@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/20 11:49:19 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/21 18:33:50 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,40 @@
 
 #include <stdio.h> //A EFFACER !!!
 
-
-typedef struct	fptr
+typedef struct	s_flag
 {
-   char			c;
-   void			(*ptr)(va_list);
-} 				fptr;
+	char		type;
 
-void		ft_printf(char *str, ...);
-void		ft_putstr(va_list ap);
+	int			sharp;
+	int			zero;
+	int			minus;
+	int			plus;
+	int			space;
+
+	int			width;
+
+	int			precision;
+
+	int			hh;
+	int			h;
+	int			ll;
+	int			l;
+	int			j;
+	int			z;
+}				t_flag;
+
+
+char		*ft_parsing(char *format, int len, t_flag *flags);
+int			ft_get_flag_length(char *format, t_flag *flags);
+/*
+** Initialize our struct array with char and function pointers.
+*/
+// void		initialize_t_fptr(t_fptr *fptrs);
+// void		initialize_t_fptr_end(t_fptr *fptrs);
+
+/*
+** Main functions.
+*/
+// void		ft_printf(char *str, ...);
 
 #endif
