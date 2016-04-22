@@ -1,7 +1,7 @@
 #!bin/bash
-echo "make re"
+echo "=======\tmake re"
 make re
-echo "compilation"
+echo "=======\tcompilation"
 gcc -Wall -Werror -Wextra main.c libftprintf.a
-echo "exec\n\n"
+echo "=======\texec\n"
 ./a.out

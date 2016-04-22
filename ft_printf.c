@@ -6,12 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 11:28:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 16:03:51 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 /*
 ** This our main function, it tooks our string and arguments, displays them or
@@ -28,11 +27,11 @@ void		ft_printf(const char *format, ...)
 	i = -1;
 	while (format[++i] != '\0')
 	{
-		if (format[i] == '%' && (flags->len = ft_get_flag_length(&format[i]))
-			> 0)
+		if (format[i] == '%' && (flags.len =
+			ft_get_flag_length((char*)&format[i])) > 0)
 		{
-			ft_specs_dispatcher(&format[i], &flags, ap);
-			i += flags->len;
+			ft_specs_dispatcher((char*)&format[i], &flags, &ap);
+			i += flags.len;
 		}
 		else
 			ft_putchar(format[i]);

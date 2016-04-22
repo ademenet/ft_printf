@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 11:28:58 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 15:59:37 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef struct	s_spec
 {
 	char		c;
-	void		(*ptr)(va_list);
+	void		(*ptr)(char*);
 }				t_spec;
 
 typedef struct	s_flag
@@ -31,6 +31,8 @@ typedef struct	s_flag
 
 	char		*format;
 	int			len;
+
+	va_list		ap;
 
 	int			sharp;
 	int			zero;
@@ -50,25 +52,37 @@ typedef struct	s_flag
 	int			z;
 }				t_flag;
 
-void		ft_specs_dispatcher(char *format, t_flag *flags, va_list ap);
-
 /*
-** Functions that are part of parsing.
+** ft_display.c
 */
 
-int			ft_get_flag_length(char *format);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+void	ft_putnbr(int n);
 
 /*
-** Initialize our struct array with char and function pointers.
+** ft_initialize_functions.c
 */
 
-void		ft_initialize_specs_1(t_spec *specs);
-void		ft_initialize_specs_2(t_spec *specs);
+void	ft_initialize_specs_1(t_spec *specs);
+void	ft_initialize_specs_2(t_spec *specs);
 
 /*
-** Main functions.
+** ft_dispatcher.c
 */
 
-void		ft_printf(char *format, ...);
+void	ft_specs_dispatcher(char *format, t_flag *flags, va_list *ap);
+
+/*
+** ft_parsing.c
+*/
+
+int		ft_get_flag_length(char *format);
+
+/*
+** ft_printf.c
+*/
+
+void	ft_printf(const char *format, ...);
 
 #endif

@@ -6,15 +6,14 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 11:03:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 16:18:44 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
+void		ft_printf(const char *format, ...);
 
 int		main()
 {
-	ft_printf("%   s %S", "coucou c'est moi ", "Trou du cul");
+	ft_printf("Bonjour %    s", "! Comment vas tu ?");
 	return (0);
 }

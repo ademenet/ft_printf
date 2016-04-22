@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int			ft_get_flag_length(char *format, t_flag *flags)
 {
