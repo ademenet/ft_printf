@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 16:03:51 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 18:28:37 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void		ft_printf(const char *format, ...)
 		if (format[i] == '%' && (flags.len =
 			ft_get_flag_length((char*)&format[i])) > 0)
 		{
-			ft_specs_dispatcher((char*)&format[i], &flags, &ap);
+			flags.format = (char*)&format[i];
+			ft_specs_dispatcher(&flags, &ap);
 			i += flags.len;
 		}
 		else

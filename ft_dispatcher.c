@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 18:16:47 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 18:31:05 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** associate flags. It calls the right function.
 */
 
-void		ft_specs_dispatcher(char *format, t_flag *flags, va_list *ap)
+void		ft_specs_dispatcher(t_flag *flags, va_list *ap)
 {
 	t_spec	specs[16];
 	char	*str;
@@ -27,13 +27,8 @@ void		ft_specs_dispatcher(char *format, t_flag *flags, va_list *ap)
 	ft_initialize_specs_2(specs);
 	j = 0;
 	flags->sharp = 0;
-	while (specs[j].c != format[flags->len] && specs[j].c != 0)
-    	j++;
-    if (specs[j].c != 0)
-	{
-		str = va_arg(*ap, char*);
-		// printf("%s\n", str);
-    	specs[j].ptr(str);
-	}
-	flags->specs = specs;
+	while (specs[j].c != flags->format[flags->len] && specs[j].c != 0)
+		j++;
+	if (specs[j].c != 0)
+		specs[j].ptr(flags, ap);
 }

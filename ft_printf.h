@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 15:59:37 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 18:30:59 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@
 typedef struct	s_spec
 {
 	char		c;
-	void		(*ptr)(char*);
+	void		(*ptr)(*t_flag, *va_list);
 }				t_spec;
 
 typedef struct	s_flag
 {
-	t_spec		*specs;
-
 	char		*format;
 	int			len;
 
@@ -71,7 +69,7 @@ void	ft_initialize_specs_2(t_spec *specs);
 ** ft_dispatcher.c
 */
 
-void	ft_specs_dispatcher(char *format, t_flag *flags, va_list *ap);
+void	ft_specs_dispatcher(t_flag *flags, va_list *ap);
 
 /*
 ** ft_parsing.c
