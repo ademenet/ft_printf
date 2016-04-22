@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/04/20 11:35:56 by ademenet         ###   ########.fr        #
+#    Updated: 2016/04/22 10:04:01 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
-SOURCES = ft_printf.c
+SOURCES =	ft_printf.c\
+			ft_initialize_functions.c
 
 HEADERS = ft_printf.h
 

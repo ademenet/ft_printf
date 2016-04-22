@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 11:03:14 by ademenet         ###   ########.fr       */
+/*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
+/*   Updated: 2016/04/22 11:29:48 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
+/*
+** This function set the base in order to manage our differents specifiers and
+** associate flags.
+*/
 
-int		main()
+void		ft_specs_dispatcher(char *format, t_flag *flags, va_list ap)
 {
-	ft_printf("%   s %S", "coucou c'est moi ", "Trou du cul");
-	return (0);
+	t_spec	specs;
+	int		j;
+
+	initialize_specs_1(&specs);
+	initialize_specs_2(&specs);
+	while (specs[j].c != format[flags->len] && specs[j].c != 0)
+    	j++;
+    if (specs[j].c != 0)
+    	specs[j].ptr(ap);
+	flags->specs = &specs;
 }

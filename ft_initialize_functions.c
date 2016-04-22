@@ -6,18 +6,18 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 12:15:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/21 15:12:02 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/22 11:28:52 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
-** This file inits our array of structs in order to detect final flag and
+** This file initiates our array of structs in order to detect specifiers and
 ** point directly to the right function.
 */
 
-void		initialize_t_fptr_end(t_fptr *fptrs)
+void		ft_initialize_specs_2(t_spec *specs)
 {
 	fptrs[12].c = 'x';
 	fptrs[12].ptr = NULL;
@@ -29,7 +29,7 @@ void		initialize_t_fptr_end(t_fptr *fptrs)
 	fptrs[15].ptr = NULL;
 }
 
-void		initialize_t_fptr(t_fptr *fptrs)
+void		ft_initialize_specs_1(t_spec *specs)
 {
 	fptrs[0].c = 's';
 	fptrs[0].ptr = NULL;
