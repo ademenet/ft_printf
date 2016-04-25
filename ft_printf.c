@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 18:28:37 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/25 17:58:55 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@
 void		ft_printf(const char *format, ...)
 {
 	va_list		ap;
-	t_flag		flags;
+	t_flag		f;
 	int			i;
 
 	va_start(ap, format);
 	i = -1;
 	while (format[++i] != '\0')
 	{
-		if (format[i] == '%' && (flags.len =
+		if (format[i] == '%' && (f.len =
 			ft_get_flag_length((char*)&format[i])) > 0)
 		{
-			flags.format = (char*)&format[i];
-			ft_specs_dispatcher(&flags, &ap);
-			i += flags.len;
+			f.format = (char*)&format[i];
+			ft_specs_dispatcher(&f, &ap);
+			i += f.len;
 		}
 		else
 			ft_putchar(format[i]);

@@ -19,12 +19,15 @@ int		main()
 	 * printf("%55d", 8);
 	 * printf("\n");
 	 */
-	printf("%15mdma");
-printf("\n");
-	printf("%-15mdma");
-printf("\n");
-	printf("%1s", "pute");
-
+/*
+**	printf("%15mdma");
+**printf("\n");
+**	printf("%-15mdma");
+**printf("\n");
+**	printf("%1s", "pute");
+ */
+// printf("%-2-s\n", "Щ不");
+printf("%0s\n", "cgcgcgc");
 
 
 

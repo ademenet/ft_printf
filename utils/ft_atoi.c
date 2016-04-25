@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dispatcher.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/25 17:58:46 by ademenet         ###   ########.fr       */
+/*   Created: 2015/11/24 17:27:36 by ademenet          #+#    #+#             */
+/*   Updated: 2016/04/25 13:38:35 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "ft_printf.h"
 
-/*
-** This function set the base in order to manage our differents specifiers and
-** associate flags. It calls the right function.
-*/
-
-void		ft_specs_dispatcher(t_flag *f, va_list *ap)
+long	ft_atoi(const char *str)
 {
-	t_spec	specs[16];
-	char	*str;
-	int		j;
+	long	sign;
+	long	nbr;
 
-	ft_initialize_specs_1(specs);
-	ft_initialize_specs_2(specs);
-	j = 0;
-	f->sharp = 0;
-	while (specs[j].c != f->frmt[f->len] && specs[j].c != 0)
-		j++;
-	if (specs[j].c != 0)
-		specs[j].ptr(f, ap);
+	sign = 1;
+	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' ||
+			*str == '\t' || *str == '\v')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	nbr = 0;
+	while (ft_isdigit((int)*str))
+	{
+		nbr = nbr * 10 + *str - '0';
+		str++;
+	}
+	return (sign * nbr);
 }

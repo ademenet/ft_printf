@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dispatcher.c                                    :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/25 17:58:46 by ademenet         ###   ########.fr       */
+/*   Created: 2015/11/26 11:16:23 by ademenet          #+#    #+#             */
+/*   Updated: 2016/04/25 13:38:49 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <string.h>
 #include "ft_printf.h"
 
-/*
-** This function set the base in order to manage our differents specifiers and
-** associate flags. It calls the right function.
-*/
-
-void		ft_specs_dispatcher(t_flag *f, va_list *ap)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	t_spec	specs[16];
-	char	*str;
-	int		j;
+	char	*fresh;
+	int		i;
 
-	ft_initialize_specs_1(specs);
-	ft_initialize_specs_2(specs);
-	j = 0;
-	f->sharp = 0;
-	while (specs[j].c != f->frmt[f->len] && specs[j].c != 0)
-		j++;
-	if (specs[j].c != 0)
-		specs[j].ptr(f, ap);
+	if (!s)
+		return (NULL);
+	fresh = malloc((len + 1) * sizeof(char));
+	i = 0;
+	if (!fresh)
+		return (NULL);
+	fresh[len] = '\0';
+	while (len--)
+	{
+		fresh[i] = s[start];
+		i++;
+		start++;
+	}
+	return (fresh);
 }

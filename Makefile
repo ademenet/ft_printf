@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/04/22 12:27:30 by ademenet         ###   ########.fr        #
+#    Updated: 2016/04/25 13:37:08 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,11 @@ SOURCES =	ft_printf.c\
 			ft_display.c\
 			ft_dispatcher.c\
 			ft_parsing.c\
+			ft_check.c\
+			utils/ft_atoi.c\
+			utils/ft_strsub.c\
+			utils/ft_isdigit.c
+
 
 HEADERS = ft_printf.h
 
