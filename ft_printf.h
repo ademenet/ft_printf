@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/26 16:37:20 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/27 14:26:12 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int			ft_check_flag(t_flag *f, int *mask);
 int			ft_check_width(t_flag *f, int *mask);
 int			ft_check_precision(t_flag *f, int *mask);
 int			ft_check_modifier(t_flag *f, int *mask);
+int			ft_check_len(t_flag *f, int *mask);
 
 /*
 ** other functions

@@ -6,25 +6,17 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/26 16:41:41 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/27 15:21:10 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-**int			ft_check_len(t_flag *f)
-**{
-**	if (f->ndx < f->len)
-**		return (-1);
-**	return (0);
-**}
- */
-
 void		ft_check_initialize(t_flag *f)
 {
 	int		i;
 
+	printf("f->ndx initializer == %d\n", f->ndx);
 	while (f->flmo[i])
 	{
 		f->flmo[i] = 0;
@@ -91,26 +83,38 @@ int			ft_check_precision(t_flag *f, int *mask)
 	return (ft_check_modifier(f, mask));
 }
 
-int			ft_check_modifier(t_flag *f, int *mask_s)
+int			ft_check_modifier(t_flag *f, int *mask)
 {
 	int i = 0;
 	// FAUX : checker le 1er char et le char + 1
-	while (f->ndx++ < f->len)
+	while (f->ndx < f->len && (f->frmt[f->ndx] == 'h' || f->frmt[f->ndx] == 'l'
+		|| f->frmt[f->ndx] == 'j' || f->frmt[f->ndx] == 'z'))
 	{
 		i++;
-		printf("%d tour\n", i);
 		if(f->frmt[f->ndx] == 'h' && f->frmt[f->ndx + 1] == 'h')
-			f->flmo[5] = f->flmo[5] + mask_s[5];
+			f->flmo[5] = f->flmo[5] + mask[5];
 		else if(f->frmt[f->ndx] == 'h')
-			f->flmo[6] = f->flmo[6] + mask_s[6];
+			f->flmo[6] = f->flmo[6] + mask[6];
 		if(f->frmt[f->ndx] == 'l' && f->frmt[f->ndx + 1] == 'l')
-			f->flmo[7] = f->flmo[7] + mask_s[7];
+			f->flmo[7] = f->flmo[7] + mask[7];
 		else if(f->frmt[f->ndx] == 'l')
-			f->flmo[8] = f->flmo[8] + mask_s[8];
+			f->flmo[8] = f->flmo[8] + mask[8];
 		if(f->frmt[f->ndx] == 'j')
-			f->flmo[9] = f->flmo[9] + mask_s[9];
+			f->flmo[9] = f->flmo[9] + mask[9];
 		if(f->frmt[f->ndx] == 'z')
-			f->flmo[10] = f->flmo[10] + mask_s[10];
+			f->flmo[10] = f->flmo[10] + mask[10];
+		f->ndx++;
 	}
+	return (ft_check_len(f, mask));
+}
+
+int			ft_check_len(t_flag *f, int *mask)
+{
+	printf("==== ft_check_len ====\n");
+	printf("f->ndx == %d\n", f->ndx);
+	printf("f->len == %d\n", f->len);
+
+	if (f->ndx < f->len)
+		return (0);
 	return (1);
 }

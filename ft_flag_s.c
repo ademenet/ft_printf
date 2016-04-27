@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/26 16:42:01 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/27 15:22:53 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int 	main()
 {
 	t_flag	*f = (t_flag*)malloc(sizeof(t_flag));
 
-	f->frmt = "%50.1hhhhs";
-	f->len = 89;
+	f->frmt = "%##### ##000000++++++--------56.2hhs";
+	f->len = 34;
 	int nb = ft_check_valid_s(f);
 	printf("===== MAIN FONCTION !!! ======\n");
 	printf("retour de fonction : %d\n", nb);

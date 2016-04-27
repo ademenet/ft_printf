@@ -20,6 +20,5 @@ int		main()
 	printf( "%ti\n", &(al[3]) - &(al[1]) );
 
 	printf( "%Lf\n", 3.14L );
-
 	return (0);
 }

@@ -39,5 +39,6 @@ int		main()
 	**printf("|%-010.5d|\n", -12);
 	**printf("%3y");
 	 */
+	 printf("%####+++++50.1hhhhs", "jujou");
 	return (0);
 }
