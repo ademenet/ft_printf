@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/27 14:26:12 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/27 16:36:40 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct	s_flag
 	int			precision;
 
 /*
-**
-**
+** |0|1|2|3|4|5 |6|7 |8|9|10| == 11
+** |#|0|-|+| |hh|h|ll|l|j|z |
 */
 	/*
 	**int			sharp;
@@ -66,11 +66,9 @@ typedef struct	s_flag
 ** ft_display.c
 */
 
-/*
-**void	ft_putchar(char c);
-**void	ft_putstr(char *s);
-**void	ft_putnbr(int n);
- */
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+void	ft_putnbr(int n);
 
 /*
 ** ft_initialize_functions.c
@@ -109,6 +107,13 @@ int			ft_check_width(t_flag *f, int *mask);
 int			ft_check_precision(t_flag *f, int *mask);
 int			ft_check_modifier(t_flag *f, int *mask);
 int			ft_check_len(t_flag *f, int *mask);
+
+/*
+** ft_flag_c.c
+*/
+
+int			ft_check_valid_c(t_flag *f, char ap);
+int			ft_handler_c(t_flag *f, char c);
 
 /*
 ** other functions
