@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int		main()
 {
@@ -27,10 +28,16 @@ int		main()
 **	printf("%1s", "pute");
  */
 // printf("%-2-s\n", "Щ不");
-printf("%0s\n", "cgcgcgc");
-
-
-
-
+// printf("%0s\n", "cgcgcgc");
+	/*
+	**printf("4567 |%-105d| plip\n", 1);
+	**printf("4567 |%105d| plip\n", 1);
+	**printf("|%10.5d|\n", -12);
+	**printf("|%10d|\n", -12);
+	**printf("|%010d|\n", -12);
+	**printf("|%-10.5d|\n", -12);
+	**printf("|%-010.5d|\n", -12);
+	**printf("%3y");
+	 */
 	return (0);
 }

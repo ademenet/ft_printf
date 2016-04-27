@@ -6,12 +6,12 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:27:36 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/25 13:38:35 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/26 15:41:59 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 long	ft_atoi(const char *str)
 {

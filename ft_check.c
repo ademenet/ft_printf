@@ -6,18 +6,20 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/25 18:16:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/26 16:41:41 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_check_len(t_flag *f)
-{
-	if (f->ndx < f->len)
-		return (-1);
-	return (0);
-}
+/*
+**int			ft_check_len(t_flag *f)
+**{
+**	if (f->ndx < f->len)
+**		return (-1);
+**	return (0);
+**}
+ */
 
 void		ft_check_initialize(t_flag *f)
 {
@@ -30,95 +32,85 @@ void		ft_check_initialize(t_flag *f)
 	}
 }
 
-int			ft_check_flag()
+int			ft_check_flag(t_flag *f, int *mask)
 {
-	while (f->ndx <= len && (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0' ||
+	while (f->ndx <= f->len && (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0' ||
 		f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+' ||
 		f->frmt[f->ndx] == ' '))
 	{
-		ft_check_flag(f, mask_s);
+		if(f->frmt[f->ndx] == '#')
+			f->flmo[0] = mask[0];
+		if(f->frmt[f->ndx] == '0')
+			f->flmo[1] = mask[1];
+		if(f->frmt[f->ndx] == '-')
+			f->flmo[2] = mask[2];
+		if(f->frmt[f->ndx] == '+')
+			f->flmo[3] = mask[3];
+		if(f->frmt[f->ndx] == ' ')
+			f->flmo[4] = mask[4];
 		f->ndx++;
 	}
+	return (ft_check_width(f, mask));
 }
 
-void		ft_validate_flag(t_flag *f, int *mask_s)
-{
-	if(f->frmt[f->ndx] == '#')
-		f->flmo[0] = mask_s[0];
-	if(f->frmt[f->ndx] == '0')
-		f->flmo[1] = mask_s[1];
-	if(f->frmt[f->ndx] == '-')
-		f->flmo[2] = mask_s[2];
-	if(f->frmt[f->ndx] == '+')
-		f->flmo[3] = mask_s[3];
-	if(f->frmt[f->ndx] == ' ')
-		f->flmo[4] = mask_s[4];
-}
-
-/*
-** FREE !
-*/
-
-void		ft_check_width(t_flag *f)
+int			ft_check_width(t_flag *f, int *mask)
 {
 	int		i;
-	int		nbr;
+	char	*str;
 
-	i = 0;
-	while (ft_isdigit(f->frmt[i]) && i < len)
-		i++;
+	i = f->ndx;
+	while (ft_isdigit(f->frmt[f->ndx]) && f->ndx < f->len)
+		f->ndx++;
 	if (i > 0)
-		f->width = ft_atoi((const char*)ft_strsub(f->frmt, 0, i));
+	{
+		str = ft_strsub(f->frmt, i, f->ndx - i);
+		f->width = ft_atoi((const char*)str);
+		free(str);
+	}
+	return (ft_check_precision(f, mask));
 }
 
-void		ft_check_precision(t_flag *f)
+// CHECKER LE DERNIER POINT ET PRENDRE LA VALEUR DU DERNIER POINT ! printf("%50.1.4s", "jungle");
+int			ft_check_precision(t_flag *f, int *mask)
 {
 	int		i;
-	int		nbr;
+	char	*str;
 
-	i = 0;
-	if (f->frmt[i++] == '.')
+	if (f->frmt[f->ndx] == '.')
 	{
-		while (ft_isdigit(f->frmt[i]) && i < len)
-			i++;
+		i = ++f->ndx;
+		while (ft_isdigit(f->frmt[f->ndx]) && f->ndx < f->len)
+			f->ndx++;
 		if (i > 0)
-			f->precision = ft_atoi((const char)ft_strsub(f->frmt, 0, i));
+		{
+			str = ft_strsub(f->frmt, i, f->ndx - i);
+			f->precision = ft_atoi((const char*)str);
+			free(str);
+		}
 	}
+	return (ft_check_modifier(f, mask));
 }
 
-void		ft_check_modifier(t_flag *f, int *mask_s)
+int			ft_check_modifier(t_flag *f, int *mask_s)
 {
+	int i = 0;
 	// FAUX : checker le 1er char et le char + 1
-	if(&f->frmt == 'hh')
-		f->flmo[5] = f->flmo[5] + mask_s[5];
-	if(&f->frmt == 'h')
-		f->flmo[6] = f->flmo[6] + mask_s[6];
-	if(&f->frmt == 'll')
-		f->flmo[7] = f->flmo[7] + mask_s[7];
-	if(&f->frmt == 'l')
-		f->flmo[8] = f->flmo[8] + mask_s[8];
-	if(&f->frmt == 'j')
-		f->flmo[9] = f->flmo[9] + mask_s[9];
-	if(&f->frmt == 'z')
-		f->flmo[10] = f->flmo[10] + mask_s[10];
-}
-
-int		main()
-{
-	t_flag f;
-	int mask_s[11] = {-1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1};
-
-	ft_check_initialize(&f);
-	printf("%d\n", f.flmo[0]);
-	printf("%d\n", f.flmo[7]);
-	f.frmt = "gsaugs+jii345.654z";
-	ft_check_flag(&f, mask_s);
-	ft_check_width(&f, mask_s);
-	ft_check_precision(&f, mask_s);
-	ft_check_modifier(&f, mask_s);
-	printf("%d\n", f.flmo[3]);
-	printf("%d\n", f.width);
-	printf("%d\n", f.precision);
-	printf("%d\n", f.flmo[10]);
-	return (0);
+	while (f->ndx++ < f->len)
+	{
+		i++;
+		printf("%d tour\n", i);
+		if(f->frmt[f->ndx] == 'h' && f->frmt[f->ndx + 1] == 'h')
+			f->flmo[5] = f->flmo[5] + mask_s[5];
+		else if(f->frmt[f->ndx] == 'h')
+			f->flmo[6] = f->flmo[6] + mask_s[6];
+		if(f->frmt[f->ndx] == 'l' && f->frmt[f->ndx + 1] == 'l')
+			f->flmo[7] = f->flmo[7] + mask_s[7];
+		else if(f->frmt[f->ndx] == 'l')
+			f->flmo[8] = f->flmo[8] + mask_s[8];
+		if(f->frmt[f->ndx] == 'j')
+			f->flmo[9] = f->flmo[9] + mask_s[9];
+		if(f->frmt[f->ndx] == 'z')
+			f->flmo[10] = f->flmo[10] + mask_s[10];
+	}
+	return (1);
 }

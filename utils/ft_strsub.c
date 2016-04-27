@@ -6,13 +6,13 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 11:16:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/25 13:38:49 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/26 15:42:05 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
