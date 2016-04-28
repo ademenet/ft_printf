@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/28 18:03:12 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/04/28 18:53:15 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,6 @@ int			ft_check_valid_d(t_flag *f)
 	return (ft_check_flag(f, mask_s));
 }
 
-void	ft_precision_i(t_flag *f)
-{
-	int	i;
-
-	i = ft_strlen(f->arg);
-	while (f->fla[0] > i)
-	{
-		f->ret += write(1, "0", 1);
-		i++;
-	}
-}
-
 int		ft_handler_d(t_flag *f)
 {
 	int	i;
@@ -41,10 +29,8 @@ int		ft_handler_d(t_flag *f)
 	f->ret = 0;
 	k = -1;
 	i = ft_strlen(f->arg);
-	if (f->fla[6] == 1 || f->fla[5] == 1)
-		ft_space_and_plus(f);
-	if (f->fla[0] != 0)
-		ft_precision_i(f);
+	// if (f->fla[6] == 1 || f->fla[5] == 1)
+	// 	ft_space_and_plus(f);
 	if (f->fla[1] != 0)
 		ft_width(f);
 	else
@@ -62,14 +48,13 @@ int 	main()
 	t_flag	*f = (t_flag*)malloc(sizeof(t_flag));
 	int	i;
 
-	f->len = 999;
 	f->arg = "12345";
 	f->fla[0] = 10; // precision
 	f->fla[1] = 20; // width
 	f->fla[2] = 0; // #
 	f->fla[3] = 0; // 0
 	f->fla[4] = 0; // -
-	f->fla[5] = 0; // +
+	f->fla[5] = 1; // +
 	f->fla[6] = 0; // | |
 
 	// int nb = ft_check_valid_s(f);
@@ -78,11 +63,11 @@ int 	main()
 	i = ft_handler_d(f);
 
 	ft_putstr("\n===== NUMBER OF CHAR ======\n");
-
-	printf("|% 012o|\n", 124);
-	printf("|%08o|\n", 124);
-	printf("|%+.10o|\n", 124);
-	printf("|% +012d|\n", 124);
+	//
+	// printf("|% 012o|\n", 124);
+	// printf("|%08o|\n", 124);
+	// printf("|%+.10o|\n", 124);
+	printf("|%020.10s|\n", "test");
 
 	return (0);
 }
