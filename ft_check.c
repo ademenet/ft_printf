@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/27 16:39:51 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/28 10:21:06 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int			ft_check_precision(t_flag *f, int *mask)
 int			ft_check_modifier(t_flag *f, int *mask)
 {
 	int i = 0;
-	// FAUX : checker le 1er char et le char + 1
 	while (f->ndx < f->len && (f->frmt[f->ndx] == 'h' || f->frmt[f->ndx] == 'l'
 		|| f->frmt[f->ndx] == 'j' || f->frmt[f->ndx] == 'z'))
 	{

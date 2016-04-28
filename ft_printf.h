@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/27 16:36:40 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/28 10:19:46 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,16 @@ typedef struct	s_flag
 
 	va_list		ap;
 
-	int			flmo[11];
+	/*
+	** fla[13] is an array which contains flags for precision, width, flags
+	** and modifiers such as:
+	** |0        |1    |2|3|4|5|6|7 |8|9 |10|11|12|
+	** |precision|width|#|0|-|+| |hh|h|ll|l |j |z |
+	*/
 
-	int			width;
+	int			fla[13];
 
-	int			precision;
+	char		*arg;
 
 /*
 ** |0|1|2|3|4|5 |6|7 |8|9|10| == 11
