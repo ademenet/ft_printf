@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/27 15:22:53 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/28 10:36:33 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_check_valid_s(t_flag *f)
 {
-	static int	mask_s[11] = {2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2};
+	static int	mask_s[13] = {0, 0, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2};
 
 	f->ndx = 1;
 	ft_check_initialize(f);
@@ -58,18 +58,18 @@ int 	main()
 	int nb = ft_check_valid_s(f);
 	printf("===== MAIN FONCTION !!! ======\n");
 	printf("retour de fonction : %d\n", nb);
-	printf("# = %d\n", f->flmo[0]);
-	printf("0 = %d\n", f->flmo[1]);
-	printf("- = %d\n", f->flmo[2]);
-	printf("+ = %d\n", f->flmo[3]);
-	printf("| | = %d\n", f->flmo[4]);
-	printf("width = %d\n", f->width);
-	printf("precision = %d\n", f->precision);
-	printf("hh = %d\n", f->flmo[5]);
-	printf("h = %d\n", f->flmo[6]);
-	printf("ll = %d\n", f->flmo[7]);
-	printf("l = %d\n", f->flmo[8]);
-	printf("j = %d\n", f->flmo[9]);
-	printf("z = %d\n", f->flmo[10]);
+	printf("# = %d\n", f->fla[2]);
+	printf("0 = %d\n", f->fla[3]);
+	printf("- = %d\n", f->fla[4]);
+	printf("+ = %d\n", f->fla[5]);
+	printf("| | = %d\n", f->fla[6]);
+	printf("width = %d\n", f->fla[1]);
+	printf("precision = %d\n", f->fla[0]);
+	printf("hh = %d\n", f->fla[7]);
+	printf("h = %d\n", f->fla[8]);
+	printf("ll = %d\n", f->fla[9]);
+	printf("l = %d\n", f->fla[10]);
+	printf("j = %d\n", f->fla[11]);
+	printf("z = %d\n", f->fla[12]);
 	return (0);
 }

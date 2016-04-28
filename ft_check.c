@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/28 10:21:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/28 10:32:46 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,29 @@ void		ft_check_initialize(t_flag *f)
 {
 	int		i;
 
-	while (f->flmo[i])
+	while (f->fla[i])
 	{
-		f->flmo[i] = 0;
+		f->fla[i] = 0;
 		i++;
 	}
 }
 
 int			ft_check_flag(t_flag *f, int *mask)
 {
-	while (f->ndx <= f->len && (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0' ||
-		f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+' ||
+	while (f->ndx <= f->len && (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
+		|| f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+' ||
 		f->frmt[f->ndx] == ' '))
 	{
 		if(f->frmt[f->ndx] == '#')
-			f->flmo[0] = mask[0];
+			f->fla[2] = mask[2];
 		if(f->frmt[f->ndx] == '0')
-			f->flmo[1] = mask[1];
+			f->fla[3] = mask[3];
 		if(f->frmt[f->ndx] == '-')
-			f->flmo[2] = mask[2];
+			f->fla[4] = mask[4];
 		if(f->frmt[f->ndx] == '+')
-			f->flmo[3] = mask[3];
+			f->fla[5] = mask[5];
 		if(f->frmt[f->ndx] == ' ')
-			f->flmo[4] = mask[4];
+			f->fla[6] = mask[6];
 		f->ndx++;
 	}
 	return (ft_check_width(f, mask));
@@ -55,7 +55,7 @@ int			ft_check_width(t_flag *f, int *mask)
 	if (i > 0)
 	{
 		str = ft_strsub(f->frmt, i, f->ndx - i);
-		f->width = ft_atoi((const char*)str);
+		f->fla[1] = ft_atoi((const char*)str);
 		free(str);
 	}
 	return (ft_check_precision(f, mask));
@@ -75,7 +75,7 @@ int			ft_check_precision(t_flag *f, int *mask)
 		if (i > 0)
 		{
 			str = ft_strsub(f->frmt, i, f->ndx - i);
-			f->precision = ft_atoi((const char*)str);
+			f->fla[0] = ft_atoi((const char*)str);
 			free(str);
 		}
 	}
@@ -90,17 +90,17 @@ int			ft_check_modifier(t_flag *f, int *mask)
 	{
 		i++;
 		if(f->frmt[f->ndx] == 'h' && f->frmt[f->ndx + 1] == 'h')
-			f->flmo[5] = f->flmo[5] + mask[5];
+			f->fla[7] = f->fla[7] + mask[7];
 		else if(f->frmt[f->ndx] == 'h')
-			f->flmo[6] = f->flmo[6] + mask[6];
+			f->fla[8] = f->fla[8] + mask[8];
 		if(f->frmt[f->ndx] == 'l' && f->frmt[f->ndx + 1] == 'l')
-			f->flmo[7] = f->flmo[7] + mask[7];
+			f->fla[9] = f->fla[9] + mask[9];
 		else if(f->frmt[f->ndx] == 'l')
-			f->flmo[8] = f->flmo[8] + mask[8];
+			f->fla[10] = f->fla[10] + mask[10];
 		if(f->frmt[f->ndx] == 'j')
-			f->flmo[9] = f->flmo[9] + mask[9];
+			f->fla[11] = f->fla[11] + mask[11];
 		if(f->frmt[f->ndx] == 'z')
-			f->flmo[10] = f->flmo[10] + mask[10];
+			f->fla[12] = f->fla[12] + mask[12];
 		f->ndx++;
 	}
 	return (ft_check_len(f, mask));
