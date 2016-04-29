@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/28 10:36:08 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/29 15:05:08 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ typedef struct	s_flag
  */
 
 /*
-** ft_display.c
+** ./utils/
 */
 
-void	ft_putchar(char c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int n);
+void		ft_putchar(char c);
+void		ft_putwchar(wchar_t wchar);
+int			ft_wcharlen(wchar_t wchar);
+long		ft_atoi(const char *str);
+int			ft_isdigit(int c);
+char		*ft_strsub(char const *s, unsigned int start, size_t len);
 
 /*
 ** ft_initialize_functions.c
@@ -101,15 +104,5 @@ int			ft_check_len(t_flag *f, int *mask);
 
 int			ft_check_valid_c(t_flag *f, char ap);
 int			ft_handler_c(t_flag *f, char c);
-
-/*
-** other functions
-*/
-
-int			ft_isdigit(int c);
-long		ft_atoi(const char *str);
-char		*ft_strsub(char const *s, unsigned int start, size_t len);
-
-
 
 #endif
