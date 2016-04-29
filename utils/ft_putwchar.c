@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 11:20:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:01:55 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/29 15:27:54 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 /*
 ** This function takes a wchar_t and writes it. It starts with big endian

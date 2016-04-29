@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 14:56:38 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 14:57:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/29 15:27:50 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../include/ft_printf.h"
 
 void	ft_putchar(char c)
 {

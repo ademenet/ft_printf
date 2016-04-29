@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 18:05:14 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/25 17:58:17 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/29 15:29:05 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "include/ft_printf.h"
 
 /*
 ** This function returns length from '%' + 1 char until the first specifier met.
@@ -32,18 +32,3 @@ int			ft_get_flag_length(char *frmt)
 	}
 	return (0);
 }
-
-/*
-**char		*ft_parsing(char *frmt, int len, t_flag *f)
-**{
-**	char	*parse;
-**	int		i;
-**	parse = (char*)malloc(sizeof(char) * len + 1);
-**	parse[len] = '\0';
-**	while (i < len)
-**	{
-**		parse[i] = frmt[i];
-**	}
-**	return (parse);
-**}
-*/
