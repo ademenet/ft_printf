@@ -6,31 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 11:20:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 14:58:26 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/04/29 15:01:55 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-** These are unicode masks:
-** 0xxxxxxx // 0x00
-** 110xxxxx 10xxxxxx // 0xC0 0x80
-** 1110xxxx 10xxxxxx 10xxxxxx // 0xE0 0x80 0x80
-** 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx // 0xF0 0x80 0x80 0x80
-*/
-
-int			ft_wchar_len(wchar_t wchar)
-{
-	if (wchar <= 0x7f)
-		return (1);
-	else if (wchar <= 0x7ff)
-		return (2);
-	else if (wchar <= 0xffff)
-		return (3);
-	else
-		return (4);
-}
 
 /*
 ** This function takes a wchar_t and writes it. It starts with big endian
