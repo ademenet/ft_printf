@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/28 17:45:31 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/04/29 10:55:34 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct	s_flag
 	*/
 
 	int			fla[13];
-
+	char		spe;
 	char		*arg;
 }				t_flag;
 
@@ -100,14 +100,13 @@ int			ft_handler_c(t_flag *f, char c);
 */
 
 int			ft_check_valid_s(t_flag *f);
-int			ft_handler_s(t_flag *f);
 
 /*
 ** ft_flag_d.c
 */
 
 int			ft_check_valid_d(t_flag *f);
-int			ft_handler_d(t_flag *f);
+int			ft_handler(t_flag *f);
 void		ft_precision_i(t_flag *f);
 
 /*
