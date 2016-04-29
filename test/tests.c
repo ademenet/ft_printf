@@ -2,47 +2,47 @@
 #include <stdlib.h>
 
 // test o
-int		main()
-{
-	printf("|%o|\n", 123);
-	printf("|%.1o|\n", 123);
-	printf("|%.5o|\n", 123);
-	printf("|%2o|\n", 123);
-	printf("|%5o|\n", 123);
-	printf("|%05o|\n", 123);
-	printf("|%#5o|\n", 123);
-	printf("|%-5o|\n", 123);
-	printf("|%+5o|\n", 123);
-	printf("|%+5o|\n", -123);
-	printf("|% 5o|\n", 123);
-	printf("|% o|\n", 123);
-	printf("|%o|\n", 2147483648);
-	printf("|%o|\n", -2147483649);
-	return(0);
-}
-
-// test x
 /*
 **int		main()
 **{
-**	printf("|%x|\n", 123);
-**	printf("|%.1x|\n", 123);
-**	printf("|%.5x|\n", 123);
-**	printf("|%2x|\n", 123);
-**	printf("|%5x|\n", 123);
-**	printf("|%05x|\n", 123);
-**	printf("|%#5x|\n", 123);
-**	printf("|%-5x|\n", 123);
-**	printf("|%+5x|\n", 123);
-**	printf("|%+5x|\n", -123);
-**	printf("|% 5x|\n", 123);
-**	printf("|% x|\n", 123);
-**	printf("|%x|\n", 2147483648);
-**	printf("|%x|\n", -2147483649);
+**	printf("|%o|\n", 123);
+**	printf("|%.1o|\n", 123);
+**	printf("|%.5o|\n", 123);
+**	printf("|%2o|\n", 123);
+**	printf("|%5o|\n", 123);
+**	printf("|%05o|\n", 123);
+**	printf("|%#5o|\n", 123);
+**	printf("|%-5o|\n", 123);
+**	printf("|%+5o|\n", 123);
+**	printf("|%+5o|\n", -123);
+**	printf("|% 5o|\n", 123);
+**	printf("|% o|\n", 123);
+**	printf("|%o|\n", 2147483648);
+**	printf("|%o|\n", -2147483649);
 **	return(0);
 **}
  */
 
+// test x
+int		main()
+{
+	printf("|%x|\n", 123);
+	printf("|%.1x|\n", 123);
+	printf("|%.5x|\n", 123);
+	printf("|%.10x|\n", 123);
+	printf("|%2x|\n", 123);
+	printf("|%5x|\n", 123);
+	printf("|%05x|\n", 123);
+	printf("|%#5x|\n", 123);
+	printf("|%-5x|\n", 123);
+	printf("|%+5x|\n", 123);
+	printf("|%+5x|\n", -123);
+	printf("|% 5x|\n", 123);
+	printf("|% x|\n", 123);
+	printf("|%x|\n", 2147483648);
+	printf("|%x|\n", -2147483649);
+	return(0);
+}
 
 // test d
 /*
@@ -51,6 +51,7 @@ int		main()
 **	printf("|%d|\n", 123);
 **	printf("|%.1d|\n", 123);
 **	printf("|%.5d|\n", 123);
+**	printf("|%.10d|\n", 123);
 **	printf("|%2d|\n", 123);
 **	printf("|%5d|\n", 123);
 **	printf("|%05d|\n", 123);
