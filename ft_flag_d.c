@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:28:52 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/04/30 16:22:31 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int		ft_handler(t_flag *f)
 		ft_precision(f);
 	if (f->fla[1] > 0)
 		ft_width(f);
-	if ((f->fla[6] == 1 || f->fla[5] == 1 || f->fla[2] == 1) &&
+	if ((f->fla[5] == 1 || f->fla[6] == 1 || f->fla[2] == 1) &&
 	(f->fla[0] == 0 && f->fla[1] == 0))
-		{
-			ft_space_and_plus(f);
-			ft_sharp(f);
-		}
+	{
+		ft_space_and_plus(f);
+		ft_sharp(f);
+	}
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
 		f->ret += write(1, &f->arg[k], 1);
 	if (f->ret == 0)
@@ -52,12 +52,12 @@ int 	main()
 	int	i;
 
 	f->arg = "123";
-	f->spe = 's';
-	f->fla[0] = 0; // precision
+	f->spe = 'o';
+	f->fla[0] = 12; // precision
 	f->fla[1] = 20; // width
-	f->fla[2] = 0; // #
-	f->fla[3] = 0; // 0
-	f->fla[4] = 0; // -
+	f->fla[2] = 1; // #
+	f->fla[3] = 1; // 0
+	f->fla[4] = 1; // -
 	f->fla[5] = 0; // +
 	f->fla[6] = 0; // | |
 
@@ -71,9 +71,15 @@ int 	main()
 	// printf("|% 012o|\n", 124);
 	// printf("|%08o|\n", 124);
 	// printf("|%+.10o|\n", 124);
-	printf("%+20.12d\n", 123);
-	printf("%020.12d\n", 123);
-	printf("%+-012d\n", 123);
+	printf("%#-20.12o\n", 123);
+	printf("%020.6d\n", 123);
+	printf("%20.6d\n", 123);
+	printf("%20.6D\n", 123);
+	printf("%20.6i\n", 123);
+	printf("%20.6o\n", 123);
+	printf("%20.6u\n", 123);
+	printf("%20.6x\n", 123);
+
 
 
 	return (0);
