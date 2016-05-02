@@ -6,17 +6,17 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/02 10:02:13 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:18:16 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 /*
 ** Remove more space on width for '0' flag
 */
 
-void	len_of_precision_zero(t_flag *f, int len, int len_zero)
+void	len_of_precision_zero(t_flag *f, int len)
 {
 	int	i;
 
@@ -71,7 +71,7 @@ void	ft_zero(t_flag *f)
 ** Remove more space on width for '-' flag
 */
 
-void	len_of_precision_minus(t_flag *f, int len, int len_zero)
+void	len_of_precision_minus(t_flag *f, int len)
 {
 	int	i;
 

@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/02 10:20:00 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:09:22 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 /*
 ** Pas de free dans la precision WARNING
@@ -20,7 +20,6 @@
 void	ft_precision(t_flag *f)
 {
 	char	*str2;
-	int		i;
 
 	str2 = f->arg;
 	if (f->spe == 's' || f->spe == 'S')

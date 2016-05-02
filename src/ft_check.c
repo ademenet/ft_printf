@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 10:49:41 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:10:47 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
+#include "../include/ft_printf.h"
 
 void		ft_check_initialize(t_flag *f)
 {
 	int		i;
 
+	i = 0;
 	while (f->fla[i])
 	{
 		f->fla[i] = 0;
@@ -103,10 +104,10 @@ int			ft_check_modifier(t_flag *f, int *mask)
 			f->fla[12] = f->fla[12] + mask[12];
 		f->ndx++;
 	}
-	return (ft_check_len(f, mask));
+	return (ft_check_len(f));
 }
 
-int			ft_check_len(t_flag *f, int *mask)
+int			ft_check_len(t_flag *f)
 {
 	if (f->ndx < f->len)
 		return (0);

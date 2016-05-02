@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:11:02 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:14:12 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
+#include "../include/ft_printf.h"
 
 /*
 ** This function set the basic in order to manage our differents specifiers and
@@ -20,13 +20,11 @@
 void		ft_specs_dispatcher(t_flag *f, va_list *ap)
 {
 	t_spec	specs[16];
-	char	*str;
 	int		j;
 
 	ft_initialize_specs_1(specs);
 	ft_initialize_specs_2(specs);
 	j = 0;
-	f->sharp = 0;
 	while (specs[j].c != f->frmt[f->len] && specs[j].c != 0)
 		j++;
 	if (specs[j].c != 0)

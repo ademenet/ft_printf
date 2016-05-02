@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/04/25 13:37:08 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/02 11:05:44 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,28 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
-SOURCES =	ft_printf.c\
-			ft_initialize_functions.c\
-			ft_display.c\
-			ft_dispatcher.c\
-			ft_parsing.c\
-			ft_check.c\
+SOURCES =	src/ft_apply_flags.c\
+			src/ft_check.c\
+			src/ft_dispatcher.c\
+			src/ft_flag_c.c\
+			src/ft_flag_d.c\
+			src/ft_flag_s.c\
+			src/ft_initialize_functions.c\
+			src/ft_parsing.c\
+			src/ft_printf.c\
+			src/ft_width_and_precision.c\
 			utils/ft_atoi.c\
+			utils/ft_isdigit.c\
+			utils/ft_itoa_base.c\
+			utils/ft_putchar.c\
+			utils/ft_putnbr.c\
+			utils/ft_putwchar.c\
+			utils/ft_strlen.c\
 			utils/ft_strsub.c\
-			utils/ft_isdigit.c
+			utils/ft_strsub.c\
+			utils/ft_wcharlen.c\
 
-
-HEADERS = ft_printf.h
+HEADERS = include/ft_printf.h
 
 OBJECT = $(SOURCES:.c=.o)
 

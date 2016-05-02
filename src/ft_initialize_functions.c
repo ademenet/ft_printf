@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 12:15:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/22 15:20:10 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:11:38 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
+#include "../include/ft_printf.h"
 
 /*
 ** This file initiates our array of structs in order to detect specifiers and
@@ -32,7 +32,7 @@ void		ft_initialize_specs_2(t_spec *specs)
 void		ft_initialize_specs_1(t_spec *specs)
 {
 	specs[0].c = 's';
-	specs[0].ptr = &ft_putstr;
+	specs[0].ptr = ;
 	specs[1].c = 'S';
 	specs[1].ptr = NULL;
 	specs[3].c = 'c';

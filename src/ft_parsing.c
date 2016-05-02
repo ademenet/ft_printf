@@ -6,11 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 18:05:14 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:29:05 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:06:58 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
+#include "../include/ft_printf.h"
 
 /*
 ** This function returns length from '%' + 1 char until the first specifier met.

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:13:23 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:19:06 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void		ft_initialize_specs_2(t_spec *specs);
 ** ft_dispatcher.c
 */
 
-/* void	ft_specs_dispatcher(t_flag *f, va_list *ap); */
+void		ft_specs_dispatcher(t_flag *f, va_list *ap);
 
 /*
 ** ft_parsing.c
@@ -128,9 +128,9 @@ void		ft_precision(t_flag *f);
 ** ft_width_and_precision.c
 */
 
-void		len_of_precision_zero(t_flag *f, int len, int len_zero);
+void		len_of_precision_zero(t_flag *f, int len);
 void		ft_zero(t_flag *f);
-void		len_of_precision_minus(t_flag *f, int len, int len_zero);
+void		len_of_precision_minus(t_flag *f, int len);
 void		ft_minus(t_flag *f);
 void		ft_width(t_flag *f);
 
