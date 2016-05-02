@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_c.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:33:33 by ademenet         ###   ########.fr       */
+/*   Created: 2015/11/24 17:27:36 by ademenet          #+#    #+#             */
+/*   Updated: 2016/04/29 15:27:43 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "../include/ft_printf.h"
 
-int				ft_check_valid_c(t_flag *f, va_list ap)
+long	ft_atoi(const char *str)
 {
-	static int	mask_c[13] = {0, 0, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2};
-	char		c;
+	long	sign;
+	long	nbr;
 
-	f->ndx = 1;
-	ft_check_initialize(f);
-	ft_check_flag(f, mask_c);
-	c = (char)va_arg(ap, int);
-	f->arg = &c;
-printf("%s\n", f->arg);
-	ft_handler(f);
-	return (0);
+	sign = 1;
+	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' ||
+			*str == '\t' || *str == '\v')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	nbr = 0;
+	while (ft_isdigit((int)*str))
+	{
+		nbr = nbr * 10 + *str - '0';
+		str++;
+	}
+	return (sign * nbr);
 }

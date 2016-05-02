@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:22:18 by ademenet         ###   ########.fr       */
+/*   Created: 2015/11/24 17:05:25 by ademenet          #+#    #+#             */
+/*   Updated: 2015/11/24 18:39:39 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ft_printf.h"
-
-int		main()
+int	ft_isdigit(int c)
 {
-	ft_printf("couco%c", 'u');
+	if (c >= 48 && c <= 57)
+		return (1);
 	return (0);
 }

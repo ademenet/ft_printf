@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_c.c                                        :+:      :+:    :+:   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:33:33 by ademenet         ###   ########.fr       */
+/*   Created: 2016/04/29 15:01:24 by ademenet          #+#    #+#             */
+/*   Updated: 2016/05/02 10:21:47 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int				ft_check_valid_c(t_flag *f, va_list ap)
-{
-	static int	mask_c[13] = {0, 0, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2};
-	char		c;
+/*
+** These are unicode masks:
+** 0xxxxxxx // 0x00
+** 110xxxxx 10xxxxxx // 0xC0 0x80
+** 1110xxxx 10xxxxxx 10xxxxxx // 0xE0 0x80 0x80
+** 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx // 0xF0 0x80 0x80 0x80
+*/
 
-	f->ndx = 1;
-	ft_check_initialize(f);
-	ft_check_flag(f, mask_c);
-	c = (char)va_arg(ap, int);
-	f->arg = &c;
-printf("%s\n", f->arg);
-	ft_handler(f);
-	return (0);
+int			ft_wcharlen(wchar_t wchar)
+{
+	if (wchar <= 0x7f)
+		return (1);
+	else if (wchar <= 0x7ff)
+		return (2);
+	else if (wchar <= 0xffff)
+		return (3);
+	else
+		return (4);
 }
