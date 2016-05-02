@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 11:20:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:27:54 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:21:55 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void		ft_putwchar(wchar_t wchar)
 {
 	int		size;
 
-	size = ft_wchar_len(wchar);
+	size = ft_wcharlen(wchar);
 	if (size == 1)
 		ft_putchar(wchar);
 	else if (size == 2)

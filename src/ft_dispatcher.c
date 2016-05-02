@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:27:25 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:11:02 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ void		ft_specs_dispatcher(t_flag *f, va_list *ap)
 	while (specs[j].c != f->frmt[f->len] && specs[j].c != 0)
 		j++;
 	if (specs[j].c != 0)
+	{
+		f->spe = specs[j].c;
 		specs[j].ptr(f, ap);
+	}
 }

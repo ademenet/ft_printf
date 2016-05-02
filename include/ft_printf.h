@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:03:55 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:13:23 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,11 @@ typedef struct	s_flag
 	char		*arg;
 }				t_flag;
 
-/*
-**typedef struct	s_spec
-**{
-**	char		c;
-**	void		(*ptr)(*t_flag, *va_list);
-**}				t_spec;
- */
+typedef struct	s_spec
+{
+	char		c;
+	void		(*ptr)(*t_flag, *va_list);
+}				t_spec;
 
 /*
 ** ./utils/
@@ -65,10 +63,8 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 ** ft_initialize_functions.c
 */
 
-/*
-**void	ft_initialize_specs_1(t_spec *specs);
-**void	ft_initialize_specs_2(t_spec *specs);
- */
+void		ft_initialize_specs_1(t_spec *specs);
+void		ft_initialize_specs_2(t_spec *specs);
 
 /*
 ** ft_dispatcher.c
@@ -80,7 +76,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 ** ft_parsing.c
 */
 
-/* int		ft_get_flag_length(char *format); */
+int			ft_get_flag_length(char *format);
 
 /*
 ** ft_printf.c

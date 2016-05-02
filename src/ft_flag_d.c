@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:02:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:20:17 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,43 +44,4 @@ int		ft_handler(t_flag *f)
 	if (f->ret == 0)
 		return (-1);
 	return (f->ret);
-}
-
-int 	main()
-{
-	t_flag	*f = (t_flag*)malloc(sizeof(t_flag));
-	int	i;
-
-	f->arg = "123";
-	f->spe = 'o';
-	f->fla[0] = 12; // precision
-	f->fla[1] = 20; // width
-	f->fla[2] = 1; // #
-	f->fla[3] = 1; // 0
-	f->fla[4] = 1; // -
-	f->fla[5] = 0; // +
-	f->fla[6] = 0; // | |
-
-	// int nb = ft_check_valid_s(f);
-	ft_putstr("===== MINE ======\n");
-
-	i = ft_handler(f);
-
-	ft_putstr("\n===== PRINTF ======\n");
-
-	// printf("|% 012o|\n", 124);
-	// printf("|%08o|\n", 124);
-	// printf("|%+.10o|\n", 124);
-	printf("%#-20.12o\n", 123);
-	printf("%020.6d\n", 123);
-	printf("%20.6d\n", 123);
-	printf("%20.6D\n", 123);
-	printf("%20.6i\n", 123);
-	printf("%20.6o\n", 123);
-	printf("%20.6u\n", 123);
-	printf("%20.6x\n", 123);
-
-
-
-	return (0);
 }

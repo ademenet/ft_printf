@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:01:02 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:12:46 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,27 +56,4 @@ int			ft_handler_c(t_flag *f, char c)
 	else
 		ft_putchar(c);
 	return (1);
-}
-
-int			main()
-{
-	t_flag	*f = (t_flag*)malloc(sizeof(t_flag));
-
-	f->frmt = "%##0+ 5.1c";
-	f->len = 12;
-	ft_check_valid_c(f, 'd');
-	printf("\n# = %d\n", f->flmo[0]);
-	printf("0 = %d\n", f->flmo[1]);
-	printf("- = %d\n", f->flmo[2]);
-	printf("+ = %d\n", f->flmo[3]);
-	printf("| | = %d\n", f->flmo[4]);
-	printf("width = %d\n", f->width);
-	printf("precision = %d\n", f->precision);
-	printf("hh = %d\n", f->flmo[5]);
-	printf("h = %d\n", f->flmo[6]);
-	printf("ll = %d\n", f->flmo[7]);
-	printf("l = %d\n", f->flmo[8]);
-	printf("j = %d\n", f->flmo[9]);
-	printf("z = %d\n", f->flmo[10]);
-	return (0);
 }

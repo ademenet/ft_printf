@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/02 10:02:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:20:00 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** Pas de free dans la precision WARNING
-** Sub string if 's' or 'S'
+** Sub string if 's' or 'S'.
 */
 
 void	ft_precision(t_flag *f)
@@ -25,10 +25,11 @@ void	ft_precision(t_flag *f)
 	str2 = f->arg;
 	if (f->spe == 's' || f->spe == 'S')
 		f->arg = ft_strsub(str2, 0, f->fla[0]);
+	free(str2);
 }
 
 /*
-** Add 0, 0x or 0X
+** Add 0, 0x or 0X.
 */
 
 void	ft_sharp(t_flag *f)
@@ -48,7 +49,7 @@ void	ft_sharp(t_flag *f)
 }
 
 /*
-** Put space and/or plus
+** Put space and/or plus.
 */
 
 void	ft_space_and_plus(t_flag *f)
