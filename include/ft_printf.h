@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:05:08 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:03:55 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_flag
 	char		*frmt;
 	int			ndx;
 	int			len;
+	int			ret;
 
 	va_list		ap;
 
@@ -37,7 +38,7 @@ typedef struct	s_flag
 	*/
 
 	int			fla[13];
-
+	char		spe;
 	char		*arg;
 }				t_flag;
 
@@ -104,5 +105,49 @@ int			ft_check_len(t_flag *f, int *mask);
 
 int			ft_check_valid_c(t_flag *f, char ap);
 int			ft_handler_c(t_flag *f, char c);
+
+/*
+** ft_flag_s.c
+*/
+
+int			ft_check_valid_s(t_flag *f);
+
+/*
+** ft_flag_d.c
+*/
+
+int			ft_check_valid_d(t_flag *f);
+int			ft_handler(t_flag *f);
+void		ft_precision_i(t_flag *f);
+
+/*
+** ft_apply_flags.c
+*/
+
+void		ft_space_and_plus(t_flag *f);
+void		ft_sharp(t_flag *f);
+void		ft_precision(t_flag *f);
+
+/*
+** ft_width_and_precision.c
+*/
+
+void		len_of_precision_zero(t_flag *f, int len, int len_zero);
+void		ft_zero(t_flag *f);
+void		len_of_precision_minus(t_flag *f, int len, int len_zero);
+void		ft_minus(t_flag *f);
+void		ft_width(t_flag *f);
+
+/*
+** other functions
+*/
+
+int			ft_isdigit(int c);
+long		ft_atoi(const char *str);
+char		*ft_strsub(char const *s, unsigned int start, size_t len);
+int			ft_strlen(char *str);
+void		ft_putchar(char c);
+void		ft_putstr(char *s);
+void		ft_putnbr(int n);
 
 #endif

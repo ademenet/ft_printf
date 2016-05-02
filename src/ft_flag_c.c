@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/27 18:00:21 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:01:02 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_check_valid_c(t_flag *f, char ap)
 {
-	static int	mask_c[11] = {2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2};
+	static int	mask_c[13] = {0, 0, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2};
 	// char		c;
 	f->ndx = 1;
 	ft_check_initialize(f);

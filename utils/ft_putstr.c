@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/29 14:56:38 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:01:37 by ademenet         ###   ########.fr       */
+/*   Created: 2016/04/27 19:02:23 by tvisenti          #+#    #+#             */
+/*   Updated: 2016/04/27 19:38:31 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include <unistd.h>
 
-void	ft_putchar(char c)
+void		ft_putstr(char *s)
 {
-	write(1, &c, 1);
+	int		i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
 }

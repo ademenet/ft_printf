@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/04/29 15:27:25 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 10:04:24 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,38 +42,24 @@ int			ft_handler_s(t_flag *f, va_list *ap)
 	**	ft_check_precision(f);
 	**}
 	 */
+	return (ft_check_flag(f, mask_s));
 }
 
-
-
-/*
-**void		ft_flag_s(t_flag *f, va_list ap)
-**{
-**	if(ft_check_valid(f) == 1)
-**}
- */
-
-int 	main()
-{
-	t_flag	*f = (t_flag*)malloc(sizeof(t_flag));
-
-	f->frmt = "%##### ##000000++++++--------56.2hhs";
-	f->len = 34;
-	int nb = ft_check_valid_s(f);
-	printf("===== MAIN FONCTION !!! ======\n");
-	printf("retour de fonction : %d\n", nb);
-	printf("# = %d\n", f->fla[2]);
-	printf("0 = %d\n", f->fla[3]);
-	printf("- = %d\n", f->fla[4]);
-	printf("+ = %d\n", f->fla[5]);
-	printf("| | = %d\n", f->fla[6]);
-	printf("width = %d\n", f->fla[1]);
-	printf("precision = %d\n", f->fla[0]);
-	printf("hh = %d\n", f->fla[7]);
-	printf("h = %d\n", f->fla[8]);
-	printf("ll = %d\n", f->fla[9]);
-	printf("l = %d\n", f->fla[10]);
-	printf("j = %d\n", f->fla[11]);
-	printf("z = %d\n", f->fla[12]);
-	return (0);
-}
+// int		ft_handler_s(t_flag *f)
+// {
+// 	int	i;
+// 	int	k;
+//
+// 	f->ret = 0;
+// 	k = -1;
+// 	i = ft_strlen(f->arg);
+// 	if (f->fla[0] != 0)
+// 		ft_precision(f);
+// 	if (f->fla[1] != 0)
+// 		ft_width(f);
+// 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
+// 		f->ret += write(1, &f->arg[k], 1);
+// 	if (f->ret == 0)
+// 		return (-1);
+// 	return (f->ret);
+// }
