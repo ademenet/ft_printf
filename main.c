@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:22:18 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 19:17:06 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int		main()
 {
-	ft_printf("couco%c", 'u');
+	ft_printf("couco%s", "u Thomas !");
 	return (0);
 }

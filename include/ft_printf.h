@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:46:51 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 19:13:30 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@ typedef struct	s_spec
 }				t_spec;
 
 /*
+** ft_flag_c.c
+*/
+
+int			ft_check_valid_c(t_flag *f, va_list *ap);
+
+/*
+** ft_flag_s.c
+*/
+
+int			ft_check_s(t_flag *f, va_list *ap);
+
+
+
+/*
 ** ./utils/
 */
 
@@ -58,6 +72,8 @@ int			ft_wcharlen(wchar_t wchar);
 long		ft_atoi(const char *str);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
+char		*ft_itoa_base(long nbr, int base);
+
 
 /*
 ** ft_initialize_functions.c
@@ -95,22 +111,10 @@ int			ft_check_modifier(t_flag *f, int *mask);
 int			ft_check_len(t_flag *f);
 
 /*
-** ft_flag_c.c
-*/
-
-int			ft_check_valid_c(t_flag *f, va_list ap);
-
-/*
-** ft_flag_s.c
-*/
-
-int			ft_check_valid_s(t_flag *f);
-
-/*
 ** ft_flag_d.c
 */
 
-int			ft_check_valid_d(t_flag *f);
+int			ft_check_valid_d(t_flag *f, va_list *ap);
 int			ft_handler(t_flag *f);
 void		ft_precision_i(t_flag *f);
 

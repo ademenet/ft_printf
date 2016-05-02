@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/02 18:16:40 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/02 19:15:39 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_check.c\
 			ft_dispatcher.c\
 			ft_flag_c.c\
+			ft_flag_s.c\
+			ft_flag_d.c\
 			ft_initialize_functions.c\
 			ft_parsing.c\
 			ft_printf.c\
