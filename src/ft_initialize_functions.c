@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 12:15:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:27:16 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 18:47:13 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** point directly to the right function.
 */
 
-void		ft_initialize_specs_2(t_spec *specs)
+static void		ft_initialize_specs_suite(t_spec *specs)
 {
 	specs[11].c = 'x';
 	specs[11].ptr = NULL;
@@ -29,7 +29,7 @@ void		ft_initialize_specs_2(t_spec *specs)
 	specs[14].ptr = NULL;
 }
 
-void		ft_initialize_specs_1(t_spec *specs)
+void			ft_initialize_specs(t_spec *specs)
 {
 	specs[0].c = 's';
 	specs[0].ptr = NULL;
@@ -53,4 +53,5 @@ void		ft_initialize_specs_1(t_spec *specs)
 	specs[9].ptr = NULL;
 	specs[10].c = 'U';
 	specs[10].ptr = NULL;
+	ft_initialize_specs_suite(specs);
 }

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 11:58:40 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 18:46:51 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 ** ft_initialize_functions.c
 */
 
-void		ft_initialize_specs_1(t_spec *specs);
-void		ft_initialize_specs_2(t_spec *specs);
+void		ft_initialize_specs(t_spec *specs);
 
 /*
 ** ft_dispatcher.c
