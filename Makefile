@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/02 11:35:31 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/02 12:10:52 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,40 +16,47 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
-SOURCES =	src/ft_apply_flags.c\
-			src/ft_check.c\
-			src/ft_dispatcher.c\
-			src/ft_flag_c.c\
-			src/ft_initialize_functions.c\
-			src/ft_parsing.c\
-			src/ft_printf.c\
-			src/ft_width_and_precision.c\
-			utils/ft_atoi.c\
-			utils/ft_isdigit.c\
-			utils/ft_itoa_base.c\
-			utils/ft_putchar.c\
-			utils/ft_putnbr.c\
-			utils/ft_putwchar.c\
-			utils/ft_strlen.c\
-			utils/ft_strsub.c\
-			utils/ft_strsub.c\
-			utils/ft_wcharlen.c\
+SRC_PATH = src/
+
+UTILS_PATH = utils/
+
+SOURCES =	ft_apply_flags.c\
+			ft_check.c\
+			ft_dispatcher.c\
+			ft_flag_c.c\
+			ft_initialize_functions.c\
+			ft_parsing.c\
+			ft_printf.c\
+			ft_width_and_precision.c\
+
+UTILS = 	ft_atoi.c\
+			ft_isdigit.c\
+			ft_itoa_base.c\
+			ft_putchar.c\
+			ft_putnbr.c\
+			ft_putwchar.c\
+			ft_strlen.c\
+			ft_strsub.c\
+			ft_strsub.c\
+			ft_wcharlen.c\
 
 HEADERS = include/ft_printf.h
 
-OBJECT = $(SOURCES:.c=.o)
+OBJ_PATH = obj/
+
+OBJECT = $(OBJ_PATH)$(SOURCES:.c=.o)
 
 $(NAME):
-	@$(CC) $(FLAGS) -c $(SOURCES)
-	@ar rc $(NAME) $(OBJECT)
+	@mkdir $(OBJ_PATH)
+	@$(CC) $(FLAGS) -c $(SRC_PATH)$(SOURCES) $(UTILS_PATH)$(UTILS)
+	ar rc $(NAME) $(OBJECT)
 	@ranlib $(NAME)
 	@echo "\033[1;34mLibftprintf\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
 
 all: $(NAME)
 
-# NE CLEAN PAS LES .O ON DIRAIT
 clean:
-	@rm -rf $(OBJECT)
+	@rm -rf $(OBJ_PATH)
 	@echo "\033[1;34mLibftprintf\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
