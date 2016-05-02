@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/02 11:05:44 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/02 11:35:31 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,6 @@ SOURCES =	src/ft_apply_flags.c\
 			src/ft_check.c\
 			src/ft_dispatcher.c\
 			src/ft_flag_c.c\
-			src/ft_flag_d.c\
-			src/ft_flag_s.c\
 			src/ft_initialize_functions.c\
 			src/ft_parsing.c\
 			src/ft_printf.c\
@@ -49,6 +47,7 @@ $(NAME):
 
 all: $(NAME)
 
+# NE CLEAN PAS LES .O ON DIRAIT
 clean:
 	@rm -rf $(OBJECT)
 	@echo "\033[1;34mLibftprintf\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"

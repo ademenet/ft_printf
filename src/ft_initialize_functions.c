@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 12:15:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 11:11:38 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:51:32 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void		ft_initialize_specs_2(t_spec *specs)
 void		ft_initialize_specs_1(t_spec *specs)
 {
 	specs[0].c = 's';
-	specs[0].ptr = ;
+	specs[0].ptr = NULL;
 	specs[1].c = 'S';
 	specs[1].ptr = NULL;
 	specs[3].c = 'c';
-	specs[3].ptr = NULL;
+	specs[3].ptr = &ft_check_valid_c;
 	specs[4].c = 'C';
 	specs[4].ptr = NULL;
 	specs[5].c = 'd';

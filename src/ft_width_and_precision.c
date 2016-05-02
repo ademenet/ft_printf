@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/02 11:18:16 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:41:48 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_zero(t_flag *f)
 	k = -1;
 	i = ft_strlen(f->arg);
 	len = f->fla[1] - ft_strlen(f->arg);
-	len_of_precision_zero(f, len, i);
+	len_of_precision_zero(f, len);
 	if (f->fla[6] == 1 || f->fla[5] == 1 || f->fla[2] == 1)
 	{
 		ft_space_and_plus(f);
@@ -115,7 +115,7 @@ void	ft_minus(t_flag *f)
 		f->ret += write(1, "0", 1);
 	while (f->arg[++k] != '\0')
 		f->ret += write(1, &f->arg[k], 1);
-	len_of_precision_minus(f, len_zero, i);
+	len_of_precision_minus(f, len_zero);
 }
 
 /*

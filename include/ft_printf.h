@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 11:19:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/02 11:51:58 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct	s_flag
 typedef struct	s_spec
 {
 	char		c;
-	void		(*ptr)(*t_flag, *va_list);
+	int			(*ptr)(t_flag *f, va_list *ap);
 }				t_spec;
 
 /*
@@ -82,7 +82,7 @@ int			ft_get_flag_length(char *format);
 ** ft_printf.c
 */
 
-/* void	ft_printf(const char *format, ...); */
+void		ft_printf(const char *format, ...);
 
 /*
 ** ft_check.c
@@ -93,14 +93,13 @@ int			ft_check_flag(t_flag *f, int *mask);
 int			ft_check_width(t_flag *f, int *mask);
 int			ft_check_precision(t_flag *f, int *mask);
 int			ft_check_modifier(t_flag *f, int *mask);
-int			ft_check_len(t_flag *f, int *mask);
+int			ft_check_len(t_flag *f);
 
 /*
 ** ft_flag_c.c
 */
 
-int			ft_check_valid_c(t_flag *f, char ap);
-int			ft_handler_c(t_flag *f, char c);
+int			ft_check_valid_c(t_flag *f, va_list ap);
 
 /*
 ** ft_flag_s.c
