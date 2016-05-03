@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/21 12:15:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 19:17:44 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/03 12:57:43 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ static void		ft_initialize_specs_suite(t_spec *specs)
 void			ft_initialize_specs(t_spec *specs)
 {
 	specs[0].c = 's';
-	specs[0].ptr = &ft_check_s;
+	specs[0].ptr = &ft_handler_s;
 	specs[1].c = 'S';
 	specs[1].ptr = NULL;
 	specs[2].c = 'c';
-	specs[2].ptr = &ft_check_valid_c;
+	specs[2].ptr = &ft_handler_c;
 	specs[3].c = 'C';
 	specs[3].ptr = NULL;
 	specs[4].c = 'd';
-	specs[4].ptr = &ft_check_valid_d;
+	specs[4].ptr = &ft_handler_d;
 	specs[5].c = 'D';
 	specs[5].ptr = NULL;
 	specs[6].c = 'i';

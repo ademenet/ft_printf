@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/02 19:15:39 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/03 12:59:56 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ $(OBJ):
 all: $(NAME)
 
 cc:
-	$(CC) $(FLAGS) main.c $(NAME)
+	$(CC) main.c $(NAME)
 
 clean:
 	@rm -rf $(OBJ)

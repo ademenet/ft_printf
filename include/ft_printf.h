@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 12:53:44 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/03 12:58:19 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char		*ft_itoa_base(long nbr, int base);
 int			ft_strlen(char *str);
 void		ft_putstr(char *s);
 void		ft_putnbr(int n);
-
+long		ft_atoi(const char *str);
 
 /*
 ** ft_initialize_functions.c
