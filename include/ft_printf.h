@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 19:13:30 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/03 12:53:44 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,30 +49,18 @@ typedef struct	s_spec
 }				t_spec;
 
 /*
-** ft_flag_c.c
-*/
-
-int			ft_check_valid_c(t_flag *f, va_list *ap);
-
-/*
-** ft_flag_s.c
-*/
-
-int			ft_check_s(t_flag *f, va_list *ap);
-
-
-
-/*
-** ./utils/
+** UTILS
 */
 
 void		ft_putchar(char c);
 void		ft_putwchar(wchar_t wchar);
 int			ft_wcharlen(wchar_t wchar);
-long		ft_atoi(const char *str);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_itoa_base(long nbr, int base);
+int			ft_strlen(char *str);
+void		ft_putstr(char *s);
+void		ft_putnbr(int n);
 
 
 /*
@@ -100,7 +88,7 @@ int			ft_get_flag_length(char *format);
 void		ft_printf(const char *format, ...);
 
 /*
-** ft_check.c
+** CHECKS
 */
 
 void		ft_check_initialize(t_flag *f);
@@ -111,12 +99,13 @@ int			ft_check_modifier(t_flag *f, int *mask);
 int			ft_check_len(t_flag *f);
 
 /*
-** ft_flag_d.c
+** HANDLERS: functions that handle specifiers
 */
 
-int			ft_check_valid_d(t_flag *f, va_list *ap);
 int			ft_handler(t_flag *f);
-void		ft_precision_i(t_flag *f);
+int			ft_handler_d(t_flag *f, va_list *ap);
+int			ft_handler_s(t_flag *f, va_list *ap);
+int			ft_handler_c(t_flag *f, va_list *ap);
 
 /*
 ** ft_apply_flags.c
@@ -135,17 +124,6 @@ void		ft_zero(t_flag *f);
 void		len_of_precision_minus(t_flag *f, int len);
 void		ft_minus(t_flag *f);
 void		ft_width(t_flag *f);
-
-/*
-** other functions
-*/
-
-int			ft_isdigit(int c);
-long		ft_atoi(const char *str);
-char		*ft_strsub(char const *s, unsigned int start, size_t len);
-int			ft_strlen(char *str);
-void		ft_putchar(char c);
-void		ft_putstr(char *s);
-void		ft_putnbr(int n);
+void		ft_precision_i(t_flag *f);
 
 #endif
