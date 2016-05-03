@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_flag_X.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 12:38:46 by ademenet         ###   ########.fr       */
+/*   Created: 2016/05/03 12:45:51 by ademenet          #+#    #+#             */
+/*   Updated: 2016/05/03 12:45:56 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ft_printf.h"
-
-int		main()
+int			ft_handler_X(t_flag *f, va_list ap)
 {
-	ft_printf("couco%.55s", "u Thomas !");
 	return (0);
 }
