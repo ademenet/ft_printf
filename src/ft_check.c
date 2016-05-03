@@ -6,110 +6,165 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 11:10:47 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/03 19:47:16 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+
+/*
+**printf("\nf->fla[0] = %d\n", f->fla[0]);
+**printf("f->fla[1] = %d\n", f->fla[1]);
+**printf("f->fla[2] = %d\n", f->fla[2]);
+**printf("f->fla[3] = %d\n", f->fla[3]);
+**printf("f->fla[4] = %d\n", f->fla[4]);
+**printf("f->fla[5] = %d\n", f->fla[5]);
+**printf("f->fla[6] = %d\n", f->fla[6]);
+**printf("f->fla[7] = %d\n", f->fla[7]);
+**printf("f->fla[8] = %d\n", f->fla[8]);
+**printf("f->fla[9] = %d\n", f->fla[9]);
+**printf("f->fla[10] = %d\n", f->fla[10]);
+**printf("f->fla[11] = %d\n", f->fla[11]);
+**printf("f->fla[12] = %d\n", f->fla[12]); getchar();
+ */
+
+/*
+** Initialize our int array fla[13] with zeros.
+*/
 
 void		ft_check_initialize(t_flag *f)
 {
 	int		i;
 
 	i = 0;
-	while (f->fla[i])
+	while (i < 14)
 	{
 		f->fla[i] = 0;
 		i++;
 	}
+	f->ndx = 0;
 }
 
-int			ft_check_flag(t_flag *f, int *mask)
+/*
+** This function reads each flags and call functions in order to save them.
+** First, initialize our int array.
+*/
+
+void		ft_check(t_flag *f)
 {
-	while (f->ndx <= f->len && (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
-		|| f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+' ||
-		f->frmt[f->ndx] == ' '))
+	ft_check_initialize(f);
+	while (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
+		|| f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+'
+		|| f->frmt[f->ndx] == ' ' || f->frmt[f->ndx] == 'h'
+		|| f->frmt[f->ndx] == 'l' || f->frmt[f->ndx] == 'j'
+		|| f->frmt[f->ndx] == 'z' || f->frmt[f->ndx] == '.'
+		|| f->frmt[f->ndx] == '5')
+	{
+		ft_check_flag(f);
+		ft_check_width(f);
+		ft_check_precision(f);
+		ft_check_modifier(f);
+	}
+}
+
+/*
+** This function compare the current char with flags and put an int through the
+** mask.
+*/
+
+void		ft_check_flag(t_flag *f)
+{
+	if (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
+		|| f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+'
+		|| f->frmt[f->ndx] == ' ' )
 	{
 		if(f->frmt[f->ndx] == '#')
-			f->fla[2] = mask[2];
+			f->fla[2] = 1;
 		if(f->frmt[f->ndx] == '0')
-			f->fla[3] = mask[3];
+			f->fla[3] = 1;
 		if(f->frmt[f->ndx] == '-')
-			f->fla[4] = mask[4];
+			f->fla[4] = 1;
 		if(f->frmt[f->ndx] == '+')
-			f->fla[5] = mask[5];
+			f->fla[5] = 1;
 		if(f->frmt[f->ndx] == ' ')
-			f->fla[6] = mask[6];
+			f->fla[6] = 1;
 		f->ndx++;
 	}
-	return (ft_check_width(f, mask));
 }
 
-int			ft_check_width(t_flag *f, int *mask)
+/*
+** This function check the witdh if we find a digit.
+*/
+
+void		ft_check_width(t_flag *f)
 {
 	int		i;
 	char	*str;
 
 	i = f->ndx;
-	while (ft_isdigit(f->frmt[f->ndx]) && f->ndx < f->len)
+	while (ft_isdigit(f->frmt[f->ndx]))
 		f->ndx++;
-	if (i > 0)
+	if (f->ndx - i > 0)
 	{
+		f->fla[1] = 0;
 		str = ft_strsub(f->frmt, i, f->ndx - i);
 		f->fla[1] = ft_atoi((const char*)str);
 		free(str);
 	}
-	return (ft_check_precision(f, mask));
 }
 
+/*
+** This function check the precision if we find a dot.
+*/
+
 // CHECKER LE DERNIER POINT ET PRENDRE LA VALEUR DU DERNIER POINT ! printf("%50.1.4s", "jungle");
-int			ft_check_precision(t_flag *f, int *mask)
+void		ft_check_precision(t_flag *f)
 {
 	int		i;
 	char	*str;
-
 	if (f->frmt[f->ndx] == '.')
 	{
+		f->fla[0] = 0;
 		i = ++f->ndx;
-		while (ft_isdigit(f->frmt[f->ndx]) && f->ndx < f->len)
+		while (ft_isdigit(f->frmt[f->ndx]))
 			f->ndx++;
-		if (i > 0)
+		if (f->ndx - i > 0)
 		{
 			str = ft_strsub(f->frmt, i, f->ndx - i);
 			f->fla[0] = ft_atoi((const char*)str);
 			free(str);
 		}
 	}
-	return (ft_check_modifier(f, mask));
 }
 
-int			ft_check_modifier(t_flag *f, int *mask)
+/*
+** This function compare and analyse the modifiers.
+*/
+
+void		ft_check_modifier(t_flag *f)
 {
-	int i = 0;
-	while (f->ndx < f->len && (f->frmt[f->ndx] == 'h' || f->frmt[f->ndx] == 'l'
-		|| f->frmt[f->ndx] == 'j' || f->frmt[f->ndx] == 'z'))
+	while (f->frmt[f->ndx] == 'h' || f->frmt[f->ndx] == 'l' ||
+		f->frmt[f->ndx] == 'j' || f->frmt[f->ndx] == 'z')
 	{
-		i++;
 		if(f->frmt[f->ndx] == 'h' && f->frmt[f->ndx + 1] == 'h')
-			f->fla[7] = f->fla[7] + mask[7];
+		{
+			f->fla[7] = 1;
+			f->ndx++;
+		}
 		else if(f->frmt[f->ndx] == 'h')
-			f->fla[8] = f->fla[8] + mask[8];
+			f->fla[8] = 1;
 		if(f->frmt[f->ndx] == 'l' && f->frmt[f->ndx + 1] == 'l')
-			f->fla[9] = f->fla[9] + mask[9];
+		{
+			f->fla[9] = 1;
+			f->ndx++;
+		}
 		else if(f->frmt[f->ndx] == 'l')
-			f->fla[10] = f->fla[10] + mask[10];
+			f->fla[10] = 1;
 		if(f->frmt[f->ndx] == 'j')
-			f->fla[11] = f->fla[11] + mask[11];
+			f->fla[11] = 1;
 		if(f->frmt[f->ndx] == 'z')
-			f->fla[12] = f->fla[12] + mask[12];
+			f->fla[12] = 1;
 		f->ndx++;
 	}
-	return (ft_check_len(f));
-}
-
-int			ft_check_len(t_flag *f)
-{
-	if (f->ndx < f->len)
-		return (0);
-	return (1);
 }

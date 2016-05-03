@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int		main()
 {
@@ -39,6 +40,14 @@ int		main()
 	**printf("|%-010.5d|\n", -12);
 	**printf("%3y");
 	 */
-	 printf("%####+++++50.1hhhhs", "jujou");
+	//  printf("%####+++++50.1hhhhs", "jujou");
+	// printf("%022+55s", "coucouc");
+	setlocale(LC_ALL, "");
+	printf("1 %ls\n", L"ڤڴط");
+	printf("2 %lls\n", L"ڤڴط");
+	printf("3 %llls\n", L"ڤڴط");
+	printf("4 %lllls\n", L"ڤڴط");
+	printf("5 %llllls\n", L"ڤڴط");
+
 	return (0);
 }

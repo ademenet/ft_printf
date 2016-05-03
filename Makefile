@@ -6,13 +6,13 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/03 12:59:56 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/03 19:37:37 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 NAME = libftprintf.a
 
@@ -21,11 +21,22 @@ SRC_PATH = ./src
 SRC_NAME =	ft_apply_flags.c\
 			ft_check.c\
 			ft_dispatcher.c\
-			ft_flag_c.c\
 			ft_flag_s.c\
+			ft_flag_S.c\
+			ft_flag_c.c\
+			ft_flag_C.c\
 			ft_flag_d.c\
-			ft_initialize_functions.c\
-			ft_parsing.c\
+			ft_flag_D.c\
+			ft_flag_i.c\
+			ft_flag_o.c\
+			ft_flag_O.c\
+			ft_flag_u.c\
+			ft_flag_U.c\
+			ft_flag_x.c\
+			ft_flag_X.c\
+			ft_flag_p.c\
+			ft_flag_undefined.c\
+			ft_handler.c\
 			ft_printf.c\
 			ft_width_and_precision.c\
 			ft_atoi.c\
@@ -36,8 +47,8 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_putwchar.c\
 			ft_strlen.c\
 			ft_strsub.c\
-			ft_strsub.c\
 			ft_wcharlen.c\
+			ft_putstr.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 
@@ -49,7 +60,7 @@ OBJ = $(SRC_NAME:.c=.o)
 
 $(NAME): $(OBJ)
 	@mkdir -p $(OBJ_PATH)
-	@$(CC) $(FLAGS) -c $(SRC) -I $(CPP_FLAGS)
+	@$(CC) -c $(SRC) -I $(CPP_FLAGS)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "\033[1;34mLibftprintf\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
@@ -59,7 +70,7 @@ $(OBJ):
 all: $(NAME)
 
 cc:
-	$(CC) main.c $(NAME)
+	$(CC) $(FLAGS) main.c $(SRC)
 
 clean:
 	@rm -rf $(OBJ)

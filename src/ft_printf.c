@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:19:29 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/03 19:46:07 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** call subsidiaries functions to manage flags.
 */
 
-void		ft_printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	t_flag		f;
@@ -25,17 +25,18 @@ void		ft_printf(const char *format, ...)
 
 	va_start(ap, format);
 	i = -1;
+	f.ret = 0;
 	while (format[++i] != '\0')
 	{
-		if (format[i] == '%' && (f.len =
-			ft_get_flag_length((char*)&format[i])) > 0)
+		if (format[i] == '%')
 		{
-			f.frmt = (char*)&format[i];
-			ft_specs_dispatcher(&f, &ap);
-			i += f.len;
+			f.frmt = (char*)&format[++i];
+			ft_dispatcher(&f, &ap);
+			i += f.ndx;
 		}
 		else
 			ft_putchar(format[i]);
 	}
 	va_end(ap);
+	return (f.ret);
 }

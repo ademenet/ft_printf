@@ -6,11 +6,13 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:45:51 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 12:45:56 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/03 18:06:31 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_handler_X(t_flag *f, va_list ap)
+#include "../include/ft_printf.h"
+
+int			ft_handler_X(t_flag *f, va_list *ap)
 {
 	return (0);
 }
