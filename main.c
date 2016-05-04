@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 17:32:09 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:40:13 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,11 @@ int		main()
 	 */
 
 	printf("TESTS DIVERS\n");
-	ft_printf("test");
 	ft_printf("test\n");
-	ft_printf("1234");
+	ft_printf("test\n");
+	ft_printf("1234\n");
+	printf("|%015.5d|\n", 123);
+	ft_printf("|%015.5d|\n", 123);
 
 
 

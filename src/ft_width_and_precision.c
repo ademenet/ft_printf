@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/04 17:14:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:39:11 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	len_of_precision_zero(t_flag *f, int len)
 	{
 		while (len-- > 0)
 		{
-			if (f->fla[3] == 1)
+			if (f->fla[3] == 1 && f->fla[0] == 0)
 				f->ret += write(1, "0", 1);
 			else
 				f->ret += write(1, " ", 1);
