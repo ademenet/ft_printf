@@ -24,48 +24,48 @@
  */
 
 // test x
-int		main()
-{
-	printf("|%x|\n", 123);
-	printf("|%.1x|\n", 123);
-	printf("|%.5x|\n", 123);
-	printf("|%.10x|\n", 123);
-	printf("|%2x|\n", 123);
-	printf("|%5x|\n", 123);
-	printf("|%05x|\n", 123);
-	printf("|%#5x|\n", 123);
-	printf("|%-5x|\n", 123);
-	printf("|%+5x|\n", 123);
-	printf("|%+5x|\n", -123);
-	printf("|% 5x|\n", 123);
-	printf("|% x|\n", 123);
-	printf("|%x|\n", 2147483648);
-	printf("|%x|\n", -2147483649);
-	return(0);
-}
-
-// test d
 /*
 **int		main()
 **{
-**	printf("|%d|\n", 123);
-**	printf("|%.1d|\n", 123);
-**	printf("|%.5d|\n", 123);
-**	printf("|%.10d|\n", 123);
-**	printf("|%2d|\n", 123);
-**	printf("|%5d|\n", 123);
-**	printf("|%05d|\n", 123);
-**	printf("|%#5d|\n", 123);
-**	printf("|%-5d|\n", 123);
-**	printf("|%+5d|\n", 123);
-**	printf("|%+5d|\n", -123);
-**	printf("|% 5d|\n", 123);
-**	printf("|% d|\n", 123);
-**	printf("|%d|\n", 2147483648);
-**	printf("|%d|\n", -2147483649);
+**	printf("|%x|\n", 123);
+**	printf("|%.1x|\n", 123);
+**	printf("|%.5x|\n", 123);
+**	printf("|%.10x|\n", 123);
+**	printf("|%2x|\n", 123);
+**	printf("|%5x|\n", 123);
+**	printf("|%05x|\n", 123);
+**	printf("|%#5x|\n", 123);
+**	printf("|%-5x|\n", 123);
+**	printf("|%+5x|\n", 123);
+**	printf("|%+5x|\n", -123);
+**	printf("|% 5x|\n", 123);
+**	printf("|% x|\n", 123);
+**	printf("|%x|\n", 2147483648);
+**	printf("|%x|\n", -2147483649);
 **	return(0);
 **}
  */
+
+// test d
+int		main()
+{
+	printf("1 |%d|\n", 123);
+	printf("2 |%.1d|\n", 123);
+	printf("3 |%.5d|\n", 123);
+	printf("4 |%.10d|\n", 123);
+	printf("5 |%2d|\n", 123);
+	printf("6 |%5d|\n", 123);
+	printf("7 |%05d|\n", 123);
+	printf("8 |%#5d|\n", 123);
+	printf("|%-5d|\n", 123);
+	printf("|%+5d|\n", 123);
+	printf("|%+5d|\n", -123);
+	printf("|% 5d|\n", 123);
+	printf("|% d|\n", 123);
+	printf("|%d|\n", 2147483648);
+	printf("|%d|\n", -2147483649);
+	return(0);
+}
 
 // tests s
 /*

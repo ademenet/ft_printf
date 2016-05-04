@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 19:46:34 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 14:36:16 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,15 @@ void		ft_check_modifier(t_flag *f);
 ** UTILS
 */
 
-void		ft_putchar(char c);
-void		ft_putwchar(wchar_t wchar);
+void		ft_putchar(char c, t_flag *f);
+void		ft_putwchar(wchar_t wchar, t_flag *f);
 int			ft_wcharlen(wchar_t wchar);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_itoa_base(long nbr, int base);
 int			ft_strlen(char *str);
-void		ft_putstr(char *s);
-void		ft_putnbr(int n);
 long		ft_atoi(const char *str);
+char		*ft_strlwr(char *s1);
 
 /*
 ** DISPATCHER
@@ -98,14 +97,20 @@ int			ft_handler_S(t_flag *f, va_list *ap);
 int			ft_handler_c(t_flag *f, va_list *ap);
 int			ft_handler_C(t_flag *f, va_list *ap);
 int			ft_handler_d(t_flag *f, va_list *ap);
+char		*ft_modifier_d(t_flag *f, va_list *ap);
 int			ft_handler_D(t_flag *f, va_list *ap);
 int			ft_handler_i(t_flag *f, va_list *ap);
+char		*ft_modifier_i(t_flag *f, va_list *ap);
 int			ft_handler_o(t_flag *f, va_list *ap);
+char		*ft_modifier_o(t_flag *f, va_list *ap);
 int			ft_handler_O(t_flag *f, va_list *ap);
 int			ft_handler_u(t_flag *f, va_list *ap);
+char		*ft_modifier_u(t_flag *f, va_list *ap);
 int			ft_handler_U(t_flag *f, va_list *ap);
 int			ft_handler_x(t_flag *f, va_list *ap);
+char		*ft_modifier_x(t_flag *f, va_list *ap);
 int			ft_handler_X(t_flag *f, va_list *ap);
+char		*ft_modifier_X(t_flag *f, va_list *ap);
 int			ft_handler_p(t_flag *f, va_list *ap);
 int			ft_handler_undefined(t_flag *f);
 

@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlwr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/28 10:50:33 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/02 11:18:36 by ademenet         ###   ########.fr       */
+/*   Created: 2015/12/17 10:30:04 by ademenet          #+#    #+#             */
+/*   Updated: 2016/05/04 14:56:21 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include <string.h>
 
-void		ft_putnbr(int n)
+static int		ft_isupper(int c)
 {
-	if (n == -2147483648)
-		return (ft_putstr("-2147483648"));
-	if (n < 0)
+	return ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z');
+}
+
+static int		ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
+}
+
+char			*ft_strlwr(char *s1)
+{
+	int		i;
+
+	i = 0;
+	if (!s1)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		n = -n;
-		ft_putchar('-');
+		if (ft_isupper(s1[i]))
+			s1[i] = ft_tolower(s1[i]);
+		i++;
 	}
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
-	}
-	else
-		ft_putchar(n + '0');
+	return (s1);
 }

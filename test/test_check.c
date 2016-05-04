@@ -26,3 +26,22 @@ int 	main()
 	printf("z = %d\n", f->flmo[10]);
 	return (0);
 }
+
+
+// In order to test our array of int :
+
+/*
+**printf("\nf->fla[0] = %d\n", f->fla[0]);
+**printf("f->fla[1] = %d\n", f->fla[1]);
+**printf("f->fla[2] = %d\n", f->fla[2]);
+**printf("f->fla[3] = %d\n", f->fla[3]);
+**printf("f->fla[4] = %d\n", f->fla[4]);
+**printf("f->fla[5] = %d\n", f->fla[5]);
+**printf("f->fla[6] = %d\n", f->fla[6]);
+**printf("f->fla[7] = %d\n", f->fla[7]);
+**printf("f->fla[8] = %d\n", f->fla[8]);
+**printf("f->fla[9] = %d\n", f->fla[9]);
+**printf("f->fla[10] = %d\n", f->fla[10]);
+**printf("f->fla[11] = %d\n", f->fla[11]);
+**printf("f->fla[12] = %d\n", f->fla[12]); getchar();
+ */

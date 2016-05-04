@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/03 19:37:37 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/04 14:38:33 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,12 +43,11 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_isdigit.c\
 			ft_itoa_base.c\
 			ft_putchar.c\
-			ft_putnbr.c\
 			ft_putwchar.c\
 			ft_strlen.c\
 			ft_strsub.c\
 			ft_wcharlen.c\
-			ft_putstr.c
+			ft_strlwr.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 

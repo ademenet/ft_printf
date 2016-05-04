@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 17:24:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:55:00 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 10:40:28 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 // J'ai quelques caracteres non souhaites parfois... fonction a revoir.
 
-int				ft_abs(long n)
+uintmax_t		ft_abs(intmax_t n)
 {
 	return (n < 0 ? -n : n);
 }
 
-char			*ft_itoa_base(long nbr, int base)
+char			*ft_itoa_base(intmax_t nbr, int base)
 {
 	static char	convert[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
 	'9', 'A', 'B', 'C', 'D', 'E', 'F'};
 	long		i;
-	long		n;
-	long		converted_nbr[64];
+	uintmax_t	n;
+	uintmax_t	converted_nbr[64];
 	char		*result;
 
 	i = 0;

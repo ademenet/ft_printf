@@ -6,28 +6,11 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 09:37:50 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:43:22 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-
-/*
-**printf("\nf->fla[0] = %d\n", f->fla[0]);
-**printf("f->fla[1] = %d\n", f->fla[1]);
-**printf("f->fla[2] = %d\n", f->fla[2]);
-**printf("f->fla[3] = %d\n", f->fla[3]);
-**printf("f->fla[4] = %d\n", f->fla[4]);
-**printf("f->fla[5] = %d\n", f->fla[5]);
-**printf("f->fla[6] = %d\n", f->fla[6]);
-**printf("f->fla[7] = %d\n", f->fla[7]);
-**printf("f->fla[8] = %d\n", f->fla[8]);
-**printf("f->fla[9] = %d\n", f->fla[9]);
-**printf("f->fla[10] = %d\n", f->fla[10]);
-**printf("f->fla[11] = %d\n", f->fla[11]);
-**printf("f->fla[12] = %d\n", f->fla[12]); getchar();
- */
 
 /*
 ** Initialize our int array fla[13] with zeros.

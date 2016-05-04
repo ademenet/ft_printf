@@ -6,13 +6,13 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 14:56:38 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/02 10:01:37 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 14:16:30 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, t_flag *f)
 {
-	write(1, &c, 1);
+	f->ret += write(1, &c, 1);
 }
