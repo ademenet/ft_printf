@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 18:57:42 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:35:56 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int			ft_handler_d(t_flag *f, va_list *ap)
 	static int	mask_s[13] = {0, 0, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2};
 	int			numb;
 
-	f->ndx = 1;
 	ft_apply_mask(f, mask_s);
 	numb = (int)va_arg(*ap, int);
 	f->arg = ft_itoa_base(numb, 10);

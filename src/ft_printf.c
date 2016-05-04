@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 19:46:07 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:37:31 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** call subsidiaries functions to manage flags.
 */
 
-int		ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	t_flag		f;
