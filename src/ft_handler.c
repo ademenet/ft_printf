@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 17:13:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:55:16 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ void		ft_handler(t_flag *f)
 		ft_sharp(f);
 	}
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
-		f->ret += write(1, &f->arg[k], 1);
+		// f->ret += write(1, &f->arg[k], 1);
+		ft_putchar(f->arg[k], f);
 }
