@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/03 18:58:31 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:13:14 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ void		ft_apply_mask(t_flag *f, int *mask)
 	}
 }
 
-int		ft_handler(t_flag *f)
+void		ft_handler(t_flag *f)
 {
 	int	i;
 	int	k;
 
-	f->ret = 0;
 	k = -1;
 	i = ft_strlen(f->arg);
 	if (f->fla[0] > 0)
@@ -44,7 +43,4 @@ int		ft_handler(t_flag *f)
 	}
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
 		f->ret += write(1, &f->arg[k], 1);
-	if (f->ret == 0)
-		return (-1);
-	return (f->ret);
 }

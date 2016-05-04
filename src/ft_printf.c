@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 14:09:36 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:36:23 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int				ft_printf(const char *format, ...)
 			ft_dispatcher(&f, &ap);
 			i += f.ndx;
 		}
-		else
+		else if (format[i] != '\0' && format[i] != '%')
 			ft_putchar(format[i], &f);
 	}
 	va_end(ap);
