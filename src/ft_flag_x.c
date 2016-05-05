@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:45:29 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 09:49:34 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 10:59:18 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 char			*ft_modifier_x(t_flag *f, va_list *ap)
 {
-	intmax_t	data;
+	uintmax_t	data;
 
-	if (f->fla[7] == 1)
-		data = (intmax_t)((unsigned char)va_arg(*ap, int));
-	if (f->fla[8] == 1)
-		data = (intmax_t)((unsigned short)va_arg(*ap, int));
-	if (f->fla[10] == 1)
-		data = (va_arg(*ap, unsigned long));
-	if (f->fla[9] == 1)
-		data = (intmax_t)(va_arg(*ap, unsigned long long));
-	if (f->fla[11] == 1)
-		data = (intmax_t)(va_arg(*ap, uintmax_t));
 	if (f->fla[12] == 1)
-		data = (intmax_t)(va_arg(*ap, size_t));
+		data = (uintmax_t)va_arg(*ap, size_t);
+	else if (f->fla[11] == 1)
+		data = va_arg(*ap, uintmax_t);
+	else if (f->fla[9] == 1)
+		data = (uintmax_t)va_arg(*ap, unsigned long long);
+	else if (f->fla[10] == 1)
+		data = (uintmax_t)va_arg(*ap, unsigned long);
+	else if (f->fla[8] == 1)
+		data = (uintmax_t)va_arg(*ap, int);
+	else if (f->fla[7] == 1)
+		data = (uintmax_t)va_arg(*ap, int);
 	else
-		data = (intmax_t)(va_arg(*ap, unsigned int));
-	printf("%jd\n", data);
+		data = (uintmax_t)va_arg(*ap, unsigned int);
 	return (ft_strlwr(ft_itoa_base(data, 16)));
 }
 
