@@ -6,13 +6,13 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/04 14:38:33 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/05 18:27:00 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
@@ -69,7 +69,7 @@ $(OBJ):
 all: $(NAME)
 
 cc:
-	$(CC) $(FLAGS) main.c $(SRC)
+	$(CC) main.c $(SRC)
 
 clean:
 	@rm -rf $(OBJ)

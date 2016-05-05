@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 18:17:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:53:07 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 int		main()
 {
 	printf("YOURS :\n");
-	printf("|%#.x|\n", NULL);
-
+	printf("|%-5.2s| is a string\n", "");
 	printf("MINE :\n");
-	ft_printf("|%#.x|\n", NULL);
+	ft_printf("|%-5.2s| is a string\n", "");
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_width_and_precision.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/05 14:57:25 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:55:49 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	len_of_precision_zero(t_flag *f, int len)
 	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X'))
 		len = len - 2;
 	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
-	f->spe == 'c' || f->spe == 'C' || f->spe == '%')))
+	f->spe == 'c' || f->spe == 'C')))
 		len--;
 	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
 	{
@@ -65,8 +65,8 @@ void	ft_zero(t_flag *f)
 		len_of_precision_zero(f, len);
 		ft_space_and_plus(f);
 	}
-	while (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C' ||
-	f->spe == '%') && f->fla[0] > i++)
+	while (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
+		&& f->fla[0] > i++)
 		ft_putchar('0', f);
 	while (f->arg[++k] != '\0')
 		ft_putchar(f->arg[k], f);
@@ -88,7 +88,7 @@ void	len_of_precision_minus(t_flag *f, int len)
 	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X'))
 		len = len - 2;
 	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
-	f->spe == 'c' || f->spe == 'C' || f->spe == '%')))
+	f->spe == 'c' || f->spe == 'C')))
 		len--;
 	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
 	{
@@ -113,7 +113,8 @@ void	ft_minus(t_flag *f)
 	i = ft_strlen(f->arg);
 	len = f->fla[1] - f->fla[0];
 	ft_space_and_plus(f);
-	while (f->fla[0] > i++)
+	while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S' ||
+		f->spe == 'c' || f->spe == 'C'))
 		ft_putchar('0', f);
 	while (f->arg[++k] != '\0')
 		ft_putchar(f->arg[k], f);

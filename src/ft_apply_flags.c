@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/05 18:18:36 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:53:15 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,7 @@ void	ft_precision(t_flag *f)
 
 	str2 = f->arg;
 	if (f->spe == 's' || f->spe == 'S')
-	{
-		// if (f->fla[0] > 0)
-			f->arg = ft_strsub(str2, 0, f->fla[0]);
-		// else
-			// f->arg = "\0";
-	}
+		f->arg = ft_strsub(str2, 0, f->fla[0]);
 }
 
 void	ft_precision_zero(t_flag *f)
@@ -39,8 +34,7 @@ void	ft_precision_zero(t_flag *f)
 	len = f->fla[0];
 	i = ft_strlen(f->arg);
 	ft_space_and_plus(f);
-	if (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C' ||
-	f->spe == '%'))
+	if (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C'))
 	{
 		while (len > i-- && i > 0)
 			len--;

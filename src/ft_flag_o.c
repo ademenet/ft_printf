@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:43:37 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:34:43 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:42:51 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char			*ft_modifier_o(t_flag *f, va_list *ap)
 	else if (f->fla[10] == 1)
 		data = (uintmax_t)va_arg(*ap, unsigned long);
 	else if (f->fla[8] == 1)
-		data = (uintmax_t)va_arg(*ap, int);
+		data = (uintmax_t)(unsigned short)va_arg(*ap, int);
 	else if (f->fla[7] == 1)
-		data = (uintmax_t)va_arg(*ap, int);
+		data = (uintmax_t)(unsigned char)va_arg(*ap, int);
 	else
 		data = (uintmax_t)va_arg(*ap, unsigned int);
 	return (ft_itoa_base(data, 8));
