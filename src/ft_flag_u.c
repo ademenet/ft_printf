@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:44:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 14:19:35 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 16:05:31 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_modifier_u(t_flag *f, va_list *ap)
 
 int			ft_handler_u(t_flag *f, va_list *ap)
 {
-	static int	mask_u[13] = {0, 0, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1};
+	static int	mask_u[13] = {0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
 	ft_apply_mask(f, mask_u);
 	f->arg = ft_modifier_u(f, ap);

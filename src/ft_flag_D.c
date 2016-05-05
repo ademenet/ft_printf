@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:41:00 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 15:40:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 16:07:55 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,14 @@ char			*ft_modifier_D(t_flag *f, va_list *ap)
 	else if (f->fla[7] == 1)
 		data = (intmax_t)((char)va_arg(*ap, int));
 	else
-		data = (intmax_t)(va_arg(*ap, int));
+		data = (intmax_t)(va_arg(*ap, long));
 	data_max = ft_sign(f, data);
 	return (ft_itoa_base(data_max, 10));
 }
 
-
 int			ft_handler_D(t_flag *f, va_list *ap)
 {
-	static int	mask_D[13] = {0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+	static int	mask_D[13] = {0, 0, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1};
 
 	ft_apply_mask(f, mask_D);
 	f->arg = ft_modifier_D(f, ap);
