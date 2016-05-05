@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_width_and_precision.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/04 17:58:04 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 10:24:19 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ void	len_of_precision_zero(t_flag *f, int len)
 		while (len-- > 0)
 		{
 			if (f->fla[3] == 1 && f->fla[0] == 0)
-				// f->ret += write(1, "0", 1);
 				ft_putchar('0', f);
 			else
-				// f->ret += write(1, " ", 1);
 				ft_putchar(' ', f);
 		}
 	}
@@ -56,18 +54,13 @@ void	ft_zero(t_flag *f)
 	k = -1;
 	i = ft_strlen(f->arg);
 	len = f->fla[1] - ft_strlen(f->arg);
+	ft_space_and_plus(f);
+	ft_sharp(f);
 	len_of_precision_zero(f, len);
-	if (f->fla[6] == 1 || f->fla[5] == 1 || f->fla[2] == 1)
-	{
-		ft_space_and_plus(f);
-		ft_sharp(f);
-	}
 	while (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C' ||
 	f->spe == '%') && f->fla[0] > i++)
-		// f->ret += write(1, "0", 1);
 		ft_putchar('0', f);
 	while (f->arg[++k] != '\0')
-		// f->ret += write(1, &f->arg[k], 1);
 		ft_putchar(f->arg[k], f);
 }
 
@@ -91,7 +84,6 @@ void	len_of_precision_minus(t_flag *f, int len)
 	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
 	{
 		while (len-- > 0)
-			// f->ret += write(1, " ", 1);
 			ft_putchar(' ', f);
 	}
 }
@@ -111,16 +103,11 @@ void	ft_minus(t_flag *f)
 	len_zero = f->fla[1] - ft_strlen(f->arg);
 	i = ft_strlen(f->arg);
 	len = f->fla[1] - f->fla[0];
-	if (f->fla[6] == 1 || f->fla[5] == 1 || f->fla[2] == 1)
-	{
-		ft_space_and_plus(f);
-		ft_sharp(f);
-	}
+	ft_space_and_plus(f);
+	ft_sharp(f);
 	while (f->fla[0] > i++)
-		// f->ret += write(1, "0", 1);
 		ft_putchar('0', f);
 	while (f->arg[++k] != '\0')
-		// f->ret += write(1, &f->arg[k], 1);
 		ft_putchar(f->arg[k], f);
 	len_of_precision_minus(f, len_zero);
 }
@@ -146,7 +133,6 @@ void	ft_width(t_flag *f)
 	else
 	{
 		while (f->arg[++k] != '\0')
-			// f->ret += write(1, &f->arg[k], 1);
 			ft_putchar(f->arg[k], f);
 	}
 }
