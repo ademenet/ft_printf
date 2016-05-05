@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:01:55 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:15:51 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct	s_flag
 
 	char		spe;
 	char		*arg;
+	char		sign;
 
 	va_list		ap;
 
@@ -76,8 +77,7 @@ int			ft_wcharlen(wchar_t wchar);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_itoa_base(long nbr, int base);
-uintmax_t	ft_abs(intmax_t n);
-char		ft_is_negative(intmax_t nbr);
+uintmax_t	ft_sign(t_flag *f, intmax_t nbr);
 int			ft_strlen(char *str);
 long		ft_atoi(const char *str);
 char		*ft_strlwr(char *s1);

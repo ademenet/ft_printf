@@ -6,25 +6,21 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 17:24:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:01:38 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:15:49 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char			ft_is_negative(intmax_t nbr)
+uintmax_t		ft_sign(t_flag *f, intmax_t nbr)
 {
-	char		neg;
-
-	neg = '+';
+	f->sign = '+';
 	if (nbr < 0)
-		neg = '-';
-	return (neg);
-}
-
-uintmax_t		ft_abs(intmax_t n)
-{
-	return (n < 0 ? -(uintmax_t)n : (uintmax_t)n);
+	{
+		f->sign = '-';
+		nbr = -nbr;
+	}
+	return ((uintmax_t)nbr);
 }
 
 char			*ft_itoa_base(uintmax_t nbr, int base)
