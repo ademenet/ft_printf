@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/05 14:18:39 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 14:57:10 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void	ft_space_and_plus(t_flag *f)
 	}
 	if (f->sign == '-')
 		ft_putchar('-', f);
+	ft_sharp(f);
 }

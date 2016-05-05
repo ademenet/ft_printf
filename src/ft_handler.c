@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 10:24:52 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 14:57:01 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ void		ft_handler(t_flag *f)
 	if (f->fla[1] > 0)
 		ft_width(f);
 	if (f->fla[0] == 0 && f->fla[1] == 0)
-	{
 		ft_space_and_plus(f);
-		ft_sharp(f);
-	}
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
 		// f->ret += write(1, &f->arg[k], 1);
 		ft_putchar(f->arg[k], f);
