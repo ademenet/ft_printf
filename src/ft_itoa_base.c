@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 17:24:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 14:44:09 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 15:11:53 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char			*ft_itoa_base(uintmax_t nbr, int base)
 	static char	convert[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
 	'9', 'A', 'B', 'C', 'D', 'E', 'F'};
 	intmax_t	i;
-	intmax_t	n;
+	uintmax_t	n;
 	int			converted_nbr[64];
 	char		*result;
 
