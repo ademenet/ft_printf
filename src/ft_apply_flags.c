@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/05 11:40:12 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:58:39 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	ft_space_and_plus(t_flag *f)
 				ft_putchar(' ', f);
 			if (f->fla[5] == 1 && ft_isdigit(f->arg[0]) && f->sign == '+')
 				ft_putchar('+', f);
-			else if (f->fla[5] == 1 && ft_isdigit(f->arg[0]) && f->sign == '-')
-				ft_putchar('-', f);
 		}
 	}
+	if (f->sign == '-')
+		ft_putchar('-', f);
 }
