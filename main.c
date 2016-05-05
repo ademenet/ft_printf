@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 15:49:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:17:11 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 int		main()
 {
-	ft_printf("%jx", -4294967296);
-	puts("\n");
-	ft_printf("%jx", -4294967297);
-	puts("\n");
-	printf("%D\n", 4294967296);
-	printf("%d\n", 4294967296);
+	printf("YOURS :\n");
+	printf("|%#.x|\n", NULL);
+
+	printf("MINE :\n");
+	ft_printf("|%#.x|\n", NULL);
 	return (0);
 }

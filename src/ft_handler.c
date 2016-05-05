@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 15:25:06 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:20:15 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void		ft_apply_mask(t_flag *f, int *mask)
 
 void		ft_handler(t_flag *f)
 {
-	int	i;
 	int	k;
 
 	k = -1;
-	i = ft_strlen(f->arg);
-	if (f->fla[0] > 0)
+	if (f->fla[0] == -1)
+		f->arg = "\0";
+	if (f->fla[0] != 0)
 		ft_precision(f);
 	if (f->fla[1] > 0)
 		ft_width(f);
@@ -40,6 +40,5 @@ void		ft_handler(t_flag *f)
 	if (f->fla[0] == 0 && f->fla[1] == 0)
 		ft_space_and_plus(f);
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
-		// f->ret += write(1, &f->arg[k], 1);
 		ft_putchar(f->arg[k], f);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_apply_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/05 15:46:07 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 18:18:36 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ void	ft_precision(t_flag *f)
 
 	str2 = f->arg;
 	if (f->spe == 's' || f->spe == 'S')
-		f->arg = ft_strsub(str2, 0, f->fla[0]);
+	{
+		// if (f->fla[0] > 0)
+			f->arg = ft_strsub(str2, 0, f->fla[0]);
+		// else
+			// f->arg = "\0";
+	}
 }
 
 void	ft_precision_zero(t_flag *f)
@@ -53,7 +58,7 @@ void	ft_precision_zero(t_flag *f)
 
 void	ft_sharp(t_flag *f)
 {
-	if (f->fla[2] == 1)
+	if (f->fla[2] == 1 && f->arg[0] != '0')
 	{
 		if (f->spe == 'o' || f->spe == 'O' || f->spe == 'x' || f->spe == 'X')
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 10:18:26 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/05 17:51:39 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ void		ft_check_precision(t_flag *f)
 			f->fla[0] = ft_atoi((const char*)str);
 			free(str);
 		}
+		if (f->fla[0] == 0)
+			f->fla[0] = -1;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:43:02 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:33:30 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 17:05:52 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_modifier_i(t_flag *f, va_list *ap)
 	return (ft_itoa_base(data_max, 10));
 }
 
-int			ft_handler_i(t_flag *f, va_list *ap)
+int				ft_handler_i(t_flag *f, va_list *ap)
 {
 	static int	mask_i[13] = {0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
