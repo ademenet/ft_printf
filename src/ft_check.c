@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 18:57:50 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 10:18:26 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,20 @@ void		ft_check_width(t_flag *f)
 	char	*str;
 
 	i = f->ndx;
-	while (ft_isdigit(f->frmt[f->ndx]))
+
+	if (ft_isdigit(f->frmt[f->ndx]) && f->frmt[f->ndx] != '0')
 	{
-		f->ndx++;
-	}
-	if (f->ndx - i > 0)
-	{
-		f->fla[1] = 0;
-		str = ft_strsub(f->frmt, i, f->ndx - i);
-		f->fla[1] = ft_atoi((const char*)str);
-		free(str);
+		while (ft_isdigit(f->frmt[f->ndx]))
+		{
+			f->ndx++;
+		}
+		if (f->ndx - i > 0)
+		{
+			f->fla[1] = 0;
+			str = ft_strsub(f->frmt, i, f->ndx - i);
+			f->fla[1] = ft_atoi((const char*)str);
+			free(str);
+		}
 	}
 }
 
