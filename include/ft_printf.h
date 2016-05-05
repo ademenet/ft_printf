@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 15:55:03 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 19:06:08 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct	s_flag
 	int			ndx;
 	int			ret;
 
+	char		spe;
+	char		*arg;
+
 	va_list		ap;
 
 	/*
@@ -38,8 +41,6 @@ typedef struct	s_flag
 	*/
 
 	int			fla[13];
-	char		spe;
-	char		*arg;
 }				t_flag;
 
 typedef struct	s_spec

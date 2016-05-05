@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 09:43:22 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/04 18:57:50 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		ft_check(t_flag *f)
 		|| f->frmt[f->ndx] == ' ' || f->frmt[f->ndx] == 'h'
 		|| f->frmt[f->ndx] == 'l' || f->frmt[f->ndx] == 'j'
 		|| f->frmt[f->ndx] == 'z' || f->frmt[f->ndx] == '.'
-		|| f->frmt[f->ndx] == '5')
+		|| ft_isdigit(f->frmt[f->ndx]))
 	{
 		ft_check_flag(f);
 		ft_check_width(f);
@@ -87,7 +87,9 @@ void		ft_check_width(t_flag *f)
 
 	i = f->ndx;
 	while (ft_isdigit(f->frmt[f->ndx]))
+	{
 		f->ndx++;
+	}
 	if (f->ndx - i > 0)
 	{
 		f->fla[1] = 0;

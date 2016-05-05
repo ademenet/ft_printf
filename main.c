@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 18:26:18 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 09:44:04 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@
 
 int		main()
 {
-
-	// printf("TESTS DIVERS\n");
-	ft_printf("test\n");
-	ft_printf("test\n");
-	ft_printf("1234\n");
-	printf("|%015.5d|\n", 123);
-	ft_printf("|%015.5d|\n", 123);
-	ft_printf("|%s|\n", "chuhs");
-	ft_printf("|%%|\n");
-	ft_printf("|%%%c|\n", 'c');
-
-
+	ft_printf("|%lx|\n", 4294967296);
+	ft_printf("|%llx|\n", 4294967296);
+	ft_printf("|%hx|\n", 4294967296);
+	ft_printf("|%hhx|\n", 4294967296);
+	ft_printf("|%jx|\n", 4294967295);
+	ft_printf("|%jx|\n", 4294967296);
+	ft_printf("|%jx|\n", -4294967296);
+	ft_printf("|%jx|\n", -4294967297);
 
 	return (0);
 }
