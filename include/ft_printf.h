@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:15:51 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:31:09 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void		ft_putwchar(wchar_t wchar, t_flag *f);
 int			ft_wcharlen(wchar_t wchar);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
-char		*ft_itoa_base(long nbr, int base);
+char		*ft_itoa_base(uintmax_t nbr, int base);
 uintmax_t	ft_sign(t_flag *f, intmax_t nbr);
 int			ft_strlen(char *str);
 long		ft_atoi(const char *str);
