@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:07:52 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/05 14:34:32 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int		main()
 {
-	ft_printf("MINE : |%#08x|\n", 42);
-	printf("VRAI : |%#08x|\n", 42);
-
+	ft_printf("|%x|", -42);
+	puts("\n");
+	ft_printf("|%X|", -42);
+	puts("\n");
+	ft_printf("|%jx|", 4294967295);
 	return (0);
 }
