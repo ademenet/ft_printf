@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 09:35:46 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 11:16:05 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-/*
-**static void	ft_modifier(t_flag *f, va_list *ap)
-**{
-**
-**}
- */
-
 
 int			ft_handler_s(t_flag *f, va_list *ap)
 {
@@ -29,6 +21,9 @@ int			ft_handler_s(t_flag *f, va_list *ap)
 		return (0);
 	else
 		f->arg = va_arg(*ap, char*);
-	ft_handler(f);
+	if (f->arg != 0)
+		ft_handler(f);
+	else
+		f->ret += write(1, "(null)", 6);
 	return (0);
 }
