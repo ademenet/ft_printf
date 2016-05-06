@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 17:34:52 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 10:28:56 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int				ft_handler_c(t_flag *f, va_list *ap)
 	s[1] = '\0';
 	f->arg = s;
 	ft_handler(f);
+	if (f->arg[0] == 0)
+		ft_putchar('\0', f);
 	return (0);
 }
