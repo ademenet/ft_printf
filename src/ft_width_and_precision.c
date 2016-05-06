@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/06 10:55:08 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/06 14:48:19 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,14 @@ void	len_of_precision_zero(t_flag *f, int len)
 	int	i;
 
 	i = ft_strlen(f->arg);
-	if (f->fla[5] == 1 || f->fla[6] == 1 || f->sign == '-' ||
-		(f->fla[2] == 1 && f->fla[0] <=	ft_strlen(f->arg) &&
-		(f->spe == 'o' || f->spe == 'O')))
+	if (f->fla[5] == 1 || f->fla[6] == 1 || f->sign == '-' || (f->fla[2] == 1 &&
+		f->fla[0] <= ft_strlen(f->arg) && (f->spe == 'o' || f->spe == 'O')))
 		len--;
 	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X'))
 		len = len - 2;
-	while (f->fla[0] > i && (!(f->spe == 's' || f->spe == 'S' ||
-	f->spe == 'c' || f->spe == 'C')))
-	{
+	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
+		f->spe == 'c' || f->spe == 'C')))
 		len--;
-		i++;
-	}
 	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
 	{
 		while (len-- > 0)
