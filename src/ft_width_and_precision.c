@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/06 17:17:46 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 17:52:02 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,7 @@ void	ft_width(t_flag *f)
 	}
 	else
 	{
+		ft_space_and_plus(f);
 		while (f->arg[++k] != '\0')
 			ft_putchar(f->arg[k], f);
 	}
