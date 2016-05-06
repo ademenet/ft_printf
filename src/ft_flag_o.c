@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:43:37 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 18:42:51 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 14:50:16 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ int			ft_handler_o(t_flag *f, va_list *ap)
 
 	ft_apply_mask(f, mask_o);
 	f->arg = ft_modifier_o(f, ap);
-	ft_handler(f);
+		ft_handler(f);
+	// else if (f->arg[0] == '0' && f->fla[0] == -1)
+	// {
+	// 	if (f->fla[1] > 0)
+	// 		ft_width(f);
+	// 	ft_space_and_plus(f);
+	// 	return (0);
+	// }
+	// else
+	// 	f->ret += write(1, "0", 1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 17:13:24 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 17:18:13 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ int		main()
 {
 	int ret1;
 	int ret2;
+	int	ret;
+
+	printf("TRUE :\n");
+	ret = printf("|%|\n");
+	printf("ret : |%d|\n", ret);
+
+	printf("\nMINE :\n");
+	ret = ft_printf("|%|\n", 0);
+	printf("ret : |%d|\n", ret);
 
 	ret1 = printf("{%-20p}", &ret1);
 	puts("");

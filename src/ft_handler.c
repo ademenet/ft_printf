@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:41:54 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 17:17:30 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int			ft_handler(t_flag *f)
 {
 	int	k;
 	k = -1;
-	if (f->fla[0] == -1 && f->arg[0] != f->spe)
+	if (f->fla[0] == -1 && f->arg[0] == '0' && !(f->fla[2] == 1 &&
+		(f->spe == 'o' || f->spe == 'O')))
+	{
 		f->arg = "\0";
+	}
 	if (f->fla[0] != 0)
 		ft_precision(f);
 	if (f->fla[1] > 0)
