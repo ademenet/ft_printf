@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:21:46 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 15:40:07 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 
 int		main()
 {
-	void* emp1;
-	printf("|%p|\n", emp1);
-	ft_printf("|%p|\n", emp1);
+	int ret1;
+	int ret2;
 
+	ret1 = printf("{%7p}", 0);
+	puts("");
+	ret2 = ft_printf("{%7p}", 0);
+
+	printf("ret1 = %d, ret2 = %d", ret1, ret2);
 	return (0);
 }

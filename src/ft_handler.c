@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 14:59:59 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 15:41:54 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void		ft_apply_mask(t_flag *f, int *mask)
 int			ft_handler(t_flag *f)
 {
 	int	k;
-
 	k = -1;
 	if (f->fla[0] == -1 && f->arg[0] != f->spe)
 		f->arg = "\0";
