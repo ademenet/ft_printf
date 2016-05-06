@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/06 15:42:54 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 17:11:49 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	len_of_precision_minus(t_flag *f, int len)
 		(f->fla[2] == 1 && f->fla[0] <= ft_strlen(f->arg) &&
 		(f->spe == 'o' || f->spe == 'O')))
 		len--;
-	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X'))
+	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X' || f->spe == 'p'))
 		len = len - 2;
 	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
 	f->spe == 'c' || f->spe == 'C')))
@@ -139,7 +139,7 @@ void	ft_width(t_flag *f)
 
 	k = -1;
 	i = ft_strlen(f->arg);
-	if (i < f->fla[1])
+	if (i < f->fla[1] || f->spe == 'p')
 	{
 		if (f->fla[4] == 1)
 			ft_minus(f);
