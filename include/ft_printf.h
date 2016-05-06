@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 15:55:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 13:15:17 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,14 @@ char		*ft_strlwr(char *s1);
 */
 
 void		ft_initialize_specs(t_spec *specs);
-void		ft_dispatcher(t_flag *f, va_list *ap);
+int			ft_dispatcher(t_flag *f, va_list *ap);
 
 /*
 ** HANDLERS: functions that handle specifiers
 */
 
 void		ft_apply_mask(t_flag *f, int *mask);
-void		ft_handler(t_flag *f);
+int			ft_handler(t_flag *f);
 int			ft_handler_s(t_flag *f, va_list *ap);
 int			ft_handler_S(t_flag *f, va_list *ap);
 int			ft_handler_c(t_flag *f, va_list *ap);

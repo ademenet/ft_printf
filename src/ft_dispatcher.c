@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 17:42:43 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 14:09:02 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			ft_initialize_specs(t_spec *specs)
 ** associate flags. It calls the right function.
 */
 
-void		ft_dispatcher(t_flag *f, va_list *ap)
+int		ft_dispatcher(t_flag *f, va_list *ap)
 {
 	t_spec	specs[16];
 	int		j;
@@ -72,8 +72,7 @@ void		ft_dispatcher(t_flag *f, va_list *ap)
 	f->spe = f->frmt[f->ndx];
 	while (specs[j].c != f->spe && specs[j].c != 0)
 		j++;
-	if (specs[j].c != 0)
-		specs[j].ptr(f, ap);
-	else
-		ft_handler_undefined(f);
+	if (specs[j].c == 0)
+		return (ft_handler_undefined(f));
+	return (specs[j].ptr(f, ap));
 }
