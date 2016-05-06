@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:41:01 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/06 15:44:07 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@ int		main()
 	int	ret;
 
 	printf("TRUE :\n");
-	ret = printf("@moulitest: |%#.o|\n", 0);
-	printf("ret : |%d|\n", ret);
-	ret = printf("@moulitest: |%#.0o|\n", 0);
+	ret = printf("|%|\n");
 	printf("ret : |%d|\n", ret);
 
 	printf("\nMINE :\n");
-	ret = ft_printf("@moulitest: |%#.o|\n", 0);
-	printf("ret : |%d|\n", ret);
-	ret = ft_printf("@moulitest: |%#.0o|\n", 0);
+	ret = ft_printf("|%|\n", 0);
 	printf("ret : |%d|\n", ret);
 
 	return (0);

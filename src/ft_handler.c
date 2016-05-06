@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:41:30 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/06 15:47:48 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ int			ft_handler(t_flag *f)
 	int	k;
 
 	k = -1;
-	// printf("\nf-arg[0]:|%c|\n", f->arg[0]);
-	// printf("f-spe:|%c|\n", f->spe);
-
 	if (f->fla[0] == -1 && f->arg[0] == '0' && !(f->fla[2] == 1 &&
 		(f->spe == 'o' || f->spe == 'O')))
 	{
