@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:43:37 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 14:50:16 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/06 18:24:50 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char			*ft_modifier_o(t_flag *f, va_list *ap)
 	else if (f->fla[10] == 1)
 		data = (uintmax_t)va_arg(*ap, unsigned long);
 	else if (f->fla[8] == 1)
-		data = (uintmax_t)(unsigned short)va_arg(*ap, int);
+		data = (uintmax_t)(unsigned short)va_arg(*ap, unsigned int);
 	else if (f->fla[7] == 1)
-		data = (uintmax_t)(unsigned char)va_arg(*ap, int);
+		data = (uintmax_t)(unsigned char)va_arg(*ap, unsigned int);
 	else
 		data = (uintmax_t)va_arg(*ap, unsigned int);
 	return (ft_itoa_base(data, 8));
