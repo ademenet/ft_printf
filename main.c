@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 18:53:07 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/06 15:25:00 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,19 @@
 
 int		main()
 {
-	printf("YOURS :\n");
-	printf("|%-5.2s| is a string\n", "");
-	printf("MINE :\n");
-	ft_printf("|%-5.2s| is a string\n", "");
+	int	ret;
+
+	printf("TRUE :\n");
+	ret = printf("@moulitest: |%#.o|\n", 0);
+	printf("ret : |%d|\n", ret);
+	ret = printf("@moulitest: |%#.0o|\n", 0);
+	printf("ret : |%d|\n", ret);
+
+	printf("\nMINE :\n");
+	ret = ft_printf("@moulitest: |%#.o|\n", 0);
+	printf("ret : |%d|\n", ret);
+	ret = ft_printf("@moulitest: |%#.0o|\n", 0);
+	printf("ret : |%d|\n", ret);
+
 	return (0);
 }
