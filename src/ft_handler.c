@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:35:11 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/06 15:41:30 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		ft_apply_mask(t_flag *f, int *mask)
 	}
 }
 
-void		ft_handler(t_flag *f)
+int			ft_handler(t_flag *f)
 {
 	int	k;
 
@@ -47,4 +47,5 @@ void		ft_handler(t_flag *f)
 		ft_space_and_plus(f);
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
 		ft_putchar(f->arg[k], f);
+	return (1);
 }

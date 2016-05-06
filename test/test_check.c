@@ -45,3 +45,5 @@ int 	main()
 **printf("f->fla[11] = %d\n", f->fla[11]);
 **printf("f->fla[12] = %d\n", f->fla[12]); getchar();
  */
+
+ printf("--------------\nf->arg == %s\n--------------\n", f->arg);
