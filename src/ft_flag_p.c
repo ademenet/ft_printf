@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:42:01 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 16:55:10 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 13:28:20 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ int			ft_handler_p(t_flag *f, va_list *ap)
 	f->fla[2] = 1;
 	ft_apply_mask(f, mask_p);
 	f->arg = ft_strlwr(ft_itoa_base((uintmax_t)va_arg(*ap, void*), 16));
-	ft_handler(f);
+	if (f->fla[0] == -1 && f->arg[0] == '0')
+	{
+		ft_putchar('0', f);
+		ft_putchar('x', f);
+	}
+	else
+		ft_handler(f);
 	return (0);
 }
