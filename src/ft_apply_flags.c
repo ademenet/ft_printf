@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/06 17:17:12 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 10:31:53 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_sharp(t_flag *f)
 				ft_putchar('X', f);
 			}
 			else if ((f->spe == 'o' || f->spe == 'O') &&
-			f->fla[0] <= ft_strlen(f->arg))
+				f->fla[0] <= ft_strlen(f->arg))
 				ft_putchar('0', f);
 			else if ((f->spe == 'o' || f->spe == 'O') && f->fla[0] == -1)
 				ft_putchar('0', f);
