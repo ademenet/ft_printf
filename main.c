@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/09 17:27:46 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 18:44:06 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		main()
 	int	ret;
 
 	printf("TRUE :\n");
-	ret = printf("{%05.s}{%04.2s}", 0, NULL);
+	ret = printf("{%05.s}{%04.9s}{%05s}{%5.3d}{%-5.3d}", 0, NULL, "1234", 12, 12);
 	puts("");
 	printf("ret : |%d|\n", ret);
 

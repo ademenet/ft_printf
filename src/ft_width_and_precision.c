@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/09 16:09:42 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 19:06:14 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	ft_zero(t_flag *f)
 
 /*
 ** Remove more space on width for '-' flag
+** Gere l'affichage si '-' apres avoir affiche les arguments + flags : longueur des ' ' a afficher et affiche
 */
 
 void	len_of_precision_minus(t_flag *f, int len)
@@ -106,22 +107,20 @@ void	ft_minus(t_flag *f)
 {
 	int		i;
 	int		k;
-	int		len;
 	int		len_zero;
 
 	k = -1;
-	len_zero = f->fla[1] - ft_strlen(f->arg);
-	if (f->arg[0] == 0 && (f->spe == 'c' || f->spe == 'C'))
+	len_zero = f->fla[1] - ft_strlen(f->arg); // cest le nombre d' ' ' a afficher ensuite avec len_of_precision_minus
+	if (f->arg[0] == -1 && (f->spe == 'c' || f->spe == 'C')) // a effacer surement car ne semble servir a rien
 		len_zero--;
 	i = ft_strlen(f->arg);
-	len = f->fla[1] - f->fla[0];
-	ft_space_and_plus(f);
+	ft_space_and_plus(f); // appelle pour ajouter ' ', '+' ou '#'
 	while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S' ||
-		f->spe == 'c' || f->spe == 'C'))
+		f->spe == 'c' || f->spe == 'C')) // jaffiche des '0' si precision > que mon arg
 		ft_putchar('0', f);
-	while (f->arg[++k] != '\0')
+	while (f->arg[++k] != '\0') // jaffiche mon arg
 		ft_putchar(f->arg[k], f);
-	len_of_precision_minus(f, len_zero);
+	len_of_precision_minus(f, len_zero); // jenvoie le reste pour afficher ' '
 }
 
 /*
