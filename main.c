@@ -6,11 +6,12 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 17:18:13 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 17:27:46 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <limits.h>
 #include "./include/ft_printf.h"
 
 int		main()
@@ -20,17 +21,14 @@ int		main()
 	int	ret;
 
 	printf("TRUE :\n");
-	ret = printf("|%|\n");
+	ret = printf("{%05.s}{%04.2s}", 0, NULL);
+	puts("");
 	printf("ret : |%d|\n", ret);
 
 	printf("\nMINE :\n");
-	ret = ft_printf("|%|\n", 0);
-	printf("ret : |%d|\n", ret);
-
-	ret1 = printf("{%-20p}", &ret1);
+	ret1 = ft_printf("{%05.s}{%s}", 0, NULL);
 	puts("");
-	ret2 = ft_printf("{%-20p}", &ret1);
+	printf("ret1 : |%d|\n", ret1);
 
-	printf("ret1 = %d, ret2 = %d", ret1, ret2);
 	return (0);
 }

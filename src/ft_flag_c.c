@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/09 11:14:30 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 16:36:07 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int				ft_handler_c(t_flag *f, va_list *ap)
 	else
 	{
 		c = (char)va_arg(*ap, int);
+		if (c == 0 && f->fla[0] == -1)
+			f->fla[0] = 0;
 		s[0] = c;
 		s[1] = '\0';
 		f->arg = s;

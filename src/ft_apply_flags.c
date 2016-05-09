@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/09 10:31:53 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 16:04:14 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	ft_precision_zero(t_flag *f)
 
 void	ft_sharp(t_flag *f)
 {
-	if ((f->fla[2] == 1 && f->arg[0] != '0') || f->spe == 'p')
+	if ((f->fla[2] == 1 && f->arg[0] != '0' && f->fla[0] != -1)
+		|| f->spe == 'p')
 	{
 		if (f->spe == 'o' || f->spe == 'O' || f->spe == 'x' || f->spe == 'X' ||
 			f->spe == 'p')

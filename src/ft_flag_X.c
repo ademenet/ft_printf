@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:45:51 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/05 11:36:05 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 15:41:25 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int			ft_handler_X(t_flag *f, va_list *ap)
 
 	ft_apply_mask(f, mask_X);
 	f->arg = ft_modifier_X(f, ap);
+	if (f->fla[0] == -1 && f->arg[0] != '0' && f->fla[2] == 1)
+		f->fla[0] = 0;
 	ft_handler(f);
 	return (0);
 }

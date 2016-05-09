@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/09 10:13:09 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 16:09:42 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	len_of_precision_zero(t_flag *f, int len)
 	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
 		f->spe == 'c' || f->spe == 'C')))
 		len--;
-	if ((f->fla[0] < f->fla[1] + ft_strlen(f->arg)) || (f->fla[1] > i))
+	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
 	{
 		while (len-- > 0)
 		{

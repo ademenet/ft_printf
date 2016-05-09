@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:24:31 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:00:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/09 13:32:30 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int				ft_handler_undefined(t_flag *f)
 	static int	mask_und[13] = {0, 0, 2, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2};
 	char		c[2];
 
+	f->fla[0] = 0;
 	if (f->spe == 0)
 	{
 		f->ret = 0;
