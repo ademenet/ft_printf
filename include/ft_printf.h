@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:48:07 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/09 10:53:05 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ char		*ft_modifier_i(t_flag *f, va_list *ap);
 int			ft_handler_o(t_flag *f, va_list *ap);
 char		*ft_modifier_o(t_flag *f, va_list *ap);
 int			ft_handler_O(t_flag *f, va_list *ap);
+char		*ft_modifier_O(t_flag *f, va_list *ap);
 int			ft_handler_u(t_flag *f, va_list *ap);
 char		*ft_modifier_u(t_flag *f, va_list *ap);
 int			ft_handler_U(t_flag *f, va_list *ap);
