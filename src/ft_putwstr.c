@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 17:42:49 by ademenet         ###   ########.fr       */
+/*   Created: 2016/05/10 17:44:32 by ademenet          #+#    #+#             */
+/*   Updated: 2016/05/10 17:49:29 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <limits.h>
-#include "./include/ft_printf.h"
-#include <locale.h>
+#include "../include/ft_printf.h"
 
-int		main()
+void		ft_putwstr(wchar_t *S)
 {
-	int ret1;
-	int ret2;
-	int	ret;
-	setlocale(LC_ALL, "");
+	size_t	len;
 
-	printf("TRUE :\n");
-	ret = printf("{%-30S}", L"我是一只猫。");
-	puts("");
-	printf("ret : |%d|\n", ret);
-
-	printf("\nMINE :\n");
-	ret1 = ft_printf("{%-30S}", L"我是一只猫。");
-	puts("");
-	printf("ret1 : |%d|\n", ret1);
-
-	return (0);
+	len = ft_wstrlen(S);
+	while (len > 0)
+	{
+		ft_putwchar(*S, f);
+		S++;
+		len--;
+	}
 }
