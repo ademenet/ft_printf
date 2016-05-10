@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/10 15:43:53 by tvisenti         ###   ########.fr        #
+#    Updated: 2016/05/10 15:51:00 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRC_PATH = ./src
 SRC_NAME =	ft_apply_flags.c\
 			ft_check.c\
 			ft_dispatcher.c\
+			ft_display_char.c\
+			ft_display_numb.c\
 			ft_flag_s.c\
 			ft_flag_S.c\
 			ft_flag_c.c\
@@ -38,8 +40,6 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_flag_undefined.c\
 			ft_handler.c\
 			ft_printf.c\
-			ft_width_and_precision.c\
-			ft_display_char.c\
 			ft_atoi.c\
 			ft_isdigit.c\
 			ft_itoa_base.c\
