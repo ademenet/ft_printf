@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 17:29:03 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:37:54 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	ft_precision_whitout_width(t_flag *f)
 
 /*
 ** Remove more space on width for '-' flag
-** Gere l'affichage si '-' apres avoir affiche les arguments + flags : longueur des ' ' a afficher et affiche
+** Gere l'affichage si '-' apres avoir affiche les arguments + flags :
+** longueur des ' ' a afficher et affiche
 */
 
 void	ft_precision_numb(t_flag *f, int len_zero)
@@ -103,17 +104,15 @@ void	ft_minus_numb(t_flag *f)
 	int		len_zero;
 
 	i = -1;
-	len_zero = f->fla[1] - ft_strlen(f->arg); // cest le nombre d' ' ' a afficher ensuite avec len_of_precision_minus
-	// if (f->arg[0] == -1 && (f->spe == 'c' || f->spe == 'C')) // a effacer surement car ne semble servir a rien
-	// 	len_zero--;
+	len_zero = f->fla[1] - ft_strlen(f->arg);
 	len = ft_strlen(f->arg);
 	f->fla[3] = 0;
-	ft_space_plus_sharp(f); // appelle pour ajouter ' ', '+' ou '#'
-	while (f->fla[0] > len++) // jaffiche des '0' si precision > que mon arg
+	ft_space_plus_sharp(f);
+	while (f->fla[0] > len++)
 		ft_putchar('0', f);
-	while (f->arg[++i] != '\0') // jaffiche mon arg
+	while (f->arg[++i] != '\0')
 		ft_putchar(f->arg[i], f);
-	ft_precision_numb(f, len_zero); // jenvoie le reste pour afficher ' '
+	ft_precision_numb(f, len_zero);
 }
 
 /*
