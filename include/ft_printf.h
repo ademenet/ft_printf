@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/09 10:53:05 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 09:43:02 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ int			ft_handler_undefined(t_flag *f);
 
 void		ft_space_and_plus(t_flag *f);
 void		ft_sharp(t_flag *f);
-void		ft_precision(t_flag *f);
+void		ft_precision_string(t_flag *f);
 void		ft_precision_zero(t_flag *f);
 
 /*
