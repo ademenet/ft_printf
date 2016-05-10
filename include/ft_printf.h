@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 16:01:56 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:50:45 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,20 +128,19 @@ int			ft_handler_undefined(t_flag *f);
 void		ft_space_plus_sharp(t_flag *f);
 void		ft_sharp(t_flag *f);
 void		ft_precision_string(t_flag *f);
-void		ft_precision_add_zero_no_width(t_flag *f);
 
 /*
-** ft_width_and_precision.c
+** ft_display_numb.c
 */
 
-void		len_of_precision_zero_numb(t_flag *f, int len);
+void		ft_precision_whitout_width(t_flag *f);
+void		ft_precision_numb(t_flag *f, int len);
 void		ft_zero_numb(t_flag *f);
-void		len_of_precision_minus_numb(t_flag *f, int len);
 void		ft_minus_numb(t_flag *f);
 void		ft_width_numb(t_flag *f);
 
 /*
-** ft_width_char.c
+** ft_display_numb.c
 */
 
 void	ft_width_char(t_flag *f);

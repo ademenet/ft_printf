@@ -6,33 +6,55 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 15:49:42 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:37:54 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-** Remove more space on width for '0' flag
+** Appelle la fonction space_plus_sharp, width == 0 et precision > 0
+** ajout des 0 pour completer la precision
 */
 
-void	len_of_precision_zero_numb(t_flag *f, int len)
+void	ft_precision_whitout_width(t_flag *f)
 {
-	int	i;
+	int	len;
+	int	prec;
 
-	i = ft_strlen(f->arg);
-	if (f->fla[5] == 1 || f->fla[6] == 1 || f->sign == '-' || (f->fla[2] == 1 &&
-		f->fla[0] <= ft_strlen(f->arg) && (f->spe == 'o' || f->spe == 'O')))
-		len--;
-	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X' || f->spe =='p'))
-		len = len - 2;
-	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
-		f->spe == 'c' || f->spe == 'C')))
-		len--;
-	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg) || f->spe == 's' ||
-	f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
+	prec = f->fla[0];
+	len = ft_strlen(f->arg);
+	ft_space_plus_sharp(f);
+	while (prec > len-- && len > 0)
+		prec--;
+	if (f->fla[0] > f->fla[1] + ft_strlen(f->arg))
 	{
-		while (len-- > 0)
+		while (++len < prec)
+			ft_putchar('0', f);
+	}
+}
+
+/*
+** Remove more space on width for '-' flag
+** Gere l'affichage si '-' apres avoir affiche les arguments + flags :
+** longueur des ' ' a afficher et affiche
+*/
+
+void	ft_precision_numb(t_flag *f, int len_zero)
+{
+	int	len;
+
+	len = ft_strlen(f->arg);
+	if (f->fla[5] == 1 || f->fla[6] == 1 || f->sign == '-' || (f->fla[2] == 1 &&
+		f->fla[0] <= len && (f->spe == 'o' || f->spe == 'O')))
+		len_zero--;
+	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X' || f->spe == 'p'))
+		len_zero = len_zero - 2;
+	while (f->fla[0] > len++)
+		len_zero--;
+	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
+	{
+		while (len_zero-- > 0)
 		{
 			if (f->fla[3] == 1 && f->fla[0] == 0)
 				ft_putchar('0', f);
@@ -48,57 +70,27 @@ void	len_of_precision_zero_numb(t_flag *f, int len)
 
 void	ft_zero_numb(t_flag *f)
 {
-	int		k;
 	int		i;
 	int		len;
+	int		len_zero;
 
-	k = -1;
-	i = ft_strlen(f->arg);
-	len = f->fla[1] - i;
-	if (f->arg[0] == 0 && (f->spe == 'c' || f->spe == 'C'))
-		len--;
+	i = -1;
+	len = ft_strlen(f->arg);
+	len_zero = f->fla[1] - len;
 	if (f->fla[3] == 1)
 	{
 		ft_space_plus_sharp(f);
-		len_of_precision_zero_numb(f, len);
+		ft_precision_numb(f, len_zero);
 	}
 	else
 	{
-		len_of_precision_zero_numb(f, len);
+		ft_precision_numb(f, len_zero);
 		ft_space_plus_sharp(f);
 	}
-	while (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
-		&& f->fla[0] > i++)
+	while (f->fla[0] > len++)
 		ft_putchar('0', f);
-	while (f->arg[++k] != '\0')
-		ft_putchar(f->arg[k], f);
-}
-
-/*
-** Remove more space on width for '-' flag
-** Gere l'affichage si '-' apres avoir affiche les arguments + flags : longueur des ' ' a afficher et affiche
-*/
-
-void	len_of_precision_minus_numb(t_flag *f, int len)
-{
-	int	i;
-
-	i = ft_strlen(f->arg);
-	if (f->fla[5] == 1 || f->fla[6] == 1 || f->sign == '-' ||
-		(f->fla[2] == 1 && f->fla[0] <= ft_strlen(f->arg) &&
-		(f->spe == 'o' || f->spe == 'O')))
-		len--;
-	if (f->fla[2] == 1 && (f->spe == 'x' || f->spe == 'X' || f->spe == 'p'))
-		len = len - 2;
-	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
-	f->spe == 'c' || f->spe == 'C')))
-		len--;
-	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg) || f->spe == 's' ||
-	f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
-	{
-		while (len-- > 0)
-			ft_putchar(' ', f);
-	}
+	while (f->arg[++i] != '\0')
+		ft_putchar(f->arg[i], f);
 }
 
 /*
@@ -108,21 +100,19 @@ void	len_of_precision_minus_numb(t_flag *f, int len)
 void	ft_minus_numb(t_flag *f)
 {
 	int		i;
-	int		k;
+	int		len;
 	int		len_zero;
 
-	k = -1;
-	len_zero = f->fla[1] - ft_strlen(f->arg); // cest le nombre d' ' ' a afficher ensuite avec len_of_precision_minus
-	// if (f->arg[0] == -1 && (f->spe == 'c' || f->spe == 'C')) // a effacer surement car ne semble servir a rien
-	// 	len_zero--;
-	i = ft_strlen(f->arg);
-	ft_space_plus_sharp(f); // appelle pour ajouter ' ', '+' ou '#'
-	while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S' ||
-		f->spe == 'c' || f->spe == 'C')) // jaffiche des '0' si precision > que mon arg
+	i = -1;
+	len_zero = f->fla[1] - ft_strlen(f->arg);
+	len = ft_strlen(f->arg);
+	f->fla[3] = 0;
+	ft_space_plus_sharp(f);
+	while (f->fla[0] > len++)
 		ft_putchar('0', f);
-	while (f->arg[++k] != '\0') // jaffiche mon arg
-		ft_putchar(f->arg[k], f);
-	len_of_precision_minus_numb(f, len_zero); // jenvoie le reste pour afficher ' '
+	while (f->arg[++i] != '\0')
+		ft_putchar(f->arg[i], f);
+	ft_precision_numb(f, len_zero);
 }
 
 /*
@@ -132,11 +122,11 @@ void	ft_minus_numb(t_flag *f)
 void	ft_width_numb(t_flag *f)
 {
 	int	i;
-	int	k;
+	int	len;
 
-	k = -1;
-	i = ft_strlen(f->arg);
-	if (i < f->fla[1] || f->spe == 'p')
+	i = -1;
+	len = ft_strlen(f->arg);
+	if (len < f->fla[1] || f->spe == 'p')
 	{
 		if (f->fla[4] == 1)
 			ft_minus_numb(f);
@@ -146,9 +136,9 @@ void	ft_width_numb(t_flag *f)
 	else
 	{
 		ft_space_plus_sharp(f);
-		while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S'))
+		while (f->fla[0] > len++)
 			ft_putchar('0', f);
-		while (f->arg[++k] != '\0')
-			ft_putchar(f->arg[k], f);
+		while (f->arg[++i] != '\0')
+			ft_putchar(f->arg[i], f);
 	}
 }

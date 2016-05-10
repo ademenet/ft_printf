@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 11:40:17 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:45:09 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,17 @@ void		ft_check_flag(t_flag *f)
 {
 	if (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
 		|| f->frmt[f->ndx] == '-' || f->frmt[f->ndx] == '+'
-		|| f->frmt[f->ndx] == ' ' )
+		|| f->frmt[f->ndx] == ' ')
 	{
-		if(f->frmt[f->ndx] == '#')
+		if (f->frmt[f->ndx] == '#')
 			f->fla[2] = 1;
-		if(f->frmt[f->ndx] == '0')
+		if (f->frmt[f->ndx] == '0')
 			f->fla[3] = 1;
-		if(f->frmt[f->ndx] == '-')
+		if (f->frmt[f->ndx] == '-')
 			f->fla[4] = 1;
-		if(f->frmt[f->ndx] == '+')
+		if (f->frmt[f->ndx] == '+')
 			f->fla[5] = 1;
-		if(f->frmt[f->ndx] == ' ')
+		if (f->frmt[f->ndx] == ' ')
 			f->fla[6] = 1;
 		f->ndx++;
 	}
@@ -86,7 +86,6 @@ void		ft_check_width(t_flag *f)
 	char	*str;
 
 	i = f->ndx;
-
 	if (ft_isdigit(f->frmt[f->ndx]) && f->frmt[f->ndx] != '0')
 	{
 		while (ft_isdigit(f->frmt[f->ndx]))
@@ -107,11 +106,16 @@ void		ft_check_width(t_flag *f)
 ** This function check the precision if we find a dot.
 */
 
-// CHECKER LE DERNIER POINT ET PRENDRE LA VALEUR DU DERNIER POINT ! printf("%50.1.4s", "jungle");
+/*
+** CHECKER LE DERNIER POINT ET PRENDRE LA VALEUR DU DERNIER POINT !
+** printf("%50.1.4s", "jungle");
+*/
+
 void		ft_check_precision(t_flag *f)
 {
 	int		i;
 	char	*str;
+
 	if (f->frmt[f->ndx] == '.')
 	{
 		f->fla[0] = 0;
@@ -138,23 +142,23 @@ void		ft_check_modifier(t_flag *f)
 	while (f->frmt[f->ndx] == 'h' || f->frmt[f->ndx] == 'l' ||
 		f->frmt[f->ndx] == 'j' || f->frmt[f->ndx] == 'z')
 	{
-		if(f->frmt[f->ndx] == 'h' && f->frmt[f->ndx + 1] == 'h')
+		if (f->frmt[f->ndx] == 'h' && f->frmt[f->ndx + 1] == 'h')
 		{
 			f->fla[7] = 1;
 			f->ndx++;
 		}
-		else if(f->frmt[f->ndx] == 'h')
+		else if (f->frmt[f->ndx] == 'h')
 			f->fla[8] = 1;
-		if(f->frmt[f->ndx] == 'l' && f->frmt[f->ndx + 1] == 'l')
+		if (f->frmt[f->ndx] == 'l' && f->frmt[f->ndx + 1] == 'l')
 		{
 			f->fla[9] = 1;
 			f->ndx++;
 		}
-		else if(f->frmt[f->ndx] == 'l')
+		else if (f->frmt[f->ndx] == 'l')
 			f->fla[10] = 1;
-		if(f->frmt[f->ndx] == 'j')
+		if (f->frmt[f->ndx] == 'j')
 			f->fla[11] = 1;
-		if(f->frmt[f->ndx] == 'z')
+		if (f->frmt[f->ndx] == 'z')
 			f->fla[12] = 1;
 		f->ndx++;
 	}

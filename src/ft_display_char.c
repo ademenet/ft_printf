@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 15:42:07 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:38:19 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 
 void	ft_zero_char(t_flag *f)
 {
-	int		k;
 	int		i;
 	int		nb_space;
 
-	k = -1;
-	i = ft_strlen(f->arg);
-	nb_space = f->fla[1] - i;
+	i = -1;
+	nb_space = f->fla[1] - ft_strlen(f->arg);
 	if (f->arg[0] == 0 && (f->spe == 'c' || f->spe == 'C'))
 		nb_space--;
 	while (nb_space-- > 0)
@@ -34,8 +32,8 @@ void	ft_zero_char(t_flag *f)
 		else
 			ft_putchar(' ', f);
 	}
-	while (f->arg[++k] != '\0')
-		ft_putchar(f->arg[k], f);
+	while (f->arg[++i] != '\0')
+		ft_putchar(f->arg[i], f);
 }
 
 /*
@@ -45,16 +43,14 @@ void	ft_zero_char(t_flag *f)
 void	ft_minus_char(t_flag *f)
 {
 	int		i;
-	int		k;
 	int		nb_space;
 
-	k = -1;
-	nb_space = f->fla[1] - ft_strlen(f->arg); // cest le nombre d' ' ' a afficher ensuite avec len_of_precision_minus
-	i = ft_strlen(f->arg);
+	i = -1;
+	nb_space = f->fla[1] - ft_strlen(f->arg);
 	if (f->arg[0] == 0 && (f->spe == 'c' || f->spe == 'C'))
 		nb_space--;
-	while (f->arg[++k] != '\0') // jaffiche mon arg
-		ft_putchar(f->arg[k], f);
+	while (f->arg[++i] != '\0')
+		ft_putchar(f->arg[i], f);
 	while (nb_space-- > 0)
 		ft_putchar(' ', f);
 }
