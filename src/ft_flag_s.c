@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 09:33:25 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:53:51 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int			ft_handler_s(t_flag *f, va_list *ap)
 	if (f->arg == 0)
 		f->arg = "(null)";
 	// f->ret += write(1, "(null)", 6);
-	ft_handler(f);
+	ft_handler_char(f);
 	return (0);
 }

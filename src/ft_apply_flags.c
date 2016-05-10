@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 10:59:29 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:07:18 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,14 @@ void	ft_precision_string(t_flag *f)
 	char	*str2;
 
 	str2 = f->arg;
+
 	if (f->spe == 's' || f->spe == 'S')
-		f->arg = ft_strsub(str2, 0, f->fla[0]);
+	{
+		if (f->fla[0] == -1)
+			f->arg = "\0";
+		else
+			f->arg = ft_strsub(str2, 0, f->fla[0]);
+	}
 }
 
 /*

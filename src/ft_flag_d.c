@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 18:14:15 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:53:21 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int				ft_handler_d(t_flag *f, va_list *ap)
 
 	ft_apply_mask(f, mask_d);
 	f->arg = ft_modifier_d(f, ap);
-	ft_handler(f);
+	ft_handler_numb(f);
 	return (0);
 }

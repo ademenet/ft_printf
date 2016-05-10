@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 10:49:32 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:04:50 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,23 @@ void		ft_apply_mask(t_flag *f, int *mask)
 	}
 }
 
-int			ft_handler(t_flag *f)
+int			ft_handler_char(t_flag *f)
+{
+	int	k;
+
+	k = -1;
+	if (f->fla[0] != 0) // tronque la chaine
+		ft_precision_string(f);
+	if (f->fla[1] > 0) // prends en compte la width
+		ft_width(f);
+	else if (f->fla[1] == 0 && f->fla[0] > 0) // utile ?
+		ft_precision_add_zero_no_width(f);
+	while (f->arg[++k] != '\0' && f->fla[1] == 0) // affiche la chaine
+		ft_putchar(f->arg[k], f);
+	return (1);
+}
+
+int			ft_handler_numb(t_flag *f)
 {
 	int	k;
 
@@ -32,8 +48,6 @@ int			ft_handler(t_flag *f)
 	if (f->fla[0] == -1 && f->arg[0] == '0' && !(f->fla[2] == 1 &&
 		(f->spe == 'o' || f->spe == 'O' || f->spe == 'p')))
 		f->arg = "\0";
-	if (f->fla[0] > 0)
-		ft_precision_string(f);
 	if (f->fla[1] > 0)
 		ft_width(f);
 	else if (f->fla[1] == 0 && f->fla[0] > 0)

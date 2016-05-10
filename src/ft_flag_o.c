@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:43:37 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/09 16:04:01 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:53:38 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int			ft_handler_o(t_flag *f, va_list *ap)
 	f->arg = ft_modifier_o(f, ap);
 	if (f->fla[0] == -1 && f->arg[0] != '0' && f->fla[2] == 1)
 		f->fla[0] = 0;
-	ft_handler(f);
+	ft_handler_numb(f);
 	// else if (f->arg[0] == '0' && f->fla[0] == -1)
 	// {
 	// 	if (f->fla[1] > 0)

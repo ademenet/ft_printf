@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_undefined.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:24:31 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/09 13:32:30 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:55:43 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int				ft_handler_undefined(t_flag *f)
 	c[1] = '\0';
 	f->arg = c;
 	ft_apply_mask(f, mask_und);
-	return (ft_handler(f));
+	return (ft_handler_char(f));
 }

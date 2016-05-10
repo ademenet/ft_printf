@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 10:49:38 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:55:27 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ int			ft_dispatcher(t_flag *f, va_list *ap);
 */
 
 void		ft_apply_mask(t_flag *f, int *mask);
-int			ft_handler(t_flag *f);
+int			ft_handler_char(t_flag *f);
+int			ft_handler_numb(t_flag *f);
 int			ft_handler_s(t_flag *f, va_list *ap);
 int			ft_handler_S(t_flag *f, va_list *ap);
 int			ft_handler_c(t_flag *f, va_list *ap);
