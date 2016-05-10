@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 15:04:50 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:31:19 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,20 @@ void		ft_apply_mask(t_flag *f, int *mask)
 	}
 }
 
+/*
+** Tronque la chaine, prends en compte la width / flags, et affiche
+*/
+
 int			ft_handler_char(t_flag *f)
 {
 	int	k;
 
 	k = -1;
-	if (f->fla[0] != 0) // tronque la chaine
+	if (f->fla[0] != 0)
 		ft_precision_string(f);
-	if (f->fla[1] > 0) // prends en compte la width
-		ft_width(f);
-	else if (f->fla[1] == 0 && f->fla[0] > 0) // utile ?
-		ft_precision_add_zero_no_width(f);
-	while (f->arg[++k] != '\0' && f->fla[1] == 0) // affiche la chaine
+	if (f->fla[1] > 0)
+		ft_width_char(f);
+	while (f->arg[++k] != '\0' && f->fla[1] == 0)
 		ft_putchar(f->arg[k], f);
 	return (1);
 }

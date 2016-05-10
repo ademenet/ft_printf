@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
+#    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/05 18:27:00 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/10 15:39:49 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_handler.c\
 			ft_printf.c\
 			ft_width_and_precision.c\
+			ft_display_char.c\
 			ft_atoi.c\
 			ft_isdigit.c\
 			ft_itoa_base.c\
