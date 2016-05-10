@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 17:50:45 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 19:02:58 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct	s_flag
 
 	char		spe;
 	char		*arg;
+	wchar_t		*warg;
 	char		sign;
 
 	va_list		ap;
@@ -133,7 +134,7 @@ void		ft_precision_string(t_flag *f);
 ** ft_display_numb.c
 */
 
-void		ft_precision_whitout_width(t_flag *f);
+void		ft_precision_without_width(t_flag *f);
 void		ft_precision_numb(t_flag *f, int len);
 void		ft_zero_numb(t_flag *f);
 void		ft_minus_numb(t_flag *f);
@@ -143,9 +144,11 @@ void		ft_width_numb(t_flag *f);
 ** ft_display_numb.c
 */
 
-void	ft_width_char(t_flag *f);
-void	ft_minus_char(t_flag *f);
-void	ft_zero_char(t_flag *f);
+int			ft_width_rest(t_flag *f);
+void		ft_display_arg(t_flag *f);
+void		ft_width_char(t_flag *f);
+void		ft_minus_char(t_flag *f);
+void		ft_zero_char(t_flag *f);
 
 
 #endif

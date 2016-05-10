@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_display_numb.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 17:37:54 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 18:08:41 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** ajout des 0 pour completer la precision
 */
 
-void	ft_precision_whitout_width(t_flag *f)
+void	ft_precision_without_width(t_flag *f)
 {
 	int	len;
 	int	prec;
@@ -126,7 +126,7 @@ void	ft_width_numb(t_flag *f)
 
 	i = -1;
 	len = ft_strlen(f->arg);
-	if (len < f->fla[1] || f->spe == 'p')
+	if (len < f->fla[1])
 	{
 		if (f->fla[4] == 1)
 			ft_minus_numb(f);

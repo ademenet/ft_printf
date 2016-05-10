@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 17:10:22 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 18:29:50 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ void		ft_apply_mask(t_flag *f, int *mask)
 	}
 }
 
-/*
-** Tronque la chaine, prends en compte la width / flags, et affiche
-*/
-
 int			ft_handler_char(t_flag *f)
 {
 	int	k;
@@ -37,8 +33,10 @@ int			ft_handler_char(t_flag *f)
 		ft_precision_string(f);
 	if (f->fla[1] > 0)
 		ft_width_char(f);
-	while (f->arg[++k] != '\0' && f->fla[1] == 0)
-		ft_putchar(f->arg[k], f);
+	if (f->fla[1] == 0)
+		ft_display_arg(f);
+	// while (f->arg[++k] != '\0' && f->fla[1] == 0)
+	// 	ft_putchar(f->arg[k], f);
 	return (1);
 }
 
@@ -53,7 +51,7 @@ int			ft_handler_numb(t_flag *f)
 	if (f->fla[1] > 0)
 		ft_width_numb(f);
 	else if (f->fla[1] == 0 && f->fla[0] > 0)
-		ft_precision_whitout_width(f);
+		ft_precision_without_width(f);
 	if (f->fla[0] <= 0 && f->fla[1] == 0)
 		ft_space_plus_sharp(f);
 	while (f->arg[++k] != '\0' && f->fla[1] == 0)
