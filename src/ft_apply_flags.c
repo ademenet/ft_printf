@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 10:50:57 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 10:59:29 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	ft_precision_string(t_flag *f)
 	if (f->spe == 's' || f->spe == 'S')
 		f->arg = ft_strsub(str2, 0, f->fla[0]);
 }
+
+/*
+** Appelle la fonction space_plus_sharp, width == 0 et precision > 0
+** ajout des 0 pour completer la precision
+*/
 
 void	ft_precision_add_zero_no_width(t_flag *f)
 {
@@ -47,7 +52,7 @@ void	ft_precision_add_zero_no_width(t_flag *f)
 }
 
 /*
-** Add 0, 0x or 0X.
+** Ajout 0 pour o et O, 0x pour x et p, 0X pour X
 */
 
 void	ft_sharp(t_flag *f)
@@ -78,7 +83,8 @@ void	ft_sharp(t_flag *f)
 }
 
 /*
-** Put space and/or plus.
+** Ajoute un espace si flag ' ' OU un signe +/- si flag '+'
+** appelle la fonction ft_sharp
 */
 
 void	ft_space_plus_sharp(t_flag *f)
