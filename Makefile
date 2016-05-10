@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/10 15:39:49 by tvisenti         ###   ########.fr        #
+#    Updated: 2016/05/10 15:43:53 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,12 +54,9 @@ SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 
 CPP_FLAGS = -Iinclude
 
-OBJ_PATH = ./obj
-
 OBJ = $(SRC_NAME:.c=.o)
 
 $(NAME): $(OBJ)
-	@mkdir -p $(OBJ_PATH)
 	@$(CC) -c $(SRC) -I $(CPP_FLAGS)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
