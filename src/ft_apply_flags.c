@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 09:42:23 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 10:50:57 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	ft_precision_string(t_flag *f)
 		f->arg = ft_strsub(str2, 0, f->fla[0]);
 }
 
-void	ft_precision_zero(t_flag *f)
+void	ft_precision_add_zero_no_width(t_flag *f)
 {
 	int	i;
 	int	len;
 
 	len = f->fla[0];
 	i = ft_strlen(f->arg);
-	ft_space_and_plus(f);
+	ft_space_plus_sharp(f);
 	if (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C'))
 	{
 		while (len > i-- && i > 0)
@@ -81,7 +81,7 @@ void	ft_sharp(t_flag *f)
 ** Put space and/or plus.
 */
 
-void	ft_space_and_plus(t_flag *f)
+void	ft_space_plus_sharp(t_flag *f)
 {
 	if (f->fla[5] == 1 || f->fla[6] == 1)
 	{

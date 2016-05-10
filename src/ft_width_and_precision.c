@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_width_and_precision.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/09 19:06:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 10:51:32 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	ft_zero(t_flag *f)
 		len--;
 	if (f->fla[3] == 1)
 	{
-		ft_space_and_plus(f);
+		ft_space_plus_sharp(f);
 		len_of_precision_zero(f, len);
 	}
 	else
 	{
 		len_of_precision_zero(f, len);
-		ft_space_and_plus(f);
+		ft_space_plus_sharp(f);
 	}
 	while (!(f->spe == 's' || f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
 		&& f->fla[0] > i++)
@@ -114,7 +114,7 @@ void	ft_minus(t_flag *f)
 	if (f->arg[0] == -1 && (f->spe == 'c' || f->spe == 'C')) // a effacer surement car ne semble servir a rien
 		len_zero--;
 	i = ft_strlen(f->arg);
-	ft_space_and_plus(f); // appelle pour ajouter ' ', '+' ou '#'
+	ft_space_plus_sharp(f); // appelle pour ajouter ' ', '+' ou '#'
 	while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S' ||
 		f->spe == 'c' || f->spe == 'C')) // jaffiche des '0' si precision > que mon arg
 		ft_putchar('0', f);
@@ -143,7 +143,7 @@ void	ft_width(t_flag *f)
 	}
 	else
 	{
-		ft_space_and_plus(f);
+		ft_space_plus_sharp(f);
 		while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S'))
 			ft_putchar('0', f);
 		while (f->arg[++k] != '\0')
