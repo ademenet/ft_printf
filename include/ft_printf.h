@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 17:08:10 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:50:45 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void		ft_check_modifier(t_flag *f);
 void		ft_putchar(char c, t_flag *f);
 void		ft_putwchar(wchar_t wchar, t_flag *f);
 int			ft_wcharlen(wchar_t wchar);
+size_t		ft_wstrlen(wchar_t *S);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_itoa_base(uintmax_t nbr, int base);

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 11:20:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/04 14:11:16 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:35:10 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 /*
 ** This function takes a wchar_t and writes it. It starts with big endian
 ** and move to lower endians thanks to masks and bit operations.
+** These are unicode masks:
+** 0xxxxxxx // 0x00
+** 110xxxxx 10xxxxxx // 0xC0 0x80
+** 1110xxxx 10xxxxxx 10xxxxxx // 0xE0 0x80 0x80
+** 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx // 0xF0 0x80 0x80 0x80
 */
 
 void		ft_putwchar(wchar_t wchar, t_flag *f)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
+#    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/10 15:51:00 by tvisenti         ###   ########.fr        #
+#    Updated: 2016/05/10 16:07:15 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_strlen.c\
 			ft_strsub.c\
 			ft_wcharlen.c\
-			ft_strlwr.c
+			ft_strlwr.c\
+			ft_wstrlen.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 
