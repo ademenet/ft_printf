@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 10:51:32 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/10 11:21:03 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	len_of_precision_zero(t_flag *f, int len)
 	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
 		f->spe == 'c' || f->spe == 'C')))
 		len--;
-	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
+	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg) || f->spe == 's' ||
+	f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
 	{
 		while (len-- > 0)
 		{
@@ -92,7 +93,8 @@ void	len_of_precision_minus(t_flag *f, int len)
 	while (f->fla[0] > i++ && (!(f->spe == 's' || f->spe == 'S' ||
 	f->spe == 'c' || f->spe == 'C')))
 		len--;
-	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg))
+	if (f->fla[0] < f->fla[1] + ft_strlen(f->arg) || f->spe == 's' ||
+	f->spe == 'S' || f->spe == 'c' || f->spe == 'C')
 	{
 		while (len-- > 0)
 			ft_putchar(' ', f);
@@ -111,8 +113,8 @@ void	ft_minus(t_flag *f)
 
 	k = -1;
 	len_zero = f->fla[1] - ft_strlen(f->arg); // cest le nombre d' ' ' a afficher ensuite avec len_of_precision_minus
-	if (f->arg[0] == -1 && (f->spe == 'c' || f->spe == 'C')) // a effacer surement car ne semble servir a rien
-		len_zero--;
+	// if (f->arg[0] == -1 && (f->spe == 'c' || f->spe == 'C')) // a effacer surement car ne semble servir a rien
+	// 	len_zero--;
 	i = ft_strlen(f->arg);
 	ft_space_plus_sharp(f); // appelle pour ajouter ' ', '+' ou '#'
 	while (f->fla[0] > i++ && !(f->spe == 's' || f->spe == 'S' ||
