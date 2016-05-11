@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dispatcher.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 14:09:02 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/11 14:59:38 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int		ft_dispatcher(t_flag *f, va_list *ap)
 
 	ft_check(f);
 	ft_initialize_specs(specs);
+	f->arg = NULL;
+	f->warg = NULL;
 	j = 0;
 	f->spe = f->frmt[f->ndx];
 	while (specs[j].c != f->spe && specs[j].c != 0)

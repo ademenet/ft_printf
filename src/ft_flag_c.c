@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 14:36:08 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/11 14:59:23 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int				ft_handler_c(t_flag *f, va_list *ap)
 	wchar_t		C;
 	char		s[2];
 
-	f->arg = (char*)0;
-	f->warg = (wchar_t*)0;
 	ft_apply_mask(f, mask_c);
 	if (f->fla[10] == 1)
 	{
