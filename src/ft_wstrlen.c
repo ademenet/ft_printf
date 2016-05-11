@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/10 15:59:17 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 09:22:39 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:00:40 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ size_t		ft_wstrlen(wchar_t *S)
 	size_t	len;
 
 	len = 0;
+	if (!S)
+		return (0);
 	while (*(S++))
 		len++;
 	return (len);

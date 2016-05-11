@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/11 15:43:47 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:12:05 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		ft_display_arg(t_flag *f)
 				len--;
 			}
 		}
-		else
+		else if (f->fla[0] != -1)
 			f->ret += write(1, "(null)", 6);
 	}
 	else
