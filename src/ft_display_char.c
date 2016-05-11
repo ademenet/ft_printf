@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_display_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/11 09:37:10 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/11 15:30:02 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,17 @@ void		ft_display_arg(t_flag *f)
 	if ((f->spe == 's' && f->fla[10] == 1) || f->spe == 'S' ||
 		(f->spe == 'c' && f->fla[10] == 1) || f->spe == 'C')
 	{
-		len = ft_wstrlen(f->warg);
-		while (len > 0)
+		if (f->arg != NULL || f->warg != NULL)
 		{
-			ft_putwchar(f->warg[++i], f);
-			len--;
+			len = ft_wstrlen(f->warg);
+			while (len > 0)
+			{
+				ft_putwchar(f->warg[++i], f);
+				len--;
+			}
 		}
+		else
+			f->ret += write(1, "(null)", 6);
 	}
 	else
 	{
