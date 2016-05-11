@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 10:54:53 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:31:14 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int			ft_printf(const char *format, ...);
 ** CHECKS
 */
 
-void		ft_check(t_flag *f);
+int			ft_check(t_flag *f);
 void		ft_check_initialize(t_flag *f);
 void		ft_check_flag(t_flag *f);
 void		ft_check_width(t_flag *f);

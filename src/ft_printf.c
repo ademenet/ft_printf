@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/06 15:00:43 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:34:49 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int				ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			f.frmt = (char*)&format[++i];
-			ft_dispatcher(&f, &ap);
+			if (ft_dispatcher(&f, &ap) == -1)
+				return (f.ret);
 			i += f.ndx;
 		}
 		else if (format[i] != '\0' && format[i] != '%')

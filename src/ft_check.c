@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 17:45:09 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:35:02 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		ft_check_initialize(t_flag *f)
 ** First, initialize our int array.
 */
 
-void		ft_check(t_flag *f)
+int			ft_check(t_flag *f)
 {
 	ft_check_initialize(f);
 	while (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
@@ -49,6 +49,9 @@ void		ft_check(t_flag *f)
 		ft_check_precision(f);
 		ft_check_modifier(f);
 	}
+	if (f->ndx == ft_strlen(f->frmt))
+		return (-1);
+	return (0);
 }
 
 /*
