@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/10 16:07:15 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/11 10:46:14 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_strsub.c\
 			ft_wcharlen.c\
 			ft_strlwr.c\
-			ft_wstrlen.c
+			ft_wstrlen.c\
+			ft_wstrsub.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 
@@ -68,7 +69,7 @@ $(OBJ):
 all: $(NAME)
 
 cc:
-	$(CC) main.c $(SRC)
+	clang main.c $(SRC)
 
 clean:
 	@rm -rf $(OBJ)

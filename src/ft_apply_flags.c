@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_apply_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 17:38:44 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:04:14 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,24 @@
 
 void	ft_precision_string(t_flag *f)
 {
-	char	*str2;
+	char	*str;
+	wchar_t	*wstr;
 
-	str2 = f->arg;
-	if (f->spe == 's' || f->spe == 'S')
+	if (f->spe == 'S' || (f->spe == 's' && f->fla[10] == 1))
 	{
+		wstr = f->warg;
+		if (f->fla[0] == -1)
+			f->warg = (wchar_t*)0;
+		else
+			f->warg = ft_wstrsub(wstr, 0, f->fla[0]);
+	}
+	else if (f->spe == 's')
+	{
+		str = f->arg;
 		if (f->fla[0] == -1)
 			f->arg = "\0";
 		else
-			f->arg = ft_strsub(str2, 0, f->fla[0]);
+			f->arg = ft_strsub(str, 0, f->fla[0]);
 	}
 }
 

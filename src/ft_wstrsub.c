@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_wstrsub.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 11:16:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 11:09:06 by ademenet         ###   ########.fr       */
+/*   Created: 2016/05/11 10:26:11 by ademenet          #+#    #+#             */
+/*   Updated: 2016/05/11 10:57:35 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 #include <string.h>
 #include "../include/ft_printf.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+wchar_t		*ft_wstrsub(wchar_t *S, unsigned int start, size_t len)
 {
 	char	*fresh;
+	int		real_len;
 	int		i;
 
-	if (!s)
-		return (NULL);
-	fresh = malloc((len + 1) * sizeof(char));
+	real_len = 0;
 	i = 0;
-	if (!fresh)
-		return (NULL);
-	fresh[len] = '\0';
-	while (len)
+	while (S[i] != '\0' && len >= ft_wcharlen(S[i]))
 	{
-		fresh[i] = s[start];
+		len -= ft_wcharlen(S[i]);
+		real_len += ft_wcharlen(S[i]);
 		i++;
-		start++;
-		len--;
 	}
-	return (fresh);
+	return ((wchar_t*)ft_strsub((char*)S, start, real_len));
 }
