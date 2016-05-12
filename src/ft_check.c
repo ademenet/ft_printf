@@ -6,28 +6,11 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 16:35:02 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 13:55:41 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-/*
-** Initialize our int array fla[13] with zeros.
-*/
-
-void		ft_check_initialize(t_flag *f)
-{
-	int		i;
-
-	i = 0;
-	while (i < 14)
-	{
-		f->fla[i] = 0;
-		i++;
-	}
-	f->ndx = 0;
-}
 
 /*
 ** This function reads each flags and call functions in order to save them.

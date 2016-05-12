@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 14:53:21 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 13:58:06 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-char			*ft_modifier_d(t_flag *f, va_list *ap)
+char	*ft_modifier_d(t_flag *f, va_list *ap)
 {
 	intmax_t	data;
 	uintmax_t	data_max;
@@ -29,17 +29,29 @@ char			*ft_modifier_d(t_flag *f, va_list *ap)
 		data = (intmax_t)((short)va_arg(*ap, int));
 	else if (f->fla[7] == 1)
 		data = (intmax_t)((char)va_arg(*ap, int));
-	else
+	else if (f->spe == 'D')
+		data = (intmax_t)(va_arg(*ap, long));
+	else if (f->spe == 'd' || f->spe == 'i')
 		data = (intmax_t)(va_arg(*ap, int));
 	data_max = ft_sign(f, data);
 	return (ft_itoa_base(data_max, 10));
 }
 
-int				ft_handler_d(t_flag *f, va_list *ap)
+int		ft_handler_d(t_flag *f, va_list *ap)
 {
 	static int	mask_d[13] = {0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
 	ft_apply_mask(f, mask_d);
+	f->arg = ft_modifier_d(f, ap);
+	ft_handler_numb(f);
+	return (0);
+}
+
+int		ft_handler_wd(t_flag *f, va_list *ap)
+{
+	static int	mask_wd[13] = {0, 0, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1};
+
+	ft_apply_mask(f, mask_wd);
 	f->arg = ft_modifier_d(f, ap);
 	ft_handler_numb(f);
 	return (0);

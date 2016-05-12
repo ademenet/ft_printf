@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
+#    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/11 10:46:14 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/12 12:09:15 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,20 +24,12 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_display_char.c\
 			ft_display_numb.c\
 			ft_flag_s.c\
-			ft_flag_S.c\
 			ft_flag_c.c\
-			ft_flag_C.c\
 			ft_flag_d.c\
-			ft_flag_D.c\
-			ft_flag_i.c\
-			ft_flag_o.c\
-			ft_flag_O.c\
-			ft_flag_u.c\
-			ft_flag_U.c\
+			ft_flag_p_undefined.c\
+			ft_flag_wu_wo.c\
+			ft_flag_u_o.c\
 			ft_flag_x.c\
-			ft_flag_X.c\
-			ft_flag_p.c\
-			ft_flag_undefined.c\
 			ft_handler.c\
 			ft_printf.c\
 			ft_atoi.c\
