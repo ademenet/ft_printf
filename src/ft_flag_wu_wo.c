@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:45:04 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 12:09:03 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 13:58:47 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-char			*ft_modifier_wu_wo(t_flag *f, va_list *ap)
+char		*ft_modifier_wu_wo(t_flag *f, va_list *ap)
 {
 	intmax_t	data;
 

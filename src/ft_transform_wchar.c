@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 10:44:49 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/12 10:45:17 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:00:01 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_putwchar_in_char(wchar_t wchar, char *fresh, int i)
 	return (i);
 }
 
-char	*ft_transform_wchar_in_char(wchar_t *S)
+char	*ft_transform_wchar_in_char(wchar_t *ws)
 {
 	char	*fresh;
 	int		i;
@@ -49,12 +49,12 @@ char	*ft_transform_wchar_in_char(wchar_t *S)
 
 	i = 0;
 	k = 0;
-	len = ft_wbytelen(S);
+	len = ft_wbytelen(ws);
 	fresh = (char*)malloc(sizeof(char) * len);
 	fresh[len] = '\0';
-	while (S[k])
+	while (ws[k])
 	{
-		i = ft_putwchar_in_char(S[k], fresh, i);
+		i = ft_putwchar_in_char(ws[k], fresh, i);
 		k++;
 	}
 	return (fresh);

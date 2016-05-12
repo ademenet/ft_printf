@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 12:07:35 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:01:06 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,28 @@ void			ft_initialize_specs(t_spec *specs)
 }
 
 /*
+** Initialize our int array fla[13] with zeros.
+*/
+
+void			ft_check_initialize(t_flag *f)
+{
+	int		i;
+
+	i = 0;
+	while (i < 14)
+	{
+		f->fla[i] = 0;
+		i++;
+	}
+	f->ndx = 0;
+}
+
+/*
 ** This function set the basic in order to manage our differents specifiers and
 ** associate flags. It calls the right function.
 */
 
-int		ft_dispatcher(t_flag *f, va_list *ap)
+int				ft_dispatcher(t_flag *f, va_list *ap)
 {
 	t_spec	specs[16];
 	int		j;

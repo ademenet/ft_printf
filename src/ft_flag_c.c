@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 12:05:57 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 13:58:18 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int				ft_handler_c(t_flag *f, va_list *ap)
+int		ft_handler_c(t_flag *f, va_list *ap)
 {
 	static int	mask_c[13] = {0, 0, 2, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2};
 	char		c;
@@ -41,7 +41,7 @@ int				ft_handler_c(t_flag *f, va_list *ap)
 	return (0);
 }
 
-int			ft_handler_wc(t_flag *f, va_list *ap)
+int		ft_handler_wc(t_flag *f, va_list *ap)
 {
 	static int	mask_c[13] = {0, 0, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2};
 	wchar_t		wc;
