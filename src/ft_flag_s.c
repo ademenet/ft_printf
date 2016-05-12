@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/10 18:36:16 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 12:05:03 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ int			ft_handler_s(t_flag *f, va_list *ap)
 		f->arg = va_arg(*ap, char*);
 	if (f->arg == 0)
 		f->arg = "(null)";
+	ft_handler_char(f);
+	return (0);
+}
+
+int			ft_handler_ws(t_flag *f, va_list *ap)
+{
+	static int	mask_s[13] = {0, 0, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2};
+	wchar_t		*ws;
+	size_t		len;
+
+	f->warg = va_arg(*ap, wchar_t*);
 	ft_handler_char(f);
 	return (0);
 }
