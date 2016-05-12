@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 16:26:24 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:39:58 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,9 +132,8 @@ int				ft_handler_wu(t_flag *f, va_list *ap);
 char			*ft_modifier_wu_wo(t_flag *f, va_list *ap);
 
 int				ft_handler_x(t_flag *f, va_list *ap);
-char			*ft_modifier_x(t_flag *f, va_list *ap);
 int				ft_handler_wx(t_flag *f, va_list *ap);
-char			*ft_modifier_wx(t_flag *f, va_list *ap);
+char			*ft_modifier_x(t_flag *f, va_list *ap);
 
 int				ft_handler_p(t_flag *f, va_list *ap);
 int				ft_handler_undefined(t_flag *f);
