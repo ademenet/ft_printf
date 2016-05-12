@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 12:02:13 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 12:19:08 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void		ft_putwchar(wchar_t wchar, t_flag *f);
 int			ft_wcharlen(wchar_t wchar);
 size_t		ft_wbytelen(wchar_t *ws);
 size_t		ft_wstrlen(wchar_t *ws);
-char		*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
+wchar_t		*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
 char		*ft_transform_wchar_in_char(wchar_t *ws);
 int			ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
 
@@ -106,13 +106,15 @@ int			ft_dispatcher(t_flag *f, va_list *ap);
 */
 
 void		ft_apply_mask(t_flag *f, int *mask);
+
 int			ft_handler_char(t_flag *f);
 int			ft_handler_numb(t_flag *f);
 
-int			ft_handler_s(t_flag *f, va_list *ap);
-int			ft_handler_ws(t_flag *f, va_list *ap);
 int			ft_handler_c(t_flag *f, va_list *ap);
 int			ft_handler_wc(t_flag *f, va_list *ap);
+
+int			ft_handler_s(t_flag *f, va_list *ap);
+int			ft_handler_ws(t_flag *f, va_list *ap);
 
 int			ft_handler_d(t_flag *f, va_list *ap);
 int			ft_handler_wd(t_flag *f, va_list *ap);
