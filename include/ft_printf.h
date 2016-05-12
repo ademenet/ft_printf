@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 14:18:25 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:55:51 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 # include <stdlib.h>
 # include <wchar.h>
 
+char			g_buf[4096];
+int				g_i;
+
 /*
 ** !!!!!!!!!!!!!!!! A SUPPRIMER !!!!!!!!!!!!!!!!!!!!
 */
 
 # include <stdio.h>
 # include <stdlib.h>
-
-extern char		**g_buf;
 
 /*
 ** fla[13] is an array which contains flags for precision, width, flags
@@ -41,6 +42,7 @@ typedef struct	s_flag
 	int			ret;
 	char		spe;
 	char		*arg;
+	wchar_t		*warg;
 
 	char		sign;
 	va_list		ap;
@@ -164,5 +166,18 @@ void			ft_display_arg(t_flag *f);
 void			ft_width_char(t_flag *f);
 void			ft_minus_char(t_flag *f);
 void			ft_zero_char(t_flag *f);
+
+/*
+** ft_buff.c
+*/
+
+char			*ft_buff(char *s, int nb);
+char			*ft_strset(char *s1, char fill, int len);
+char			*ft_strcat(char *s1, char *s2);
+char			*ft_strcpy(char *dst, char *src);
+char			*ft_strnew(int size);
+char			*ft_strjoin(char *s1, char *s2);
+char			*ft_filling(char c, int nb);
+char			*ft_insert(char *s);
 
 #endif

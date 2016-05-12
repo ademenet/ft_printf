@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:36:02 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 12:41:13 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:05:19 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ char		*ft_strnew(int size)
 {
 	char		*text;
 
+	printf("setnew");
 	text = (char *)malloc((size + 1) * sizeof(char));
 	if (!text)
 		return (NULL);
@@ -91,40 +92,40 @@ char		*ft_strjoin(char *s1, char *s2)
 	return (strjoin);
 }
 
-char			*ft_filling(char **buf, char c, int nb)
+char			*ft_filling(char c, int nb)
 {
 	char		*strtmp1;
 	char		*strtmp2;
 	char		*str;
 
 	strtmp1 = ft_strnew(nb);
-	strtmp2 = *buf;
+	strtmp2 = *g_buf;
 	str = ft_strjoin(ft_strset(strtmp1, c, nb), strtmp2);
 	free(strtmp1);
 	free(strtmp2);
 	return (str);
 }
 
-char			*ft_insert(char **buf, char *s)
+char			*ft_insert(char *s)
 {
 	char		*strtmp1;
 	char		*str;
 
-	strtmp1 = *buf;
+	strtmp1 = *g_buf;
 	str = ft_strjoin(strtmp1, s);
 	free(strtmp1);
 	return (str);
 }
 
-char			*ft_buff(char **buf, char *s, int nb)
+char			*ft_buff(char *s, int nb)
 {
 	char		*str;
 
 	if (nb > 0)
-		str = ft_filling(buf, s[0], nb);
+		str = ft_filling(s[0], nb);
 	// else if (nb == 0 && s[0] == '\0')
 	// 	// mettre f->ret++
 	else if (nb == -1)
-		str = ft_insert(buf, s);
+		str = ft_insert(s);
 	return(str);
 }
