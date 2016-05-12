@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/11 11:04:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/11 15:34:48 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_precision_string(t_flag *f)
 {
 	char	*str;
 	wchar_t	*wstr;
+	void	*tmp;
 
 	if (f->spe == 'S' || (f->spe == 's' && f->fla[10] == 1))
 	{

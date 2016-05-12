@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 16:31:14 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 11:31:21 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 #include <stdio.h> // A EFFACER !!!
 #include <stdlib.h> // A EFFACER !!!
 
+extern char		**g_buf;
 
 typedef struct	s_flag
 {
 	char		*frmt;
 	int			ndx;
 	int			ret;
-
 	char		spe;
 	char		*arg;
-	wchar_t		*warg;
+
 	char		sign;
 
 	va_list		ap;
