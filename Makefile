@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/12 14:20:11 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/12 15:31:00 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_strlwr.c\
 			ft_wstrlen.c\
 			ft_wstrsub.c\
-			ft_buff.c
+			ft_buf.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 

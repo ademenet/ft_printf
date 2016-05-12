@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/10 18:08:41 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:25:02 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_precision_without_width(t_flag *f)
 	if (f->fla[0] > f->fla[1] + ft_strlen(f->arg))
 	{
 		while (++len < prec)
-			ft_putchar('0', f);
+			ft_buf('0', f);
 	}
 }
 
@@ -57,9 +57,9 @@ void	ft_precision_numb(t_flag *f, int len_zero)
 		while (len_zero-- > 0)
 		{
 			if (f->fla[3] == 1 && f->fla[0] == 0)
-				ft_putchar('0', f);
+				ft_buf('0', f);
 			else
-				ft_putchar(' ', f);
+				ft_buf(' ', f);
 		}
 	}
 }
@@ -88,9 +88,9 @@ void	ft_zero_numb(t_flag *f)
 		ft_space_plus_sharp(f);
 	}
 	while (f->fla[0] > len++)
-		ft_putchar('0', f);
+		ft_buf('0', f);
 	while (f->arg[++i] != '\0')
-		ft_putchar(f->arg[i], f);
+		ft_buf(f->arg[i], f);
 }
 
 /*
@@ -109,9 +109,9 @@ void	ft_minus_numb(t_flag *f)
 	f->fla[3] = 0;
 	ft_space_plus_sharp(f);
 	while (f->fla[0] > len++)
-		ft_putchar('0', f);
+		ft_buf('0', f);
 	while (f->arg[++i] != '\0')
-		ft_putchar(f->arg[i], f);
+		ft_buf(f->arg[i], f);
 	ft_precision_numb(f, len_zero);
 }
 
@@ -137,8 +137,8 @@ void	ft_width_numb(t_flag *f)
 	{
 		ft_space_plus_sharp(f);
 		while (f->fla[0] > len++)
-			ft_putchar('0', f);
+			ft_buf('0', f);
 		while (f->arg[++i] != '\0')
-			ft_putchar(f->arg[i], f);
+			ft_buf(f->arg[i], f);
 	}
 }

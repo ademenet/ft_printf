@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 11:41:00 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:25:01 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int			ft_handler_numb(t_flag *f)
 	if (f->fla[0] <= 0 && f->fla[1] == 0)
 		ft_space_plus_sharp(f);
 	while (f->arg[++i] != '\0' && f->fla[1] == 0)
-		ft_putchar(f->arg[i], f);
+		ft_buf(f->arg[i], f);
 	return (1);
 }

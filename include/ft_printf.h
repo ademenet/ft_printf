@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 14:55:51 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:33:14 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,13 +171,8 @@ void			ft_zero_char(t_flag *f);
 ** ft_buff.c
 */
 
-char			*ft_buff(char *s, int nb);
-char			*ft_strset(char *s1, char fill, int len);
-char			*ft_strcat(char *s1, char *s2);
-char			*ft_strcpy(char *dst, char *src);
-char			*ft_strnew(int size);
-char			*ft_strjoin(char *s1, char *s2);
-char			*ft_filling(char c, int nb);
-char			*ft_insert(char *s);
+void			ft_buf(char c, t_flag *f);
+void			ft_display(t_flag *f);
+void			ft_bufset(void);
 
 #endif

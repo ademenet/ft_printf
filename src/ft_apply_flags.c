@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/12 15:04:25 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:22:38 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,19 @@ void	ft_sharp(t_flag *f)
 		{
 			if ((f->spe == 'x' && f->arg[0] != '0') || f->spe == 'p')
 			{
-				ft_putchar('0', f);
-				ft_putchar('x', f);
+				ft_buf('0', f);
+				ft_buf('x', f);
 			}
 			else if (f->spe == 'X' && f->arg[0] != '0')
 			{
-				ft_putchar('0', f);
-				ft_putchar('X', f);
+				ft_buf('0', f);
+				ft_buf('X', f);
 			}
 			else if ((f->spe == 'o' || f->spe == 'O') &&
 				f->fla[0] <= ft_strlen(f->arg))
-				ft_putchar('0', f);
+				ft_buf('0', f);
 			else if ((f->spe == 'o' || f->spe == 'O') && f->fla[0] == -1)
-				ft_putchar('0', f);
+				ft_buf('0', f);
 		}
 	}
 }
@@ -84,12 +84,12 @@ void	ft_space_plus_sharp(t_flag *f)
 		if (f->spe == 'd' || f->spe == 'D' || f->spe == 'i')
 		{
 			if (f->fla[6] == 1 && f->fla[5] == 0 && f->sign != '-')
-				ft_putchar(' ', f);
+				ft_buf(' ', f);
 			if (f->fla[5] == 1 && ft_isdigit(f->arg[0]) && f->sign == '+')
-				ft_putchar('+', f);
+				ft_buf('+', f);
 		}
 	}
 	if (f->sign == '-')
-		ft_putchar('-', f);
+		ft_buf('-', f);
 	ft_sharp(f);
 }

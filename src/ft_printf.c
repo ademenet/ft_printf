@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:04:49 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:34:22 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int				ft_printf(const char *format, ...)
 	t_flag		f;
 	int			i;
 
-
 	va_start(ap, format);
 	i = -1;
 	f.ret = 0;
+	ft_bufset();
 	while (format[++i] != '\0')
 	{
 		if (format[i] == '%')
@@ -37,8 +37,10 @@ int				ft_printf(const char *format, ...)
 			i += f.ndx;
 		}
 		else if (format[i] != '\0' && format[i] != '%')
-			g_buf[g_i++](format[i]);
+			ft_buf(format[i], &f);
 	}
+	if (g_i > 0)
+		ft_display(&f);
 	va_end(ap);
 	return (f.ret);
 }

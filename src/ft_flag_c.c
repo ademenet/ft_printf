@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 15:34:28 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 13:58:18 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:25:03 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_handler_c(t_flag *f, va_list *ap)
 		ft_handler_char(f);
 	}
 	if (f->arg[0] == 0)
-		ft_putchar('\0', f);
+		ft_buf('\0', f);
 	return (0);
 }
 
