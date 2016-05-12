@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 15:23:29 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/12 15:22:38 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 18:33:59 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,12 @@
 
 void	ft_precision_string(t_flag *f)
 {
-	char	*str;
-	wchar_t	*wstr;
-	void	*tmp;
-
-	if (f->spe == 'S' || (f->spe == 's' && f->fla[10] == 1))
-	{
-		wstr = f->warg;
-		if (f->fla[0] == -1)
-			f->warg = (wchar_t*)0;
-		else
-			f->warg = ft_wstrsub(wstr, 0, f->fla[0]);
-	}
+	if (f->fla[0] == -1)
+		f->arg = "\0";
+	else if (f->spe == 'S' || (f->spe == 's' && f->fla[10] == 1))
+		f->arg = ft_wstrsub(f->warg, 0, f->fla[0]);
 	else if (f->spe == 's')
-	{
-		str = f->arg;
-		if (f->fla[0] == -1)
-			f->arg = "\0";
-		else
-			f->arg = ft_strsub(str, 0, f->fla[0]);
-	}
+		f->arg = ft_strsub(f->arg, 0, f->fla[0]);
 }
 
 /*

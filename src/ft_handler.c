@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 18:49:48 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:25:01 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:23:58 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int			ft_handler_char(t_flag *f)
 {
 	if (f->fla[0] != 0)
 		ft_precision_string(f);
+	else if (f->spe == 'S' || (f->spe == 's' && f->fla[10] == 1) ||
+		(f->spe == 'c' && f->fla[10] == 1))
+		f->arg = ft_transform_wchar_in_char(f->warg);
 	if (f->fla[1] > 0)
 		ft_width_char(f);
 	if (f->fla[1] == 0)

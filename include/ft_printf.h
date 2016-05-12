@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 16:39:58 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 18:15:52 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void			ft_check_modifier(t_flag *f);
 ** UTILS
 */
 
-void			ft_putchar(char c, t_flag *f);
 int				ft_isdigit(int c);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_itoa_base(uintmax_t nbr, int base);
@@ -93,7 +92,8 @@ void			ft_putwchar(wchar_t wchar, t_flag *f);
 int				ft_wcharlen(wchar_t wchar);
 size_t			ft_wbytelen(wchar_t *ws);
 size_t			ft_wstrlen(wchar_t *ws);
-wchar_t			*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
+// wchar_t			*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
+char			*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
 char			*ft_transform_wchar_in_char(wchar_t *ws);
 int				ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
 

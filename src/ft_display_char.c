@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/12 16:32:38 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:22:52 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void		ft_display_arg(t_flag *f)
 	if ((f->spe == 's' && f->fla[10] == 1) || f->spe == 'S' ||
 		(f->spe == 'c' && f->fla[10] == 1) || f->spe == 'C')
 	{
-		if (f->arg != NULL || f->warg != NULL)
+		if (f->arg != NULL)
 		{
-			len = ft_wstrlen(f->warg);
+			len = ft_strlen(f->arg);
 			while (len > 0)
 			{
-				ft_putwchar(f->warg[++i], f);
+				ft_buf(f->arg[++i], f);
 				len--;
 			}
 		}
@@ -42,10 +42,6 @@ void		ft_display_arg(t_flag *f)
 
 int			ft_width_rest(t_flag *f)
 {
-	if ((f->spe == 's' && f->fla[10] == 1) || f->spe == 'S' ||
-		(f->spe == 'c' && f->fla[10] == 1) || f->spe == 'C')
-		return (f->fla[1] - (int)ft_wbytelen(f->warg));
-	else
 		return (f->fla[1] - ft_strlen(f->arg));
 }
 
@@ -58,7 +54,7 @@ void		ft_zero_char(t_flag *f)
 	int		nb_space;
 
 	nb_space = ft_width_rest(f);
-	if ((f->spe == 'c' && f->arg[0] == 0) || (f->spe == 'C' && f->warg[0] == 0))
+	if ((f->spe == 'c' && f->arg[0] == 0) || (f->spe == 'C' && f->arg[0] == 0))
 		nb_space--;
 	while (nb_space-- > 0)
 	{
@@ -79,7 +75,7 @@ void		ft_minus_char(t_flag *f)
 	int		nb_space;
 
 	nb_space = ft_width_rest(f);
-	if ((f->spe == 'c' && f->arg[0] == 0) || (f->spe == 'C' && f->warg[0] == 0))
+	if ((f->spe == 'c' && f->arg[0] == 0) || (f->spe == 'C' && f->arg[0] == 0))
 		nb_space--;
 	ft_display_arg(f);
 	while (nb_space-- > 0)
@@ -94,9 +90,7 @@ void		ft_width_char(t_flag *f)
 {
 	int		i;
 
-	if (f->warg)
-		i = (int)ft_wstrlen(f->warg);
-	else if (f->arg)
+	if (f->arg)
 		i = ft_strlen(f->arg);
 	if (i < f->fla[1])
 	{

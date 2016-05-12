@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 11:16:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 11:09:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 18:16:28 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (!fresh)
 		return (NULL);
 	fresh[len] = '\0';
-	while (len)
+	while (len > 0)
 	{
 		fresh[i] = s[start];
 		i++;
