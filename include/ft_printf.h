@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 10:47:08 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 12:02:13 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,24 @@ void		ft_check_modifier(t_flag *f);
 */
 
 void		ft_putchar(char c, t_flag *f);
-void		ft_putwchar(wchar_t wchar, t_flag *f);
-int			ft_wcharlen(wchar_t wchar);
-size_t		ft_wbytelen(wchar_t *S);
-size_t		ft_wstrlen(wchar_t *S);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
-char		*ft_wstrsub(wchar_t *S, unsigned int start, size_t len);
 char		*ft_itoa_base(uintmax_t nbr, int base);
 uintmax_t	ft_sign(t_flag *f, intmax_t nbr);
 int			ft_strlen(char *str);
 long		ft_atoi(const char *str);
 char		*ft_strlwr(char *s1);
-char		*ft_transform_wchar_in_char(wchar_t *S);
+
+/*
+** Les Wchars
+*/
+
+void		ft_putwchar(wchar_t wchar, t_flag *f);
+int			ft_wcharlen(wchar_t wchar);
+size_t		ft_wbytelen(wchar_t *ws);
+size_t		ft_wstrlen(wchar_t *ws);
+char		*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
+char		*ft_transform_wchar_in_char(wchar_t *ws);
 int			ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
 
 
@@ -103,27 +108,30 @@ int			ft_dispatcher(t_flag *f, va_list *ap);
 void		ft_apply_mask(t_flag *f, int *mask);
 int			ft_handler_char(t_flag *f);
 int			ft_handler_numb(t_flag *f);
+
 int			ft_handler_s(t_flag *f, va_list *ap);
-int			ft_handler_S(t_flag *f, va_list *ap);
+int			ft_handler_ws(t_flag *f, va_list *ap);
 int			ft_handler_c(t_flag *f, va_list *ap);
-int			ft_handler_C(t_flag *f, va_list *ap);
+int			ft_handler_wc(t_flag *f, va_list *ap);
+
 int			ft_handler_d(t_flag *f, va_list *ap);
+int			ft_handler_wd(t_flag *f, va_list *ap);
 char		*ft_modifier_d(t_flag *f, va_list *ap);
-int			ft_handler_D(t_flag *f, va_list *ap);
-char		*ft_modifier_D(t_flag *f, va_list *ap);
-int			ft_handler_i(t_flag *f, va_list *ap);
-char		*ft_modifier_i(t_flag *f, va_list *ap);
+
 int			ft_handler_o(t_flag *f, va_list *ap);
-char		*ft_modifier_o(t_flag *f, va_list *ap);
-int			ft_handler_O(t_flag *f, va_list *ap);
-char		*ft_modifier_O(t_flag *f, va_list *ap);
 int			ft_handler_u(t_flag *f, va_list *ap);
-char		*ft_modifier_u(t_flag *f, va_list *ap);
-int			ft_handler_U(t_flag *f, va_list *ap);
+char		*ft_modifier_u_o(t_flag *f, va_list *ap);
+
+int			ft_handler_wo(t_flag *f, va_list *ap);
+int			ft_handler_wu(t_flag *f, va_list *ap);
+char		*ft_modifier_wu_wo(t_flag *f, va_list *ap);
+
 int			ft_handler_x(t_flag *f, va_list *ap);
 char		*ft_modifier_x(t_flag *f, va_list *ap);
-int			ft_handler_X(t_flag *f, va_list *ap);
-char		*ft_modifier_X(t_flag *f, va_list *ap);
+int			ft_handler_wx(t_flag *f, va_list *ap);
+char		*ft_modifier_wx(t_flag *f, va_list *ap);
+
+
 int			ft_handler_p(t_flag *f, va_list *ap);
 int			ft_handler_undefined(t_flag *f);
 
