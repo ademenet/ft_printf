@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/11 16:31:14 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:47:08 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,15 @@ size_t		ft_wbytelen(wchar_t *S);
 size_t		ft_wstrlen(wchar_t *S);
 int			ft_isdigit(int c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
-wchar_t		*ft_wstrsub(wchar_t *S, unsigned int start, size_t len);
+char		*ft_wstrsub(wchar_t *S, unsigned int start, size_t len);
 char		*ft_itoa_base(uintmax_t nbr, int base);
 uintmax_t	ft_sign(t_flag *f, intmax_t nbr);
 int			ft_strlen(char *str);
 long		ft_atoi(const char *str);
 char		*ft_strlwr(char *s1);
+char		*ft_transform_wchar_in_char(wchar_t *S);
+int			ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
+
 
 /*
 ** DISPATCHER
