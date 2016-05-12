@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:33:14 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:26:24 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,7 @@ void			ft_zero_char(t_flag *f);
 */
 
 void			ft_buf(char c, t_flag *f);
+void			ft_buf_null(t_flag *f);
 void			ft_display(t_flag *f);
 void			ft_bufset(void);
 

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 14:33:30 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:30:05 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <limits.h>
 #include "./include/ft_printf.h"
 #include <locale.h>
+
+
+
 
 int		main()
 {
@@ -36,12 +39,11 @@ int		main()
 
 
 	printf("TRUE :\n");
-	ret = printf("%#x", 16);
+	ret = printf("%hhX, %hhX", 0, UCHAR_MAX + 42);
 	puts("");
 	printf("ret : |%d|\n", ret);
-
-	printf("\nMINE :\n");
-	ret1 = ft_printf("%#x", 16);
+	printf("MINE :\n");
+	ret1 = ft_printf("%hhX, %hhX", 0, UCHAR_MAX + 42);
 	puts("");
 	printf("ret1 : |%d|\n", ret1);
 

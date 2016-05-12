@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/12 15:22:04 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:25:59 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		ft_display_arg(t_flag *f)
 			}
 		}
 		else if (f->fla[0] != -1)
-			ft_buf(f->arg[i], f);
+			ft_buf_null(f);
 			// ATTENTION ! PITETRE PAS
 			// f->ret += write(1, "(null)", 6);
 	}

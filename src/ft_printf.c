@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:34:22 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:08:02 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int				ft_printf(const char *format, ...)
 		{
 			f.frmt = (char*)&format[++i];
 			if (ft_dispatcher(&f, &ap) == -1)
-				return (f.ret);
+				break ;
 			i += f.ndx;
 		}
 		else if (format[i] != '\0' && format[i] != '%')
