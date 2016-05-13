@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 17:58:16 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 18:01:29 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -396,6 +396,24 @@ int		main()
 
 	printf("MINE :\n");
 	ret1 = ft_printf("%b", 10);
+	puts("");
+	printf("ret1 : |%d|\n", ret1);
+	printf("===========================\n");
+
+	printf("MINE :\n");
+	ret1 = ft_printf("%b", 0);
+	puts("");
+	printf("ret1 : |%d|\n", ret1);
+	printf("===========================\n");
+
+	printf("MINE :\n");
+	ret1 = ft_printf("%b", -10);
+	puts("");
+	printf("ret1 : |%d|\n", ret1);
+	printf("===========================\n");
+
+	printf("MINE :\n");
+	ret1 = ft_printf("%5b", 1);
 	puts("");
 	printf("ret1 : |%d|\n", ret1);
 	printf("===========================\n");

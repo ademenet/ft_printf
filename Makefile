@@ -6,17 +6,25 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/13 14:50:43 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/13 18:12:56 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.PHONY: all clean fclean re norme
 
 CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
+CPP_FLAGS = -Iinclude
+
 NAME = libftprintf.a
 
 SRC_PATH = ./src
+LIB_PATH = ./lib
+INC_PATH = ./inc
+OBJ_PATH = ./obj
+OBJLIB_PATH = ./obj
 
 SRC_NAME =	ft_apply_flags.c\
 			ft_check.c\
@@ -32,46 +40,55 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_flag_x.c\
 			ft_handler.c\
 			ft_printf.c\
-			ft_atoi.c\
+			ft_buf.c\
+			ft_transform_wchar.c
+
+LIB_NAME = 	ft_atoi.c\
 			ft_isdigit.c\
 			ft_itoa_base.c\
-			ft_putwchar.c\
 			ft_strlen.c\
 			ft_strsub.c\
 			ft_wcharlen.c\
 			ft_strlwr.c\
 			ft_wstrlen.c\
-			ft_wstrsub.c\
-			ft_buf.c\
-			ft_transform_wchar.c
+			ft_wstrsub.c
+
+INC_NAME = ft_printf.h
+
+OBJ_NAME = $(SRC_NAME:.c=.o)
+OBJLIB_NAME = $(LIB_NAME:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
-
-CPP_FLAGS = -Iinclude
-
-OBJ = $(SRC_NAME:.c=.o)
-
-$(NAME): $(OBJ)
-	@$(CC) -c $(SRC) -I $(CPP_FLAGS)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
-	@echo "\033[1;34mLibftprintf\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
-
-$(OBJ):
+LIB = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
+INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+OBJLIB = $(addprefix $(OBJLIB_PATH)/,$(OBJLIB_NAME))
 
 all: $(NAME)
 
-cc:
-	clang main.c $(SRC)
+$(NAME): $(OBJ) $(OBJLIB)
+	@ar rc $(NAME) $(OBJ) $(OBJLIB)
+	@ranlib $(NAME)
+	@echo "\033[1;34mLibftprintf\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
+
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) -o $@ -c $<
+
+$(OBJLIB_PATH)/%.o: $(LIB_PATH)/%.c
+	@mkdir $(OBJLIB_PATH) 2> /dev/null || true
+	@$(CC) -o $@ -c $<
 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf ./obj
 	@echo "\033[1;34mLibftprintf\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	@rm -fr $(NAME)
+	@rm -rf $(NAME)
 	@echo "\033[1;34mLibftprintf\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
 
-.PHONY: clean fclean
+norme:
+	@norminette $(SRC) $(LIB) $(INC)
+	@echo "\033[1;34mLibftprintf\t\033[1;33mNorme\t\033[0;32m[OK]\033[0m"
