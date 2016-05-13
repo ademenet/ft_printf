@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 18:20:57 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 13:58:06 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:31:12 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_modifier_d(t_flag *f, va_list *ap)
 	intmax_t	data;
 	uintmax_t	data_max;
 
+	data = 0;
 	if (f->fla[12] == 1)
 		data = (intmax_t)(va_arg(*ap, ssize_t));
 	else if (f->fla[11] == 1)

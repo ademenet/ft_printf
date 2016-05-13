@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:26:11 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 09:13:53 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:32:33 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len)
 
 	real_len = 0;
 	i = 0;
-	while (ws[i] != '\0' && len >= ft_wcharlen(ws[i]))
+	while (ws[i] != '\0' && (int)len >= ft_wcharlen(ws[i]))
 	{
 		len -= ft_wcharlen(ws[i]);
 		real_len += ft_wcharlen(ws[i]);
