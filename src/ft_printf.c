@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 14:44:11 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 17:16:23 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void			ft_end(t_flag *f)
 		if (f->spe == 'x' || f->spe == 'X' || f->spe == 'o' || f->spe == 'O'
 			|| f->spe == 'u' || f->spe == 'U' || f->spe == 'd' || f->spe == 'D'
 			|| f->spe == 'p' || f->spe == 'S' || f->spe == 'i' || (f->spe == 's'
-			&& f->fla[0] < ft_strlen(f->arg) && f->fla[0] > 0))
+			&& f->fla[0] < ft_strlen(f->arg) && f->fla[0] > 0) || f->spe == 'C'
+			|| (f->spe == 'c' && f->fla[10] == 1))
 			free(f->arg);
 	}
 }
