@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 11:20:08 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:25:06 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:33:53 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,20 @@ void		ft_putwchar(wchar_t wchar, t_flag *f)
 		ft_buf(wchar, f);
 	else if (size == 2)
 	{
-		ft_buf((wchar >> 6) + 0xC0, f); // Je deplace de 6 sur la droite et j'ajoute 11000000
-		ft_buf((wchar & 0x3F) + 0x80, f); // Je filtre par 111111 et j'ajoute 10000000
+		ft_buf((wchar >> 6) + 0xC0, f);
+		ft_buf((wchar & 0x3F) + 0x80, f);
 	}
 	else if (size == 3)
 	{
-		ft_buf((wchar >> 12) + 0xE0, f); // Je deplace de 12 sur la droite et j'ajoute 11100000
-		ft_buf(((wchar >> 6) & 0x3F) + 0x80, f); // Je deplace de 6, je filtre par 111111 et j'ajoute 10000000
-		ft_buf((wchar & 0x3F) + 0x80, f); // Je filtre par 111111 et j'ajoute 10000000
+		ft_buf((wchar >> 12) + 0xE0, f);
+		ft_buf(((wchar >> 6) & 0x3F) + 0x80, f);
+		ft_buf((wchar & 0x3F) + 0x80, f);
 	}
 	else
 	{
-		ft_buf((wchar >> 18) + 0xF0, f); // Je deplace de 18 sur la droite et j'ajoute 11110000
-		ft_buf(((wchar >> 12) & 0x3F) + 0x80, f); // Je deplace de 12 sur la droite, je filtre par 111111 et j'ajoute 10000000
-		ft_buf(((wchar >> 6) & 0x3F) + 0x80, f); // Je deplace de 6 sur la droite, je filtre par 111111 et j'ajoute 10000000
-		ft_buf((wchar & 0x3F) + 0x80, f); // Je filtre par 111111 et j'ajoute 10000000
+		ft_buf((wchar >> 18) + 0xF0, f);
+		ft_buf(((wchar >> 12) & 0x3F) + 0x80, f);
+		ft_buf(((wchar >> 6) & 0x3F) + 0x80, f);
+		ft_buf((wchar & 0x3F) + 0x80, f);
 	}
 }

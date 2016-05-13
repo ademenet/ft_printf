@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 14:27:29 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:39:14 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,6 @@
 
 char			g_buf[4096];
 int				g_i;
-
-/*
-** !!!!!!!!!!!!!!!! A SUPPRIMER !!!!!!!!!!!!!!!!!!!!
-*/
-
-# include <stdio.h>
-# include <stdlib.h>
 
 /*
 ** fla[13] is an array which contains flags for precision, width, flags

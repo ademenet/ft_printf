@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/13 14:18:08 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:41:28 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void		ft_display_arg(t_flag *f)
 	int		i;
 	size_t	len;
 
-	i = -1;
-	if ((f->spe == 's' && f->fla[10] == 1) || f->spe == 'S' ||
-		(f->spe == 'c' && f->fla[10] == 1) || f->spe == 'C')
+	if ((i = -1) && ((f->spe == 's' && f->fla[10] == 1) || f->spe == 'S' ||
+		(f->spe == 'c' && f->fla[10] == 1) || f->spe == 'C'))
 	{
 		if (f->arg != NULL)
 		{
-			if (f->arg[0] == '\0' && (f->spe == 'C' || (f->spe == 'c' && f->fla[10] == 1)))
+			if (f->arg[0] == '\0' && (f->spe == 'C' ||
+				(f->spe == 'c' && f->fla[10] == 1)))
 				ft_buf('\0', f);
 			len = ft_strlen(f->arg);
 			while (len-- > 0)
@@ -42,7 +42,7 @@ void		ft_display_arg(t_flag *f)
 
 int			ft_width_rest(t_flag *f)
 {
-		return (f->fla[1] - ft_strlen(f->arg));
+	return (f->fla[1] - ft_strlen(f->arg));
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 10:44:49 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/13 12:19:35 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:44:34 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_transform_wchar_in_char(wchar_t *ws)
 	int		len;
 
 	if (!ws)
-		return(0);
+		return (0);
 	i = 0;
 	k = 0;
 	len = ft_wbytelen(ws);

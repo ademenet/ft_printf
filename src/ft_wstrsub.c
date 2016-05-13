@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:26:11 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 14:32:33 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:45:10 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char		*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len)
 	return (ft_strsub_with_free(fresh, start, real_len));
 }
 
-char	*ft_strsub_with_free(char const *s, unsigned int start, size_t len)
+char		*ft_strsub_with_free(char const *s, unsigned int start, size_t len)
 {
 	char	*fresh;
 	char	*tmp;
