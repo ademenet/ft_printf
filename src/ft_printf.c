@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 08:52:07 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 10:15:30 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,18 @@
 ** call subsidiaries functions to manage flags.
 */
 
-
+void			ft_end(t_flag *f)
+{
+	if (f->fla[0] >= 0 && f->arg != NULL && f->arg[0] != '\0' &&
+		f->arg[0] != '0')
+	{
+		if (f->spe == 'x' || f->spe == 'X' || f->spe == 'o' || f->spe == 'O'
+			|| f->spe == 'u' || f->spe == 'U' || f->spe == 'd' || f->spe == 'D'
+			|| f->spe == 'p' || f->spe == 'S' || f->spe == 'i' || (f->spe == 's'
+			&& f->fla[0] < ft_strlen(f->arg) && f->fla[0] > 0))
+				free(f->arg);
+	}
+}
 
 int				ft_printf(const char *format, ...)
 {

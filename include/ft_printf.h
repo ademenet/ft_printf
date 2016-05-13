@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 09:11:50 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 09:31:54 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int				g_i;
 
 typedef struct	s_flag
 {
+	int			ret;
 	char		*frmt;
 	int			ndx;
-	int			ret;
 	char		spe;
 	char		*arg;
 	wchar_t		*warg;
@@ -59,6 +59,7 @@ typedef struct	s_spec
 ** FT_PRINTF
 */
 
+void			ft_end(t_flag *f);
 int				ft_printf(const char *format, ...);
 
 /*
