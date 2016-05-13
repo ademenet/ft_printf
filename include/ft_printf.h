@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 18:15:52 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 09:11:50 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,9 @@ void			ft_putwchar(wchar_t wchar, t_flag *f);
 int				ft_wcharlen(wchar_t wchar);
 size_t			ft_wbytelen(wchar_t *ws);
 size_t			ft_wstrlen(wchar_t *ws);
-// wchar_t			*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
 char			*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
+char			*ft_strsub_with_free(char const *s, unsigned int start,
+				size_t len);
 char			*ft_transform_wchar_in_char(wchar_t *ws);
 int				ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
 

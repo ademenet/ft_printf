@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 16:08:02 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 08:52:07 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 ** This our main function, it tooks our string and arguments, displays them or
 ** call subsidiaries functions to manage flags.
 */
+
+
 
 int				ft_printf(const char *format, ...)
 {

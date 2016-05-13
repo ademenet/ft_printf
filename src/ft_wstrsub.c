@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:26:11 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 18:21:37 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 09:13:53 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,31 @@ char		*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len)
 		i++;
 	}
 	fresh = ft_transform_wchar_in_char(ws);
-	return (ft_strsub(fresh, start, real_len));
+	return (ft_strsub_with_free(fresh, start, real_len));
 }
 
+char	*ft_strsub_with_free(char const *s, unsigned int start, size_t len)
+{
+	char	*fresh;
+	char	*tmp;
+	int		i;
 
-/*
-**soustraire la taille de l octet a la precision
-**verifie si la precision est positive
-**copie le char dans notre chaine
-**jusqua ce que la precision > 0 || la chaine est finie
- */
+	tmp = NULL;
+	if (!s)
+		return (NULL);
+	tmp = (char*)s;
+	fresh = malloc((len + 1) * sizeof(char));
+	i = 0;
+	if (!fresh)
+		return (NULL);
+	fresh[len] = '\0';
+	while (len > 0)
+	{
+		fresh[i] = s[start];
+		i++;
+		start++;
+		len--;
+	}
+	free(tmp);
+	return (fresh);
+}

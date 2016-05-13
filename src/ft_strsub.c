@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 11:16:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 18:16:28 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 09:12:38 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*fresh;
+	char	*tmp;
 	int		i;
 
+	tmp = NULL;
 	if (!s)
 		return (NULL);
 	fresh = malloc((len + 1) * sizeof(char));
