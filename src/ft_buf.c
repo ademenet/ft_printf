@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:36:02 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/12 16:25:35 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:58:47 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,8 @@ void				ft_buf_null(t_flag *f)
 
 void				ft_buf(char c, t_flag *f)
 {
-	if (g_i < 4096)
-	{
-		g_buf[g_i] = c;
-		g_i++;
-	}
-	else
+	g_buf[g_i] = c;
+	g_i++;
+	if (g_i == 4096)
 		ft_display(f);
 }
