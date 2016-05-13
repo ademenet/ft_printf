@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:41:52 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/13 10:04:52 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/13 13:59:09 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void		ft_display_arg(t_flag *f)
 	{
 		if (f->arg != NULL)
 		{
+			if (f->arg[0] == '\0' && (f->spe == 'C' || (f->spe == 'c' && f->fla[10] == 1)))
+				ft_buf('\0', f);
 			len = ft_strlen(f->arg);
 			while (len-- > 0)
 				ft_buf(f->arg[++i], f);
@@ -88,6 +90,7 @@ void		ft_width_char(t_flag *f)
 {
 	int		i;
 
+	i = 0;
 	if (f->arg)
 		i = ft_strlen(f->arg);
 	if (i < f->fla[1])
