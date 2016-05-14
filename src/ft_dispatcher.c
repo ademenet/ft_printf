@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dispatcher.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alain <alain@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 10:53:39 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 17:51:13 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/14 15:39:38 by alain            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int				ft_dispatcher(t_flag *f, va_list *ap)
 	t_spec	specs[16];
 	int		j;
 
-	if (ft_check(f) == -1)
+	if (ft_check(f, ap) == -1)
 		return (-1);
 	ft_initialize_specs(specs);
 	f->arg = NULL;

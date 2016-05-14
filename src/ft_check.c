@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alain <alain@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 08:59:27 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/14 16:05:15 by alain            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** First, initialize our int array.
 */
 
-int			ft_check(t_flag *f)
+int			ft_check(t_flag *f, va_list *ap)
 {
 	ft_check_initialize(f);
 	while (f->frmt[f->ndx] == '#' || f->frmt[f->ndx] == '0'
@@ -25,11 +25,11 @@ int			ft_check(t_flag *f)
 		|| f->frmt[f->ndx] == ' ' || f->frmt[f->ndx] == 'h'
 		|| f->frmt[f->ndx] == 'l' || f->frmt[f->ndx] == 'j'
 		|| f->frmt[f->ndx] == 'z' || f->frmt[f->ndx] == '.'
-		|| ft_isdigit(f->frmt[f->ndx]))
+		|| f->frmt[f->ndx] == '*' || ft_isdigit(f->frmt[f->ndx]))
 	{
 		ft_check_flag(f);
-		ft_check_width(f);
-		ft_check_precision(f);
+		ft_check_width(f, ap);
+		ft_check_precision(f, ap);
 		ft_check_modifier(f);
 	}
 	if (f->ndx == ft_strlen(f->frmt))
@@ -66,7 +66,7 @@ void		ft_check_flag(t_flag *f)
 ** This function check the witdh if we find a digit.
 */
 
-void		ft_check_width(t_flag *f)
+void		ft_check_width(t_flag *f, va_list *ap)
 {
 	int		i;
 	char	*str;
@@ -75,9 +75,7 @@ void		ft_check_width(t_flag *f)
 	if (ft_isdigit(f->frmt[f->ndx]) && f->frmt[f->ndx] != '0')
 	{
 		while (ft_isdigit(f->frmt[f->ndx]))
-		{
 			f->ndx++;
-		}
 		if (f->ndx - i > 0)
 		{
 			f->fla[1] = 0;
@@ -86,18 +84,24 @@ void		ft_check_width(t_flag *f)
 			free(str);
 		}
 	}
+	else if (f->frmt[f->ndx] == '*')
+	{
+		f->fla[1] = va_arg(*ap, int);
+		if (f->fla[1] < 0)
+		{
+			printf("je rentre la\n");
+			f->fla[4] = 1;
+			f->fla[1] *= -1;
+		}
+		f->ndx++;
+	}
 }
 
 /*
 ** This function check the precision if we find a dot.
 */
 
-/*
-** CHECKER LE DERNIER POINT ET PRENDRE LA VALEUR DU DERNIER POINT !
-** printf("%50.1.4s", "jungle");
-*/
-
-void		ft_check_precision(t_flag *f)
+void		ft_check_precision(t_flag *f, va_list *ap)
 {
 	int		i;
 	char	*str;
@@ -106,6 +110,13 @@ void		ft_check_precision(t_flag *f)
 	{
 		f->fla[0] = 0;
 		i = ++f->ndx;
+		if (f->frmt[f->ndx] == '*')
+		{
+			f->fla[0] = va_arg(*ap, int);
+			if (f->fla[0] < 0)
+				f->fla[0] *= -1;
+			f->ndx++;
+		}
 		while (ft_isdigit(f->frmt[f->ndx]))
 			f->ndx++;
 		if (f->ndx - i > 0)

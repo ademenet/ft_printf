@@ -6,7 +6,7 @@
 /*   By: alain <alain@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/14 13:37:09 by alain            ###   ########.fr       */
+/*   Updated: 2016/05/14 15:42:13 by alain            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct	s_flag
 	char		spe;
 	char		*arg;
 	wchar_t		*warg;
-
 	char		sign;
 	va_list		ap;
 	int			fla[13];
@@ -60,11 +59,11 @@ int				ft_printf(const char *format, ...);
 ** CHECKS
 */
 
-int				ft_check(t_flag *f);
+int				ft_check(t_flag *f, va_list *ap);
 void			ft_check_initialize(t_flag *f);
 void			ft_check_flag(t_flag *f);
-void			ft_check_width(t_flag *f);
-void			ft_check_precision(t_flag *f);
+void			ft_check_width(t_flag *f, va_list *ap);
+void			ft_check_precision(t_flag *f, va_list *ap);
 void			ft_check_modifier(t_flag *f);
 
 /*
