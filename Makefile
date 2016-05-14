@@ -6,7 +6,7 @@
 #    By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/20 11:33:31 by ademenet          #+#    #+#              #
-#    Updated: 2016/05/13 18:12:56 by ademenet         ###   ########.fr        #
+#    Updated: 2016/05/14 16:48:07 by ademenet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME = libftprintf.a
 
 SRC_PATH = ./src
 LIB_PATH = ./lib
-INC_PATH = ./inc
+INC_PATH = ./include
 OBJ_PATH = ./obj
 OBJLIB_PATH = ./obj
 
@@ -41,7 +41,8 @@ SRC_NAME =	ft_apply_flags.c\
 			ft_handler.c\
 			ft_printf.c\
 			ft_buf.c\
-			ft_transform_wchar.c
+			ft_transform_wchar.c\
+			ft_wildcard.c
 
 LIB_NAME = 	ft_atoi.c\
 			ft_isdigit.c\
