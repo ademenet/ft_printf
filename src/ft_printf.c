@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alain <alain@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:18:27 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/13 17:16:23 by ademenet         ###   ########.fr       */
+/*   Updated: 2016/05/14 13:40:05 by alain            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** call subsidiaries functions to manage flags.
 */
 
-void			ft_end(t_flag *f)
+void		ft_end(t_flag *f)
 {
 	if (f->fla[0] >= 0 && f->arg != NULL && f->arg[0] != '\0' &&
 		f->arg[0] != '0')
@@ -31,28 +31,36 @@ void			ft_end(t_flag *f)
 	}
 }
 
-int				ft_printf(const char *format, ...)
+void		ft_start(const char *format, t_flag *f, va_list *ap)
 {
-	va_list		ap;
-	t_flag		f;
-	int			i;
+	int		i;
 
-	va_start(ap, format);
 	i = -1;
-	f.ret = 0;
-	ft_bufset();
 	while (format[++i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			f.frmt = (char*)&format[++i];
-			if (ft_dispatcher(&f, &ap) == -1)
+			f->frmt = (char*)&format[++i];
+			if (ft_dispatcher(f, ap) == -1)
 				break ;
-			i += f.ndx;
+			i += f->ndx;
 		}
 		else if (format[i] != '\0' && format[i] != '%')
-			ft_buf(format[i], &f);
+			ft_buf(format[i], f);
 	}
+}
+
+int			ft_printf(const char *format, ...)
+{
+	va_list	ap;
+	t_flag	f;
+
+	va_start(ap, format);
+	f.ret = 0;
+	ft_bufset();
+	if (!format)
+		return (0);
+	ft_start(format, &f, &ap);
 	if (g_i > 0)
 		ft_display(&f);
 	va_end(ap);
