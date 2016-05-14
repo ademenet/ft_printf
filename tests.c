@@ -1155,18 +1155,83 @@
 
 int main()
 {
-	printf("{%*d}\n", -5, 42);
-	ft_printf("{%*d}\n", -5, 42);
+	int ret = 0;
+	int ret1 = 0;
 
-	printf("[%d]", printf("{%*c}\n", -15, 0));
-	printf("[%d]", ft_printf("{%*c}\n", -15, 0));
+	/*
+	**printf("TRUE :\n");
+	**ret = printf("{%*d}\n", -5, 42);
+	**puts("");
+	**printf("ret : |%d|\n", ret);
+	**printf("MINE :\n");
+	**ret1 = ft_printf("{%*d}\n", -5, 42);
+	**puts("");
+	**printf("ret1 : |%d|\n", ret1);
+	**printf("===========================\n");
+	**
+	**printf("TRUE :\n");
+	**ret = printf("{%*c}\n", -15, 0);
+	**puts("");
+	**printf("ret : |%d|\n", ret);
+	**printf("MINE :\n");
+	**ret1 = ft_printf("{%*c}\n", -15, 0);
+	**puts("");
+	**printf("ret1 : |%d|\n", ret1);
+	**printf("===========================\n");
+	 */
 
-	printf("{%05.15d}\n", 42);
-	ft_printf("{%05.15d}\n", 42);
+	/*
+	**printf("TRUE :\n");
+	**ret = printf("{%05.*s}", 0, "421");
+	**puts("");
+	**printf("ret : |%d|\n", ret);
+	**printf("MINE :\n");
+	**ret1 = ft_printf("{%05.*s}", 0, "421");
+	**puts("");
+	**printf("ret1 : |%d|\n", ret1);
+	**printf("===========================\n");
+	**
+	**printf("TRUE :\n");
+	**ret = printf("{%05.*d}", -4, 421);
+	**puts("");
+	**printf("ret : |%d|\n", ret);
+	**printf("MINE :\n");
+	**ret1 = ft_printf("{%05.*d}", -4, 421);
+	**puts("");
+	**printf("ret1 : |%d|\n", ret1);
+	**printf("===========================\n");
+	 */
 
-	printf("[%d]", printf("{%*.*d}", 0, 3, 0));
-	printf("[%d]", ft_printf("{%*.*d}", 0, 3, 0));
 
+	printf("TRUE :\n");
+	ret = printf("{%*c}", -15, 0);
+	puts("");
+	printf("ret : |%d|\n", ret);
+	printf("MINE :\n");
+	ret1 = ft_printf("{%*c}", -15, 0);
+	puts("");
+	printf("ret1 : |%d|\n", ret1);
+	printf("===========================\n");
+
+	printf("TRUE :\n");
+	ret = printf("{%.*d}", 5, 42);
+	puts("");
+	printf("ret : |%d|\n", ret);
+	printf("MINE :\n");
+	ret1 = ft_printf("{%.*d}", 5, 42);
+	puts("");
+	printf("ret1 : |%d|\n", ret1);
+	printf("===========================\n");
+
+	printf("TRUE :\n");
+	ret = printf("{%.*s}", 5, "42");
+	puts("");
+	printf("ret : |%d|\n", ret);
+	printf("MINE :\n");
+	ret1 = ft_printf("{%.*s}", 5, "42");
+	puts("");
+	printf("ret1 : |%d|\n", ret1);
+	printf("===========================\n");
 
 	return (0);
 }

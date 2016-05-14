@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alain <alain@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/25 12:24:50 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/14 16:05:15 by alain            ###   ########.fr       */
+/*   Updated: 2016/05/14 17:33:22 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,7 @@ void		ft_check_width(t_flag *f, va_list *ap)
 			free(str);
 		}
 	}
-	else if (f->frmt[f->ndx] == '*')
-	{
-		f->fla[1] = va_arg(*ap, int);
-		if (f->fla[1] < 0)
-		{
-			printf("je rentre la\n");
-			f->fla[4] = 1;
-			f->fla[1] *= -1;
-		}
-		f->ndx++;
-	}
+	ft_wildcard(f, ap, 1);
 }
 
 /*
@@ -104,6 +94,7 @@ void		ft_check_width(t_flag *f, va_list *ap)
 void		ft_check_precision(t_flag *f, va_list *ap)
 {
 	int		i;
+	int		flag;
 	char	*str;
 
 	if (f->frmt[f->ndx] == '.')
@@ -111,21 +102,19 @@ void		ft_check_precision(t_flag *f, va_list *ap)
 		f->fla[0] = 0;
 		i = ++f->ndx;
 		if (f->frmt[f->ndx] == '*')
+			flag = ft_wildcard(f, ap, 0);
+		else
 		{
-			f->fla[0] = va_arg(*ap, int);
-			if (f->fla[0] < 0)
-				f->fla[0] *= -1;
-			f->ndx++;
+			while (ft_isdigit(f->frmt[f->ndx]))
+				f->ndx++;
+			if (f->ndx - i > 0)
+			{
+				str = ft_strsub(f->frmt, i, f->ndx - i);
+				f->fla[0] = ft_atoi((const char*)str);
+				free(str);
+			}
 		}
-		while (ft_isdigit(f->frmt[f->ndx]))
-			f->ndx++;
-		if (f->ndx - i > 0)
-		{
-			str = ft_strsub(f->frmt, i, f->ndx - i);
-			f->fla[0] = ft_atoi((const char*)str);
-			free(str);
-		}
-		if (f->fla[0] == 0)
+		if (f->fla[0] == 0 && flag)
 			f->fla[0] = -1;
 	}
 }

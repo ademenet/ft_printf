@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alain <alain@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 14:27:23 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/14 15:42:13 by alain            ###   ########.fr       */
+/*   Updated: 2016/05/14 17:17:34 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,5 +171,11 @@ void			ft_buf(char c, t_flag *f);
 void			ft_buf_null(t_flag *f);
 void			ft_display(t_flag *f);
 void			ft_bufset(void);
+
+/*
+** ft_wildcard.c
+*/
+
+int				ft_wildcard(t_flag *f, va_list *ap, int index);
 
 #endif

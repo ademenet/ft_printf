@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_wildcard.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:05:25 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/14 16:39:04 by ademenet         ###   ########.fr       */
+/*   Created: 2016/05/14 16:41:44 by ademenet          #+#    #+#             */
+/*   Updated: 2016/05/14 17:32:18 by ademenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "../include/ft_printf.h"
+
+int			ft_wildcard(t_flag *f, va_list *ap, int index)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	if (f->frmt[f->ndx] == '*')
+	{
+		f->fla[index] = va_arg(*ap, int);
+		if (f->fla[index] < 0)
+		{
+			if (index == 1)
+			{
+				f->fla[4] = 1;
+				f->fla[1] *= -1;
+			}
+			else if (index == 0)
+			{
+				f->fla[0] = 0;
+				f->ndx++;
+				return (0);
+			}
+		}
+		f->ndx++;
+	}
+	return (1);
 }
