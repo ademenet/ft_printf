@@ -1,13 +1,15 @@
 # ft_printf
 This function copy (almost) printf.
 
-## Work in progress
+## Synopsis
+`int	ft_printf(const char *format, ...)`
 
-#### Different resources from the web:
-[Les fonctions a nombre variables de paramètres](https://openclassrooms.com/courses/les-fonctions-a-nombre-variable-de-parametres)
+This ft_printf works exactly as the original printf. There are flags available such as: #0-(space)+.
 
-[Nombre variables de paramètres](https://openclassrooms.com/forum/sujet/nombre-d-arguments-indefini-15588)
+You can use these length modifiers: hh, h, l, ll, j and z.
 
-[Liste variables d'arguments](http://alain.dancel.free.fr/c/c70_140.htm)
+This function handle these different flags: c, C, s, S, p, d, D, i, u, U, o, O, x and X.
 
-[Nombre variable d'arguments](http://codes-sources.commentcamarche.net/faq/877-les-fonctions-a-nombre-variable-d-arguments)
+I add also my own: b, which transform decimal into binary notation.
+
+You can use wildcards (useful if you want to manage width and precision in a variable).
