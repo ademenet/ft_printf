@@ -1105,12 +1105,13 @@ int		main()
 	  ft_printf("[%.1s]\n", str);
 
 	  ft_printf("%d\n", ft_printf("%-+#.6hhd|%s\n&", c, str));
-	  ft_printf("%d\n", ft_printf("%-#6.2hhd|%s\n&", c), str);
+	  printf("ALlo ?\n");
+	  ft_printf("%d\n", ft_printf("%-#6.2hhd|%s\n&", c, str));
 	  ft_printf("%d\n", ft_printf("%-4.5hhd|%s", c, str));
 
 	  ft_printf("\nShort and long strings tests\n");
 	  ft_printf("%d\n", ft_printf("%-+#.6hhs|%s\n&", str, str));
-	  ft_printf("%d\n", ft_printf("%-#6.2lls|%hs\n&", str), str);
+	  ft_printf("%d\n", ft_printf("%-#6.2lls|%hs\n&", str, str));
 	  ft_printf("%d\n", ft_printf("%-4.5lls|%ls", str, str));
 
 	  char *str2;
